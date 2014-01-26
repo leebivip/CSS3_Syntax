@@ -1,0 +1,40 @@
+// [PackageDev] target_format: plist, ext: tmLanguage
+{
+    "name": "CSS3",
+    "scopeName": "text.css",
+    "fileTypes": ["css"],
+    "uuid": "0c288c1d-d424-476c-aa24-4dac097194a6",
+
+    "patterns": [
+        {
+            "name": "element.css",
+            "match": "",
+            "comment": "HTML elements (e.g. body, nav)"
+        },
+        {
+            "name": "id.css",
+            "match": "",
+            "comment": "(e.g. #item)"
+        },
+        {
+            "name": "class.css",
+            "match": "",
+            "comment": "(e.g. .wrapper)"
+        },
+        {
+            "name": "property.css",
+            "match": "",
+            "comment": "The stuff between the curly braces (e.g. border-radius, background-color)"
+        },
+        {
+            "name": "number.css",
+            "match": "",
+            "comment": "e.g. 100px 100.01% 1em (without the units px, %, or em)"
+        },
+        {
+            "name": "unit.css",
+            "match": "",
+            "comment": "e.g. px, %, em"
+        }
+    ]
+}
