@@ -12,31 +12,7 @@
 	<array>
 		<dict>
 			<key>comment</key>
-			<string>Units (px, em)</string>
-			<key>match</key>
-			<string>(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz|%)</string>
-			<key>name</key>
-			<string>keyword.other.css</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Element ID (#header, #logo)</string>
-			<key>match</key>
-			<string>regex</string>
-			<key>name</key>
-			<string>id</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Element class (.comment, .alert)</string>
-			<key>match</key>
-			<string>regex</string>
-			<key>name</key>
-			<string>class</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>numeric literals (45, 3.14)</string>
+			<string>Numeric literals (42, 3.14)</string>
 			<key>match</key>
 			<string>[0-9]+|[0-9]*\.[0-9]+</string>
 			<key>name</key>
@@ -44,35 +20,11 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Pseudo class (:hover, :first-child)</string>
+			<string>@ rules (@media, @import)</string>
 			<key>match</key>
-			<string>regex</string>
+			<string>@(charset|document|font-(face|feature-values)|import|keyframes|media|namespace|page|supports|viewport)\b</string>
 			<key>name</key>
-			<string>pseudo class</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Pseudo element (::first-line, ::after)</string>
-			<key>match</key>
-			<string>regex</string>
-			<key>name</key>
-			<string>pseudo element</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Function (url(), calc())</string>
-			<key>match</key>
-			<string>regex</string>
-			<key>name</key>
-			<string>function</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>@ rule (@media, @import)</string>
-			<key>match</key>
-			<string>regex</string>
-			<key>name</key>
-			<string>@ rule</string>
+			<string>comment.line.css</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -88,11 +40,11 @@
 			<key>match</key>
 			<string>\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\b</string>
 			<key>name</key>
-			<string>keyword.tags.css</string>
+			<string>entity.name.tag.css</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>double-quoted strings</string>
+			<string>Double-quoted strings</string>
 			<key>match</key>
 			<string>\"([^\n\r\f\\"]|\\(\n|\r\n|\r|\f)|((\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)|\\[^\n\r\f0-9a-f]))*\"</string>
 			<key>name</key>
@@ -100,7 +52,7 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>single-quoted strings</string>
+			<string>Single-quoted strings</string>
 			<key>match</key>
 			<string>\'([^\n\r\f\\']|\\(\n|\r\n|\r|\f)|((\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)|\\[^\n\r\f0-9a-f]))*\'</string>
 			<key>name</key>
@@ -108,7 +60,7 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>block comments</string>
+			<string>Block comments</string>
 			<key>match</key>
 			<string>\/\*[^*]*\*+([^/*][^*]*\*+)*\/</string>
 			<key>name</key>
