@@ -12,7 +12,22 @@
             // "captures": {
             //     "1": {"name": "constant.numeric.css"}
             // },
-            "comments": "units"       // should match number, unit, but only color the unit
+            "comment": "units"       // should match number, unit, but only color the unit
+        },
+        {
+            "name": "id",
+            "match": "regex",
+            "comment": "Element ID (#header, #logo)"
+        },
+        {
+            "name": "class",
+            "match": "regex",
+            "comment": "Element class (.comment, .alert)"
+        },
+        {
+            "name": "constant.numeric.css",
+            "match": "(\\+|-)?[0-9]+|[0-9]*\\.[0-9]+",
+            "comment": "numeric literals"
         },
         {
             "name": "keyword.tags.css",
@@ -33,11 +48,6 @@
             "name": "string.quoted.single.css",
             "match": "'.*'",
             "comment": "single-quoted strings"
-        },
-        {
-            "name": "constant.numeric.css",
-            "match": "(\\+|-)?[0-9]+|[0-9]*\\.[0-9]+",
-            "comment": "numeric literals"
         },
         {
             "name": "support.variable.css",    // FIXME: wrong name
