@@ -17,12 +17,6 @@
             "comment": "CSS3 properties (e.g. border-radius, background-color)"
         },
         {
-            "name": "comment.block.css",
-            "begin": "(?=/\\*)",
-            "end": "(?<=\\*/)",
-            "comment": "block comments"
-        },
-        {
             "name": "string.quoted.double.css",
             "begin": "\"",
             // "patterns": [{"match": ".", "name": "string.ssraw"}],
@@ -52,6 +46,12 @@
             "name": "support.variable.css",    // FIXME: wrong name
             "match": "\\.[a-zA-Z][a-zA-Z-]*",  // FIXME: wrong pattern
             "comments": "classes"
+        },
+        {
+            "name": "comment.block.css",
+            "begin": "(?=/\\*)",
+            "end": "(?<=\\*/)",
+            "comment": "block comments"
         }
     ]
 }
