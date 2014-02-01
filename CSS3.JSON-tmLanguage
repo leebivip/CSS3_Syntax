@@ -50,11 +50,6 @@
             "comment": "single-quoted strings"
         },
         {
-            "name": "support.variable.css",    // FIXME: wrong name
-            "match": "\\.[a-zA-Z][a-zA-Z-]*",  // FIXME: wrong pattern
-            "comments": "classes"
-        },
-        {
             "name": "comment.block.css",
             "begin": "(?=/\\*)",
             "end": "(?<=\\*/)",
