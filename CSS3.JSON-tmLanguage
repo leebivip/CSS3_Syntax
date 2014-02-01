@@ -18,15 +18,12 @@
         },
         {
             "name": "string.quoted.double.css",
-            "begin": "\"",
-            // "patterns": [{"match": ".", "name": "string.ssraw"}],
-            "end": "\"",
+            "match": "\".*\"",
             "comment": "double-quoted strings"
         },
         {
             "name": "string.quoted.single.css",
-            "begin": "\\'",
-            "end": "\\'",
+            "match": "'.*'",
             "comment": "single-quoted strings"
         },
         {
