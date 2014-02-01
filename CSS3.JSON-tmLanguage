@@ -7,6 +7,14 @@
 
     "patterns": [
         {
+            "name": "keyword.other.css",  // FIXME: correct name?
+            "match": "(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz|%)",
+            // "captures": {
+            //     "1": {"name": "constant.numeric.css"}
+            // },
+            "comments": "units"       // should match number, unit, but only color the unit
+        },
+        {
             "name": "keyword.tags.css",
             "match": "\\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\\b",
             "comment": "HTML elements (e.g. body, nav)"
@@ -30,14 +38,6 @@
             "name": "constant.numeric.css",
             "match": "(\\+|-)?[0-9]+|[0-9]*\\.[0-9]+",
             "comment": "numeric literals"
-        },
-        {
-            "name": "keyword.other.css",  // FIXME: correct name?
-            "match": "(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz|%)",
-            // "captures": {
-            //     "1": {"name": "constant.numeric.css"}
-            // },
-            "comments": "units"       // should match number, unit, but only color the unit
         },
         {
             "name": "support.variable.css",    // FIXME: wrong name
