@@ -1,5 +1,5 @@
 <angle>
-<color>
+<color>         constant.other
 <counter>
 <frequency>
 <gradient>
