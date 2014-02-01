@@ -71,6 +71,8 @@
         },
         {
             "name": "comment.block.css",
+            "match": "\/\*[^*]*\*+([^/*][^*]*\*+)*\/",
+
             "begin": "(?=/\\*)",
             "end": "(?<=\\*/)",
             "comment": "block comments"
