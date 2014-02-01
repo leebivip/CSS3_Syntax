@@ -26,7 +26,7 @@
         },
         {
             "name": "constant.numeric.css",
-            "match": "(\\+|-)?[0-9]+|[0-9]*\\.[0-9]+",
+            "match": "[0-9]+|[0-9]*\\.[0-9]+",
             "comment": "numeric literals (45, 3.14)"
         },
         {

@@ -38,7 +38,7 @@
 			<key>comment</key>
 			<string>numeric literals (45, 3.14)</string>
 			<key>match</key>
-			<string>(\+|-)?[0-9]+|[0-9]*\.[0-9]+</string>
+			<string>[0-9]+|[0-9]*\.[0-9]+</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
