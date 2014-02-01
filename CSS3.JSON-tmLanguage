@@ -18,8 +18,8 @@
         },
         {
             "name": "comment.block.css",
-            "begin": "(?=\/\\*)",
-            "end": "(?<=\\*\/)",
+            "begin": "(?=/\\*)",
+            "end": "(?<=\\*/)",
             "comment": "block comments"
         },
         {
