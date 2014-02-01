@@ -1,0 +1,8 @@
+.display{
+    background-image: url("display.png");
+    display: block;
+}
+
+.border{
+    border: 1px solid black;
+}
