@@ -27,6 +27,14 @@
 			<string>variable.parameter.css</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Pseudo element (::first-line, ::after)</string>
+			<key>match</key>
+			<string>::(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
+			<key>name</key>
+			<string>constant.numeric.css</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
