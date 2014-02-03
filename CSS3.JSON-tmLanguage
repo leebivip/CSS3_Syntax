@@ -14,16 +14,19 @@
         //     // },
         //     "comment": "Units (px, em)"       // should match number, unit, but only color the unit
         // },
-        // {
-        //     "name": "id",
-        //     "match": "regex",
-        //     "comment": "Element ID (#header, #logo)"
-        // },
-        // {
-        //     "name": "class",
-        //     "match": "regex",
-        //     "comment": "Element class (.comment, .alert)"
-        // },
+        {
+            // FIXME: Doesn't use official regex for ident
+            "name": "entity.name.tag.css",  // FIXME: right name?
+            "match": "#[_a-zA-Z]+[_a-zA-Z0-9-]*",
+            "comment": "Element ID (#header, #logo)"
+        },
+        {
+            "name": "entity.name.function.css",   // FIXME: right name?
+            "match": "\\.[_a-zA-Z]+[_a-zA-Z0-9-]*",
+            // FIXME: Official regex doesn't work (Error: too short multibyte code string)
+            // "match": "[-]?([_a-z]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))([_a-z0-9-]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))*",
+            "comment": "Element class (.comment, .alert)"
+        },
         {
             "name": "constant.numeric.css",
             "match": "[0-9]+|[0-9]*\\.[0-9]+",

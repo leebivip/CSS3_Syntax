@@ -12,6 +12,22 @@
 	<array>
 		<dict>
 			<key>comment</key>
+			<string>Element ID (#header, #logo)</string>
+			<key>match</key>
+			<string>#[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<key>name</key>
+			<string>entity.name.tag.css</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Element class (.comment, .alert)</string>
+			<key>match</key>
+			<string>\.[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Numeric literals (42, 3.14)</string>
 			<key>match</key>
 			<string>[0-9]+|[0-9]*\.[0-9]+</string>
