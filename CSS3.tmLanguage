@@ -20,6 +20,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>Invalid pseudo-elements (:after instead of ::after)</string>
+			<key>match</key>
+			<string>:(after|before|first-(letter|line))</string>
+			<key>name</key>
+			<string>invalid.illegal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Pseudo class (:hover, :first-child)</string>
 			<key>match</key>
 			<string>:(active|checked|default|dir|disabled|empty|enabled|first(-(child|of-type))?|focus|fullscreen|hover|indeterminate|in-range|invalid|lang|last-(child|of-type)|left|link|not|nth-(child|last-(child|of-type)|of-type)|only-(child|of-type)|optional|out-of-range|read-(only|write)|required|right|root|scope|target|valid|visited)</string>

@@ -30,15 +30,15 @@
             "comment": "Numeric literals (42, 3.14)"
         },
         {
+            "name": "invalid.illegal",
+            "match": ":(after|before|first-(letter|line))",
+            "comment": "Invalid pseudo-elements (:after instead of ::after)"
+        },
+        {
             "name": "variable.parameter.css",  // FIXME: right name?
             "match": ":(active|checked|default|dir|disabled|empty|enabled|first(-(child|of-type))?|focus|fullscreen|hover|indeterminate|in-range|invalid|lang|last-(child|of-type)|left|link|not|nth-(child|last-(child|of-type)|of-type)|only-(child|of-type)|optional|out-of-range|read-(only|write)|required|right|root|scope|target|valid|visited)",
             "comment": "Pseudo class (:hover, :first-child)"
         },
-        // {
-        //     "name": "",
-        //     "match": "",
-        //     "comment": "Invalid pseudo-elements (:after instead of ::after)"
-        // },
         {
             "name": "constant.numeric.css",  // FIXME: right name?
             "match": "::(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)",
