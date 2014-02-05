@@ -1,4 +1,8 @@
 <angle>
+    deg
+    grad
+    rad
+    turn
 <color>         constant.other
 <counter>
 <frequency>

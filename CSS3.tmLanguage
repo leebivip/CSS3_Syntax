@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>Numeric literals (42, 3.14)</string>
 			<key>match</key>
-			<string>[0-9]+|[0-9]*\.[0-9]+</string>
+			<string>[-+]?[0-9]+|[0-9]*\.[0-9]+</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
@@ -116,11 +116,11 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?=/\*)</string>
+			<string>/\*</string>
 			<key>comment</key>
 			<string>Block comments</string>
 			<key>end</key>
-			<string>(?&lt;=\*/)</string>
+			<string>\*/</string>
 			<key>name</key>
 			<string>comment.block.css</string>
 		</dict>
