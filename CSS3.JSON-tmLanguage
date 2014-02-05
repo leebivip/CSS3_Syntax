@@ -54,16 +54,12 @@
             "comment": "Pseudo element (::first-line, ::after)"
         },
         {
-            // Empty name property is empty to avoid coloring trailing parens
-            "name": "",
-            "match": "((attr|blur|brightness|calc|contrast|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))\\(",
-            // Capture just the function name so it can be colored without coloring the opening paren
-            "captures": {
-                "1": {"name": "entity.name.function.css"}   // FIXME: right name?
-            },
+            "name": "entity.name.function.css",
+            "match": "((attr|blur|brightness|calc|contrast|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\\()",
             "comment": "Function (url(), calc())"
 
-            // FIXME: Official regex doesn't work
+            // FIXME: Official regex doesn't work. Is this really a problem, since we're comprehensively
+            // listing all function names (from MDN)?
             // "match": "[-]?([_a-z]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))([_a-z0-9-]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))*\\(",
         },
         {
