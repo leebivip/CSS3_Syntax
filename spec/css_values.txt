@@ -1,23 +1,219 @@
 <angle>
-    deg
+    deg     // no spaces between the number and the unit
     grad
     rad
     turn
 <color>         constant.other
+    black
+    silver
+    gray
+    white
+    maroon
+    red
+    purple
+    fuchsia
+    green
+    lime
+    olive
+    yellow
+    navy
+    blue
+    teal
+    aqua
+    orange
+    aliceblue
+    antiquewhite
+    aquamarine
+    azure
+    beige
+    bisque
+    blanchedalmond
+    blueviolet
+    brown
+    burlywood
+    cadetblue
+    chartreuse
+    chocolate
+    coral
+    cornflowerblue
+    cornsilk
+    crimson
+    darkblue
+    darkcyan
+    darkgoldenrod
+    darkgray
+    darkgreen
+    darkgrey
+    darkkhaki
+    darkmagenta
+    darkolivegreen
+    darkorange
+    darkorchid
+    darkred
+    darksalmon
+    darkseagreen
+    darkslateblue
+    darkslategray
+    darkslategrey
+    darkturquoise
+    darkviolet
+    deeppink
+    deepskyblue
+    dimgray
+    dimgrey
+    dodgerblue
+    firebrick
+    floralwhite
+    forestgreen
+    gainsboro
+    ghostwhite
+    gold
+    goldenrod
+    greenyellow
+    grey
+    honeydew
+    hotpink
+    indianred
+    indigo
+    ivory
+    khaki
+    lavender
+    lavenderblush
+    lawngreen
+    lemonchiffon
+    lightblue
+    lightcoral
+    lightcyan
+    lightgoldenrodyellow
+    lightgray
+    lightgreen
+    lightgrey
+    lightpink
+    lightsalmon
+    lightseagreen
+    lightskyblue
+    lightslategray
+    lightslategrey
+    lightsteelblue
+    lightyellow
+    limegreen
+    linen
+    mediumaquamarine
+    mediumblue
+    mediumorchid
+    mediumpurple
+    mediumseagreen
+    mediumslateblue
+    mediumspringgreen
+    mediumturquoise
+    mediumvioletred
+    midnightblue
+    mintcream
+    mistyrose
+    moccasin
+    navajowhite
+    oldlace
+    olivedrab
+    orangered
+    orchid
+    palegoldenrod
+    palegreen
+    paleturquoise
+    palevioletred
+    papayawhip
+    peachpuff
+    peru
+    pink
+    plum
+    powderblue
+    rosybrown
+    royalblue
+    saddlebrown
+    salmon
+    sandybrown
+    seagreen
+    seashell
+    sienna
+    skyblue
+    slateblue
+    slategray
+    slategrey
+    snow
+    springgreen
+    steelblue
+    tan
+    thistle
+    tomato
+    turquoise
+    violet
+    wheat
+    whitesmoke
+    yellowgreen
+    transparent
+    currentColor
+    value returned by rgb(), rgba(), hsl(), hsla() functions (already colored)
+    3 char hex (#RGB) where RGB are hex digits (0-F)
+    6 char hex (#RRGGBB) where RRGGBB are hex digits (0-F)
 <counter>
+    value is <user-ident> type returned by counter-reset() and counter-increment() functions
+    coloring necessary?
 <frequency>
+    Hz      // no space between the number and the unit
+    kHz
 <gradient>
+    value is returned by gradient functions (e.g. linear-gradient)
+    no additional coloring needed (function name already colored)
 <image>
+    value is returned by gradient functions, url(), or element()
+    no additional coloring needed
 <integer>
+    already handled by numeric literal regex
 <length>
+    em     // no space between the number and the unit
+    ex
+    ch
+    rem
+    vh
+    vw
+    vmin
+    vmax
+    px
+    mm
+    cm
+    in
+    pt
+    pc
+    mozmm
 <number>
+    already handled by numeric literal regex
 <percentage>
+    should be handled by it's own regex
 <position>
+    static
+    relative
+    absolute
+    fixed
+    sticky
+    inherit
 <ratio>
+    two positive integers separated by a slash (e.g. 50/100)
+    already handled by numeric literal regex
 <resolution>
+    dpi   // no spaces allowed between the number and the unit
+    dpcm
+    dppx
 <shape>
+    value is the return value of the rect() function
+    already handled by function coloring
+    rect() has 4 parameters, rect(top, right, bottom, left). all are <length> data type
 <string>
+    already handled by string regexes
 <time>
+    ms      // no space between the number and the unit
+    s
 <timing-function>
 <uri>
+    single- or double-quoted string.
+    already handled by string regexes
 <user-ident>
+    see crazy regex in regex for classes

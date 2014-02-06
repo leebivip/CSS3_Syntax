@@ -6,30 +6,26 @@
     "uuid": "0c288c1d-d424-476c-aa24-4dac097194a6",
 
     "patterns": [
-        // {
-        //     "name": "keyword.other.css",            // FIXME: right name?
-        //     // The regex matches both the number and the unit (e.g. 10px), but only captures the
-        //     // unit for coloring.
-        //     "match": "(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz)",
-        //     "captures": {
-        //         "1": {"name": "constant.numeric.css"}   // FIXME: right name?
-        //     },
-        //     "comment": "Values (px, em, deg)"       // should match number, unit, but only color the unit
-        // },
+        {
+            "name": "keyword.other.css",            // FIXME: right name?
+            "match": "(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz)",
+            "comment": "Values (px, em, deg)"
+        },
         {
             "name": "entity.name.tag.css",          // FIXME: right name?
-            "match": "#[_a-zA-Z]+[_a-zA-Z0-9-]*",   // FIXME: Doesn't use official regex for ident (no unicode support)
+            "match": "#[_a-zA-Z]+[_a-zA-Z0-9-]*",   // FIXME: Doesn't use official regex for ident (no support for esaped unicode chars. doesn't support leading dash)
             "comment": "Element ID (#header, #logo)"
         },
         {
             "name": "entity.name.function.css",     // FIXME: right name?
-            "match": "\\.[_a-zA-Z]+[_a-zA-Z0-9-]*", // FIXME: should this support unicode chars?
-            // FIXME: Official regex doesn't work (Error: too short multibyte code string)
-            // "match": "[-]?([_a-z]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))([_a-z0-9-]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))*",
+            "match": "\\.[_a-zA-Z]+[_a-zA-Z0-9-]*", // FIXME: should support escaped unicode chars and leading dash
             "comment": "Element class (.comment, .alert)"
+
+            // FIXME: Official regex for idents doesn't work (Error: too short multibyte code string)
+            // "match": "[-]?([_a-z]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))([_a-z0-9-]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))*",
         },
         // {
-        //     "name": "keyword.other.css",          // FIXME: right name?
+        //     "name": "keyword.other.css",             // FIXME: right name?
         //     "match": "[-+]?[0-9]+|[0-9]*\\.[0-9]+%", // FIXME: can't match the stupid % sign!
         //     "comment": "Percentage (75%, 100.01%)"
         // },
@@ -91,10 +87,11 @@
             "name": "comment.block.css",
             "begin": "\/\\*",
             "end": "\\*\/",
-
-            // FIXME: Official regex doesn't work with multiline block comments
-            // "match": "\\/\\*[^*]*\\*+([^/*][^*]*\\*+)*\\/",
             "comment": "Block comments"
+
+            // FIXME: Official regex doesn't work with multiline block comments. Is this really a
+            // problem since we're using begin/end to do the exact same thing?
+            // "match": "\\/\\*[^*]*\\*+([^/*][^*]*\\*+)*\\/",
         }
     ]
 }
