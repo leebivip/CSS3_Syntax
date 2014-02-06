@@ -1,0 +1,26 @@
+W3C CSS 2.1 Spec
+http://www.w3.org/TR/CSS21/syndata.html#tokenization
+
+W3C CSS3 Spec
+http://www.w3.org/TR/css3-syntax/
+
+W3C CSS3 Spec - Values and Units
+http://www.w3.org/TR/css3-values/#number
+
+Old Syntax Def for CSS3
+https://github.com/i-akhmadullin/Sublime-CSS3/blob/master/CSS3.tmLanguage
+
+Syntax Def for ANTLR language
+https://github.com/iuliux/SublimeText2-Antlr-syntax/blob/master/Antlr.JSON-tmLanguage
+
+Syntax Def for MIPS
+https://github.com/contradictioned/mips-syntax/blob/master/mips.JSON-tmLanguage
+
+TextMate Naming Conventions
+http://manual.macromates.com/en/language_grammars#naming_conventions.html
+
+Unofficial Sublime Text Docs for Syntax Defs
+http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
+
+Regex Cheat Sheet
+http://www.addedbytes.com/cheat-sheets/download/regular-expressions-cheat-sheet-v2.png
