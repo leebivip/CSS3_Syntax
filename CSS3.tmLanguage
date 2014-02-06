@@ -12,6 +12,14 @@
 	<array>
 		<dict>
 			<key>comment</key>
+			<string>Units (px, em, deg)</string>
+			<key>match</key>
+			<string>(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz)</string>
+			<key>name</key>
+			<string>keyword.other.css</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Element ID (#header, #logo)</string>
 			<key>match</key>
 			<string>#[_a-zA-Z]+[_a-zA-Z0-9-]*</string>

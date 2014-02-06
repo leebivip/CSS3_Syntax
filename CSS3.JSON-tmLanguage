@@ -8,8 +8,9 @@
     "patterns": [
         {
             "name": "keyword.other.css",            // FIXME: right name?
-            "match": "(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz)",
-            "comment": "Values (px, em, deg)"
+            // "match": "(?:[0-9])(?<!\\s)(em|ex|ch|rem|vh|vw|vmin|vmax|px|mm|cm|in|pt|pc|mozmm|ms|s|dpcm|dpi|dppx|deg|grad|rad|turn|khz|hz)",
+            "match": "(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz)",
+            "comment": "Units (px, em, deg)"
         },
         {
             "name": "entity.name.tag.css",          // FIXME: right name?
@@ -53,10 +54,6 @@
             "name": "entity.name.function.css",
             "match": "((attr|blur|brightness|calc|contrast|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\\()",
             "comment": "Function (url(), calc())"
-
-            // FIXME: Official regex doesn't work. Is this really a problem, since we're comprehensively
-            // listing all function names (from MDN)?
-            // "match": "[-]?([_a-z]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))([_a-z0-9-]|[^\\0-\\237]|(\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-f]))*\\(",
         },
         {
             "name": "keyword.other.css",            // FIXME: right name?
