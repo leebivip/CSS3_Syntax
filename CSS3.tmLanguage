@@ -49,6 +49,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>Color names (teal, aqua)</string>
+			<key>match</key>
+			<string>(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)</string>
+			<key>name</key>
+			<string>constant.other.css</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Numeric literals (42, 3.14)</string>
 			<key>match</key>
 			<string>[-+]?[0-9]+|[0-9]*\.[0-9]+</string>
