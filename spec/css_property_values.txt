@@ -256,4 +256,145 @@ break-inside
 brightness()
     // just a function that takes a <number> or <percentage> as a parameter.
     // no special syntax needed
-
+calc()
+    // a function that takes a mathematical expression as a parameter
+    // no special syntax needed
+caption-side
+    top
+    bottom
+@charset
+    <string>
+clear
+    none
+    left
+    right
+    both
+clip
+    auto
+    <shape>
+clip-path
+    none
+    <uri>
+color
+    <color>
+columns
+    // shorthand property. syntax covered by longhand properties
+column-count
+    auto
+    <number>
+column-fill
+    auto
+    balance
+column-gap
+    normal
+    <length>
+column-rule
+    // shorthand property. syntax covered by longhand properties
+column-rule-color
+    <color>
+column-rule-style,
+column-rule-width
+    // covered by previous properties
+column-span
+    none
+    all
+column-width
+    auto
+    <length>
+content
+    normal
+    none
+    <string>
+    <uri>
+    <counter>
+    <ident>
+    open-quote
+    close-quote
+    no-open-quote
+    no-close-quote
+contrast()
+    // just a function that takes a percentage as a parameter.
+    // no special syntax needed
+counter-increment,
+counter-reset
+    none
+    <integer>
+    <ident>
+cross-fade()
+    // no MDN page
+cubic-bezier()
+    // covered by previous properties
+cursor
+    auto
+    default
+    none
+    context-menu
+    help
+    pointer
+    progress
+    wait
+    cell
+    crosshair
+    text
+    vertical-text
+    alias
+    copy
+    move
+    no-drop
+    not-allowed
+    e-resize
+    n-resize
+    ne-resize
+    nw-resize
+    s-resize
+    se-resize
+    sw-resize
+    w-resize
+    ew-resize
+    ns-resize
+    nesw-resize
+    nwse-resize
+    col-resize
+    row-resize
+    all-scroll
+    zoom-in
+    zoom-out
+    grab
+    grabbing
+    <uri>
+    <x>     // <x> and <y> are experimental types. unitless integers between 0
+    <y>     // and 32. probably don't need a special rule for these, as they will
+            // be colored as numeric literals
+direction
+    ltr
+    rtl
+display
+    inline
+    block
+    list-item
+    inline-block
+    inline-table
+    table
+    table-cell
+    table-column
+    table-column-group
+    table-footer-group
+    table-header-group
+    table-row
+    table-row-group
+    flex
+    inline-flex
+    grid
+    inline-grid
+    run-in
+@document
+    // accepts return values of url(), url-prefix(), domain(), regexp()
+    // no special syntax coloring needed
+drop-shadow()
+    <length>
+    <color>
+element()
+    // no special syntax coloring needed
+empty-cells
+    show
+    hide
