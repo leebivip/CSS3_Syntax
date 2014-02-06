@@ -5,14 +5,12 @@ align-content
     space-between
     space-around
     stretch
-    inherit
 align-items
     flex-start
     flex-end
     center
     baseline
     stretch
-    inherit
 align-self
     auto
     flex-start
@@ -20,13 +18,12 @@ align-self
     center
     baseline
     stretch
-    inherit
-all
+all  // all css properties accept these values
     initial
     inherit
     unset
 animation
-    *shorthand property
+    // shorthand property. syntax covered by longhand properties
 animation-delay
     <time>
 animation-direction
@@ -54,6 +51,209 @@ animation-timing-function
     <timing-function>
 attr()
     content
-    <type-or-unit>  // combination of <type> and <unit>. already handled by those rules
+    <type>      // technically <type-or-unit>. already handled by those rules
+    <unit>
 auto
     auto
+backface-visibility
+    visible
+    hidden
+background
+    // shorthand property
+background-attachment
+    scroll
+    fixed
+    local
+background-blend-mode
+    normal
+    multiply
+    screen
+    overlay
+    darken
+    lighten
+    color-dodge
+    color-burn
+    hard-light
+    soft-light
+    difference
+    exclusion
+    hue
+    saturation
+    color
+    luminosity
+background-clip
+    border-box
+    padding-box
+    content-box
+background-color
+    <color>
+background-image
+    none
+    <image>   // return value of url(), element() or a <gradient> type
+background-origin
+    border-box
+    padding-box
+    content-box
+background-position
+    <position>
+        left
+        center
+        right
+        top
+        bottom
+        <percentage>
+        <length>
+background-repeat
+    repeat-x
+    repeat-y
+    repeat
+    space
+    round
+    no-repeat
+background-size
+    auto
+    cover
+    contain
+    <length>
+    <percentage>
+blur()
+    // just a function that takes a length as a parameter (the radius).
+    // no special syntax needed
+border
+    // shorthand property. syntax covered by longhand properties
+border-bottom
+    // shorthand property. syntax covered by longhand properties
+border-bottom-color
+    <color>
+border-bottom-left-radius
+    <length>
+    <percentage>
+border-bottom-right-radius
+    <length>
+    <percentage>
+border-bottom-style
+    none
+    hidden
+    dotted
+    dashed
+    solid
+    double
+    groove
+    ridge
+    inset
+    outset
+border-bottom-width
+    thin
+    medium
+    thick
+    <length>
+border-collapse
+    collapse
+    separate
+border-color
+    // shorthand property. syntax covered by longhand properties
+border-image
+    // shorthand property. syntax covered by longhand properties
+border-image-outset
+    <length>
+    <percentage>
+border-image-repeat
+    strech
+    repeat
+    round
+    space       // present in draft spec only. not supported by any browser
+border-image-slice
+    fill
+    <number>
+    <percentage>
+border-image-source
+    none
+    <url>
+    <gradient>
+border-image-width
+    auto
+    <length>
+    <percentage>
+    <number>
+border-left
+    // shorthand property. syntax covered by longhand properties
+border-left-color
+    <color>
+border-left-style
+    none
+    hidden
+    dotted
+    dashed
+    solid
+    double
+    groove
+    ridge
+    inset
+    outset
+border-left-width
+    thin
+    medium
+    thick
+    <length>
+border-radius
+    // shorthand property. syntax covered by longhand properties
+border-right
+    // shorthand property. syntax covered by longhand properties
+border-right-color,
+border-right-style,
+border-right-width
+    // already covered by border-left property values
+border-spacing
+    <length>
+border-style
+    // shorthand property. syntax covered by longhand properties
+border-top
+    // shorthand property. syntax covered by longhand properties
+border-top-color,
+border-top-left-radius,
+border-top-right-radius,
+border-top-style,
+border-top-width
+    // already covered by border-bottom property values
+border-width
+    thin
+    medium
+    thick
+    <length>
+bottom
+    auto
+    <length>
+    <percentage>
+box-decoration-break
+    // no page on MDN
+box-shadow
+    none
+    inset
+    <length>
+    <color>
+box-sizing
+    content-box
+    padding-box
+    border-box
+break-after
+    auto
+    always
+    left
+    right
+    recto
+    verso
+    page
+    column
+    region
+    avoid
+    avoid-page
+    avoid-column
+    avoid-region
+break-before
+    // covered by break-after
+break-inside
+    // no page on MDN
+brightness()
+    // just a function that takes a <number> or <percentage> as a parameter.
+    // no special syntax needed
+
