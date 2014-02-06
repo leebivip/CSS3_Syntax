@@ -89,10 +89,6 @@
             "begin": "\/\\*",
             "end": "\\*\/",
             "comment": "Block comments"
-
-            // FIXME: Official regex doesn't work with multiline block comments. Is this really a
-            // problem since we're using begin/end to do the exact same thing?
-            // "match": "\\/\\*[^*]*\\*+([^/*][^*]*\\*+)*\\/",
         }
     ]
 }
