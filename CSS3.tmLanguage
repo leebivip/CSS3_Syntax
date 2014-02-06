@@ -35,6 +35,27 @@
 			<string>entity.name.function.css</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Percentage (75%, 100.01%)</string>
+			<key>match</key>
+			<string>([-+]?[0-9]+|[0-9]*\.[0-9]+)(%)</string>
+			<key>name</key>
+			<string></string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>Numeric literals (42, 3.14)</string>
 			<key>match</key>
