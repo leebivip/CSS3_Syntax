@@ -24,3 +24,9 @@ http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
 
 Regex Cheat Sheet
 http://www.addedbytes.com/cheat-sheets/download/regular-expressions-cheat-sheet-v2.png
+
+Sublime Text Unofficial Documentation
+http://docs.sublimetext.info/en/latest/
+
+Test out JavaScript regexes
+http://regexpal.com/
