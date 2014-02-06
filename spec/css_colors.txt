@@ -143,3 +143,5 @@ violet
 wheat
 whitesmoke
 yellowgreen
+transparent
+currentColor
