@@ -1,3 +1,5 @@
+LAST UPDATED 2014-02-06
+
 align-content
     flex-start
     flex-end
@@ -398,3 +400,218 @@ element()
 empty-cells
     show
     hide
+filter
+    none
+    <filter>    // one or more functions. no special syntax coloring needed
+flex
+    // shorthand property
+    none
+    auto
+    initial
+flex-basis
+    auto
+    initial
+    <length>    // non-negative
+    <percentage>
+flex-direction
+    row
+    row-reverse
+    column
+    column-reverse
+flex-flow
+    // shorthand property
+flex-grow,
+flex-shrink
+    <number>
+flex-wrap
+    nowrap
+    wrap
+    wrap-reverse
+float
+    left
+    right
+    none
+font
+    // shorthand property
+    caption
+    icon
+    menu
+    message-box
+    small-caption
+    status-bar
+font-family
+    sans-serif
+    serif
+    fantasy
+    cursive
+    monospace
+    <font-family>   // quoted string or unquoted sequence of <ident>
+font-feature-settings
+    normal
+    <feature-tag-value>  // 4 letter string (e.g. "scmp", "swsh")
+    <integer>            // positive integer
+@font-feature-values,
+font-kerning,
+font-language-override
+    // no MDN page
+font-size
+    xx-small
+    x-small
+    small
+    medium
+    large
+    x-large
+    xx-large
+    larger
+    smaller
+    <length>
+    <percentage>
+font-size-adjust
+    none
+    <number>
+font-stretch
+    ultra-condensed
+    extra-condensed
+    condensed
+    semi-condensed
+    normal
+    semi-expanded
+    expanded
+    extra-expanded
+    ultra-expanded
+font-style
+    normal
+    italic
+    oblique
+font-synthesis
+    // no MDN page
+font-variant
+    normal
+    small-caps
+font-variant-alternates,
+font-variant-caps,
+font-variant-east-asian,
+font-variant-ligatures,
+font-variant-numeric,
+font-variant-position
+    // no MDN page
+font-weight
+    normal
+    bold
+    lighter
+    bolder
+    100         // TODO: should be detected as a property value, not as a numeric literal
+    200
+    300
+    400
+    500
+    600
+    700
+    800
+    900
+height
+    available
+    min-content
+    max-content
+    fit-content
+    complex
+    auto
+    <length>
+    <percentage>
+hyphens
+    none
+    manual
+    auto
+icon
+    // no MDN page
+image-rendering
+    auto
+    crisp-edges
+    pixelated
+image-resolution
+    // no MDN page
+image-orientation
+    flip
+    from-image
+    <angle>
+ime-mode
+    auto
+    normal
+    active
+    inactive
+    disabled
+@import
+    <uri>   // <uri> is a <string> or an unquoted url
+    <list of media queries>
+justify-content
+    flex-start
+    flex-end
+    center
+    space-between
+    space-around
+left
+    auto
+    <length>
+    <percentage>
+letter-spacing
+    normal
+    <length>
+line-height
+    normal
+    <number>
+    <length>
+    <percentage>
+list-style
+    // shorthand property
+list-style-image
+    none
+    <uri>
+list-style-position
+    inside
+    outside
+list-style-type
+    disc
+    circle
+    square
+    decimal
+    decimal-leading-zero
+    lower-roman
+    upper-roman
+    lower-greek
+    lower-latin
+    upper-latin
+    armenian
+    georgian
+    lower-alpha
+    upper-alpha
+    none
+margin
+    // shorthand property
+margin-bottom,
+margin-left,
+margin-right,
+margin-top
+    auto
+    <length>
+    <percentage>
+marks
+    crop
+    cross
+    none
+mask
+    none
+    <uri>
+mask-type
+    luminance
+    alpha
+max-height,
+max-width,
+min-height,
+min-width
+    none
+    max-content
+    min-content
+    fit-content
+    fill-available
+    <length>
+    <percentage>
