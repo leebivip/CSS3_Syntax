@@ -11,30 +11,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>comment</key>
-			<string>Units (px, em, deg)</string>
-			<key>match</key>
-			<string>(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz)</string>
-			<key>name</key>
-			<string>keyword.other.css</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Element ID (#header, #logo)</string>
-			<key>match</key>
-			<string>#[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
-			<key>name</key>
-			<string>entity.name.tag.css</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Element class (.comment, .alert)</string>
-			<key>match</key>
-			<string>\.[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
-			<key>name</key>
-			<string>entity.name.function.css</string>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -51,9 +27,25 @@
 			<key>comment</key>
 			<string>Percentage (75%, 100.01%)</string>
 			<key>match</key>
-			<string>([-+]?[0-9]+|[0-9]*\.[0-9]+)(%)</string>
+			<string>([-+]?[0-9]+|[0-9]*\.[0-9]+)(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%)</string>
 			<key>name</key>
 			<string></string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Element ID (#header, #logo)</string>
+			<key>match</key>
+			<string>#[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<key>name</key>
+			<string>entity.name.tag.css</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Element class (.comment, .alert)</string>
+			<key>match</key>
+			<string>\.[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
 		</dict>
 		<dict>
 			<key>comment</key>
