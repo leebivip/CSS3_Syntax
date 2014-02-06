@@ -16,6 +16,11 @@
             "comment": "Units (px, rad, %)"
         },
         {
+            "name": "constant.numeric.css",
+            "match": "#(\\b[0-9a-fA-F]{6}\\b|\\b[0-9a-fA-F]{3}\\b)",
+            "comment": "Hex colors (#fff, #00ff00)"
+        },
+        {
             "name": "entity.name.tag.css",          // FIXME: right name?
             "match": "#[_a-zA-Z]+[_a-zA-Z0-9-]*",   // FIXME: Doesn't use official regex for ident (no support for esaped unicode chars. doesn't support leading dash)
             "comment": "Element ID (#header, #logo)"
@@ -30,7 +35,7 @@
         },
         {
             "name": "constant.other.css",
-            "match": "(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)",
+            "match": "\\b(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)\\b",
             "comment": "Color names (teal, aqua)"
         },
         {
