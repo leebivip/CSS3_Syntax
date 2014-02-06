@@ -13,7 +13,7 @@
                 "1": {"name": "constant.numeric.css"},
                 "2": {"name": "keyword.other.css"}
             },
-            "comment": "Percentage (75%, 100.01%)"
+            "comment": "Units (px, rad, %)"
         },
         {
             "name": "entity.name.tag.css",          // FIXME: right name?
