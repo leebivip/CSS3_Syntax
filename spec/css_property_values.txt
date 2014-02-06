@@ -1,0 +1,59 @@
+align-content
+    flex-start
+    flex-end
+    center
+    space-between
+    space-around
+    stretch
+    inherit
+align-items
+    flex-start
+    flex-end
+    center
+    baseline
+    stretch
+    inherit
+align-self
+    auto
+    flex-start
+    flex-end
+    center
+    baseline
+    stretch
+    inherit
+all
+    initial
+    inherit
+    unset
+animation
+    *shorthand property
+animation-delay
+    <time>
+animation-direction
+    normal
+    reverse
+    alternate
+    alternate-reverse
+animation-duration
+    <time>
+animation-fill-mode
+    none
+    forwards
+    backwards
+    both
+animation-iteration-count
+    infinite
+    <number>
+animation-name
+    none
+    <ident>
+animation-play-state
+    running
+    paused
+animation-timing-function
+    <timing-function>
+attr()
+    content
+    <type-or-unit>  // combination of <type> and <unit>. already handled by those rules
+auto
+    auto

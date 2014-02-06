@@ -212,6 +212,13 @@
     ms      // no space between the number and the unit
     s
 <timing-function>
+    ease
+    ease-in
+    ease-out
+    ease-in-out
+    linear
+    step-start
+    step-end
 <uri>
     single- or double-quoted string.
     already handled by string regexes
