@@ -615,3 +615,101 @@ min-width
     fill-available
     <length>
     <percentage>
+@namespace
+    // TODO: do we need a rule for the optional prefix that precedes url()?
+nav-down,
+nav-index,
+nav-left,
+nav-right,
+nav-up,
+object-fit,
+object-position
+    // no MDN page
+opacity
+    <number>
+order
+    <integer>
+orphans
+    <integer>
+outline
+    // shorthand property
+outline-color
+    invert
+    <color>
+outline-offset
+    <length>
+outline-style,
+outline-width
+    // covered by other properties
+overflow
+    visible
+    hidden
+    scroll
+    auto
+overflow-wrap
+    // no MDN page
+overflow-x,
+overflow-y
+    visible
+    hidden
+    scroll
+    auto
+padding
+    // shorthand property
+padding-bottom,
+padding-left,
+padding-right,
+padding-top
+    <length>
+    <percentage>
+page-break-after,
+page-break-before
+    auto
+    always
+    avoid
+    left
+    right
+page-break-inside
+    auto
+    avoid
+perspective
+    none
+    <length>
+perspective-origin
+    left
+    center
+    right
+    top
+    bottom
+    <length>
+    <percentage>
+pointer-events
+    auto
+    none
+    visiblePainted
+    visibleFill
+    visibleStroke
+    visible
+    painted
+    fill
+    stroke
+    all
+    inherit
+position
+    static
+    relative
+    absolute
+    fixed
+    sticky
+quotes
+    none
+    <string>
+resize
+    none
+    both
+    horizontal
+    vertical
+right
+    auto
+    <length>
+    <percentage>
