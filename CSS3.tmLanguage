@@ -25,7 +25,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>Percentage (75%, 100.01%)</string>
+			<string>Units (px, rad, %)</string>
 			<key>match</key>
 			<string>([-+]?[0-9]+|[0-9]*\.[0-9]+)(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%)</string>
 			<key>name</key>
@@ -109,7 +109,7 @@
 			<key>match</key>
 			<string>\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\b</string>
 			<key>name</key>
-			<string>entity.name.tag.css</string>
+			<string>entity.name.function.css</string>
 		</dict>
 		<dict>
 			<key>comment</key>

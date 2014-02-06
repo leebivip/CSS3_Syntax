@@ -92,7 +92,7 @@ a {
 
 a:active,
 a:hover {
-  outline: 0;
+  outline: 0em;
 }
 
 /* Text-level semantics
