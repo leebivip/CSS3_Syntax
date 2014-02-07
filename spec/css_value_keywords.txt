@@ -87,7 +87,7 @@ medium
 thick
 collapse
 separate
-strech
+
 repeat
 round
 space

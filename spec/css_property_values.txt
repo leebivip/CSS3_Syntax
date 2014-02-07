@@ -158,7 +158,7 @@ border-image-outset
     <length>
     <percentage>
 border-image-repeat
-    strech
+    stretch
     repeat
     round
     space       // present in draft spec only. not supported by any browser
