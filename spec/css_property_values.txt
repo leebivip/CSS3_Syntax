@@ -55,8 +55,6 @@ attr()
     content
     <type>      // technically <type-or-unit>. already handled by those rules
     <unit>
-auto
-    auto
 backface-visibility
     visible
     hidden
@@ -237,7 +235,8 @@ box-sizing
     content-box
     padding-box
     border-box
-break-after
+break-after,
+break-before
     auto
     always
     left
@@ -251,8 +250,6 @@ break-after
     avoid-page
     avoid-column
     avoid-region
-break-before
-    // covered by break-after
 break-inside
     // no page on MDN
 brightness()
@@ -641,19 +638,15 @@ outline-offset
 outline-style,
 outline-width
     // covered by other properties
-overflow
+overflow,
+overflow-x,
+overflow-y,
     visible
     hidden
     scroll
     auto
 overflow-wrap
     // no MDN page
-overflow-x,
-overflow-y
-    visible
-    hidden
-    scroll
-    auto
 padding
     // shorthand property
 padding-bottom,
@@ -793,7 +786,7 @@ text-underline-position
     step-start
     step-end
 top
-    auto<
+    auto
     <length>
     <percentage>
 touch-action
