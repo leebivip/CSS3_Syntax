@@ -713,3 +713,176 @@ right
     auto
     <length>
     <percentage>
+table-layout
+    auto
+    fixed
+tab-size
+    <integer>
+text-align
+    left
+    right
+    center
+    justify
+    start
+    end
+    match-parent
+    <string>
+text-align-last
+    auto
+    start
+    end
+    left
+    right
+    center
+    justify
+text-combine-horizontal
+    // no MDN page
+text-decoration
+    // shorthand property
+text-decoration-color
+    <color>
+text-decoration-line
+    underline
+    overline
+    line-through
+text-decoration-style
+    solid
+    double
+    dotted
+    dashed
+    wavy
+text-indent
+    hanging
+    each-line
+    <length>
+    <percentage>
+text-orientation
+    // no MDN page
+text-overflow
+    clip
+    ellipsis
+    <string>
+text-rendering
+    auto
+    optimizeSpeed
+    optimizeLegibility
+    geometricPrecision
+text-shadow
+    none
+    <color>
+    <offset-x>          // these should be covered by other rules
+    <offset-y>
+    <blur-radius>
+text-transform
+    capitalize
+    uppercase
+    lowercase
+    none
+    full-width
+text-underline-position
+    auto
+    under
+    left
+    right
+<timing-function>
+    linear
+    ease
+    ease-in
+    ease-in-out
+    ease-out
+    step-start
+    step-end
+top
+    auto<
+    <length>
+    <percentage>
+touch-action
+    // no MDN page
+transform
+    none
+    <transform-function>
+transform-origin
+    // should be covered by other rules
+transform-style
+    flat
+    preserve-3d
+transition
+    // shorthand property
+transition-delay,
+transition-duration
+    <time>
+transition-property
+    none
+    all
+    <ident>
+transition-timing-function
+    <timing-function>
+unicode-bidi
+    normal
+    embed
+    isolate
+    bidi-override
+    isolate-override
+    plaintext
+unicode-range
+    <unicode-codepoint>     // this is not from the spec. i made this up to
+                            // cover all the unicode literals like U+26 and U+0025-00FF
+vertical-align
+    baseline
+    sub
+    super
+    text-top
+    text-bottom
+    middle
+    top
+    bottom
+    <percentage>
+    <length>
+visibility
+    visible
+    hidden
+    collapse
+white-space
+    normal
+    nowrap
+    pre
+    pre-wrap
+    pre-line
+widows
+    <integer>
+width
+    border-box
+    content-box
+    available
+    min-content
+    max-content
+    fit-content
+    auto
+word-break
+    normal
+    break-all
+    keep-all
+word-spacing
+    normal
+    <length>
+word-wrap
+    normal
+    break-word
+writing-mode
+    horizontal-tb
+    rl-tb
+    vertical-lr
+    vertical-rl
+    bt-rl
+    bt-lr
+    lr-bt
+    rl-bt
+    lr
+    lr-tb
+    rl
+    tb
+    tb-lr
+    tb-rl
+z-index
+    auto
+    <integer>
