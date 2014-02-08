@@ -145,3 +145,12 @@ white
 whitesmoke
 yellow
 yellowgreen
+
+#fff
+#ffffff
+# fff
+# ffffff
+color: #00ff00;
+color:#fff;
+color: #fff;
+color: #ffffff;
