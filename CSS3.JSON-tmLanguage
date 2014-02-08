@@ -57,13 +57,21 @@
             "match": "\\b(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)\\b",
             "comment": "Color names (teal, aqua)"
         },
-
-
-
-
-
-
-
+        {
+            "name": "",
+            "begin": "(font-weight)\\s*:\\s*",
+            "beginCaptures": {
+                "1": {"name": "storage.type.css"}
+            },
+            "patterns": [
+                {
+                    "name": "variable.parameter.css",
+                    "match": "normal|bold(er)?|lighter|[1-9]00"
+                }
+            ],
+            "end": ";|\\}",
+            "comment": "Special case: font-weight numeric keywords (100, 200, ..., 900)"
+        },
         {
             "name": "",
             "begin": "(font)\\s*:\\s*",
@@ -84,12 +92,6 @@
             },
             "comment": "Font property"
         },
-
-
-
-
-
-
         {
             "name": "storage.type.css",
             "match": "(?<!@)(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)",
