@@ -1,17 +1,29 @@
-unit
-id
-classe
-numerical value
-pseudo class
-pseudo element
-function
-@ rule
-properties
-html
+comment
 double-quoted string
 single-quoted string
-comment
+pseudo element
+illegal pseudo element
+pseudo class
+@ rule
+function
+unit
+color names
+properties
+property keywords
+hex colors
+
+id
+class
+html
+numerical value
 
 === for later ===
 deprecated
 values
+
+
+=== collisions ===
+em and s are html tags and units
+#aaa is a valid ID and a valid hex color
+100,200,...,900 are valid numeric literals and property keyword
+    give property keyword higher precedence than numeric literals
