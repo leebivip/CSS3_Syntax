@@ -19,7 +19,8 @@ p:after{
 
 a:active{
     line-height: 1.5em;
-    margin: 1px;
+    margin: 100px;
+    margin: 100.01px;
     padding: 15.8%;
 }
 
@@ -37,4 +38,5 @@ a:active{
 #id .class4, #id2 > #id3{
     position: static;
     right: -5.5em;
+    font: italic small-caps 400 12px/1em Helvetica, serif;
 }
