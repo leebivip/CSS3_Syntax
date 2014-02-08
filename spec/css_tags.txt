@@ -11,7 +11,6 @@ animation-iteration-count
 animation-name
 animation-play-state
 animation-timing-function
-auto
 backface-visibility
 background
 background-attachment
@@ -145,7 +144,6 @@ nav-index
 nav-left
 nav-right
 nav-up
-none
 normal
 object-fit
 object-position

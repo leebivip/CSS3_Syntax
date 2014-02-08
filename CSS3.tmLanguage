@@ -125,23 +125,12 @@
 			<string>entity.name.function.css</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>:[ ]*</string>
 			<key>comment</key>
-			<string>Property values keywords (flex, left, uppercase, disc)</string>
-			<key>end</key>
-			<string>;</string>
+			<string>Property value keywords (flex, left, uppercase, disc)</string>
+			<key>match</key>
+			<string>([1-9]00|absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(-(caps|caption))?|smaller|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))</string>
 			<key>name</key>
-			<string></string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>([1-9]00|absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(-(caps|caption))?|smaller|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))</string>
-					<key>name</key>
-					<string>constant.other.css</string>
-				</dict>
-			</array>
+			<string>variable.parameter.css</string>
 		</dict>
 		<dict>
 			<key>comment</key>

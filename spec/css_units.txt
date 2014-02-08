@@ -17,15 +17,19 @@
 100mozmm
 100ms
 100s
-100dpcm
+100.dpcm
 100dpi
 100dppx
 100deg
 100grad
 100rad
 100turn
-100Hz
+1.Hz
 100kHz
+
+h1 {
+    font-size: 100em;
+}
 
 // BAD
 100khz
