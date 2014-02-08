@@ -19,9 +19,13 @@ p:after{
 
 a:active{
     line-height: 1.5em;
-    margin: 100px;
-    margin: 100.01px;
+    margin: 101px;
+    margin: 322.01px;
     padding: 15.8%;
+}
+
+tr:nth-child(2n+1){
+    clear: both;
 }
 
 #id{
@@ -38,5 +42,6 @@ a:active{
 #id .class4, #id2 > #id3{
     position: static;
     right: -5.5em;
+    font-weight: 300;
     font: italic small-caps 400 12px/1em Helvetica, serif;
 }
