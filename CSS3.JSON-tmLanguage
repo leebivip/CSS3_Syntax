@@ -84,7 +84,7 @@
                     "match": "(normal|italic|oblique)?|(normal|small-caps)?|(normal|bold|bolder|lighter|[0-9]00)?"
                 }
             ],
-            "end": "((larger|medium)|([-+]?[0-9]+|[0-9]*\\.[0-9]+)(px|em|%))/",
+            "end": "((xx-small|x-small|smaller|small|medium|larger|large|x-large|xx-large)|([-+]?[0-9]+|[0-9]*\\.[0-9]+)(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%))/",
             "endCaptures": {
                 "1": {"name": "constant.numeric.css"},
                 "2": {"name": "keyword.other.css"},

@@ -44,8 +44,8 @@ tr:nth-child(2n+1){
     right: -5.5em;
     font-weight: 300;
 
-    font: italic medium/1em Helvetica, serif;
-    font: italic small-caps larger/1em Helvetica, serif;
+    font: italic xx-small/1em Helvetica, serif;
+    font: italic small-caps smaller/1em Helvetica, serif;
     font: italic normal 400 12px/1em Helvetica, serif;
     font: 12px/1em Helvetica, serif;
 }
