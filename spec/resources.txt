@@ -28,5 +28,5 @@ http://www.addedbytes.com/cheat-sheets/download/regular-expressions-cheat-sheet-
 Sublime Text Unofficial Documentation
 http://docs.sublimetext.info/en/latest/
 
-Test out JavaScript regexes
-http://regexpal.com/
+Test Ruby Regexes
+http://rubular.com/
