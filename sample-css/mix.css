@@ -32,3 +32,9 @@ a:active{
     left: 3em;
     border-bottom: solid green 3rem;
 }
+
+.class, .class2.class3,
+#id .class4, #id2 > #id3{
+    position: static;
+    right: -5.5em;
+}
