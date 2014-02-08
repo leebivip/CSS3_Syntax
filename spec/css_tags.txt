@@ -144,7 +144,6 @@ nav-index
 nav-left
 nav-right
 nav-up
-normal
 object-fit
 object-position
 opacity
