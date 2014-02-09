@@ -33,7 +33,7 @@ h1 {
 }
 
 h1 {
-    font: italic 100 normal 12pt "Open Sans";
+    font: 100 italic normal 12pt "Open Sans";
 }
 
 h1 {
