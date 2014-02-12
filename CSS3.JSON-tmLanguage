@@ -6,12 +6,23 @@
     "uuid": "f0aff4e9-b17d-4b8a-9720-e30313131572",
 
     "patterns": [
-        {
-            "name": "comment.block.css",
-            "begin": "\/\\*",
-            "end": "\\*\/",
-            "comment": "Block comments"
-        }
+        {"include": "#block-comment"},
+        {"include": "#double-quoted-string"},
+        {"include": "#single-quoted-string"},
+        {"include": "#pseudo-element"},
+        {"include": "#illegal-pseudo-element"},
+        {"include": "#pseudo-class"},
+        {"include": "#at-rule"},
+        {"include": "#function"},
+        {"include": "#unit"},
+        {"include": "#color-name"},
+        {"include": "#property"},
+        {"include": "#hex-color"},
+        {"include": "#id"},
+        {"include": "#class"},
+        {"include": "#property-value"},
+        {"include": "#tag"},
+        {"include": "#number"}
     ],
     "repository":{
         "double-quoted-string":{
