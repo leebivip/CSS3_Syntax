@@ -1,16 +1,40 @@
-/* Testing */
+/* Test single line comment. */
 /*
-Mic check. 1, 2, 3.
+    Test multiline
+    / * * /
+    comment.
 */
 
-html{
-    background-image: url("background.png");
-    background-image: url('background.png');
-    font-family: "Hello", 'World', Helvetica, sans-serif;
-}
+@media screen and (max-width: 719px){
+    p::after{
+        display: none;
+    }
 
-p::after{
-    display: none;
+    @media screen and (min-width: 720px){
+            html{
+            background-image: url("background.png");
+            background-image: url('background.png');
+            font-family: "Hello", 'World', Helvetica, sans-serif;
+        }
+    }
+
+    em, s{
+        line-height: 1em;
+        transition-duration: 120ms;
+        transition-duration: 2s;
+    }
+
+    .class, .class2.class3,
+    #id .class4, #id2 > #id3{
+        position: static;
+        right: -5.5em;
+        font-weight: 300;
+
+        font: italic xx-small/1em Helvetica, serif;
+        font: italic small-caps smaller/1em Helvetica, serif;
+        font: italic normal 400 12px/1em Helvetica, serif;
+        font: 12px/1em Helvetica, serif;
+    }
 }
 
 p:after{
@@ -36,16 +60,4 @@ tr:nth-child(2n+1){
     position: relative;
     left: 3em;
     border-bottom: solid green 3rem;
-}
-
-.class, .class2.class3,
-#id .class4, #id2 > #id3{
-    position: static;
-    right: -5.5em;
-    font-weight: 300;
-
-    font: italic xx-small/1em Helvetica, serif;
-    font: italic small-caps smaller/1em Helvetica, serif;
-    font: italic normal 400 12px/1em Helvetica, serif;
-    font: 12px/1em Helvetica, serif;
 }
