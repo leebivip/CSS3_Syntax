@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>css</string>
+	</array>
+	<key>foldingStartMarker</key>
+	<string>\{\s*$</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*\}</string>
+	<key>name</key>
+	<string>CSS3</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>#at-charset</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#identifier</string>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>at-charset</key>
+		<dict>
+			<key>begin</key>
+			<string>@charset</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?=;)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?i)\"(utf-8|utf8|unicode-1-1-utf-8)\"|\'(utf-8|utf8|unicode-1-1-utf-8)\'</string>
+					<key>name</key>
+					<string>string.quoted.css</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-rule</key>
+		<dict>
+			<key>comment</key>
+			<string>@ rules (@media, @import)</string>
+			<key>match</key>
+			<string>@(charset|document|font-(face|feature-values)|import|keyframes|media|namespace|page|supports|viewport)\b</string>
+			<key>name</key>
+			<string>keyword.other.css</string>
+		</dict>
+		<key>block-comment</key>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>comment</key>
+			<string>Block comments</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.block.css</string>
+		</dict>
+		<key>class</key>
+		<dict>
+			<key>comment</key>
+			<string>Element class (.comment, .alert)</string>
+			<key>match</key>
+			<string>\.[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
+		</dict>
+		<key>color-name</key>
+		<dict>
+			<key>comment</key>
+			<string>Color names (teal, aqua)</string>
+			<key>match</key>
+			<string>\b(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)\b</string>
+			<key>name</key>
+			<string>constant.other.css</string>
+		</dict>
+		<key>double-quoted-string</key>
+		<dict>
+			<key>comment</key>
+			<string>Double-quoted strings</string>
+			<key>match</key>
+			<string>\"([^\n\r\f\\"]|\\(\n|\r\n|\r|\f)|((\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)|\\[^\n\r\f0-9a-f]))*\"</string>
+			<key>name</key>
+			<string>string.quoted.double.css</string>
+		</dict>
+		<key>function</key>
+		<dict>
+			<key>comment</key>
+			<string>Function (url(), calc())</string>
+			<key>match</key>
+			<string>((attr|blur|brightness|calc|contrast|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\()</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
+		</dict>
+		<key>hex-color</key>
+		<dict>
+			<key>comment</key>
+			<string>Hex colors (#fff, #00ff00)</string>
+			<key>match</key>
+			<string>#(\b[0-9a-fA-F]{6}\b|\b[0-9a-fA-F]{3}\b)</string>
+			<key>name</key>
+			<string>constant.numeric.css</string>
+		</dict>
+		<key>id</key>
+		<dict>
+			<key>comment</key>
+			<string>Element ID (#header, #logo)</string>
+			<key>match</key>
+			<string>#[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<key>name</key>
+			<string>entity.name.tag.css</string>
+		</dict>
+		<key>identifier</key>
+		<dict>
+			<key>comment</key>
+			<string>Generic identifiers</string>
+			<key>match</key>
+			<string>-?([a-zA-Z_]|[^\\x00-\\x7F]|(\\[0-9a-fA-F]{1,6}(\r\n|[ \n\r\t\f])?|\\[^\n\r\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\x00-\\x7f]|(\\[0-9a-fA-F]{1,6}(\r\n|[ \n\r\t\f])?|\\[^\n\r\f0-9a-fA-F]))</string>
+			<key>name</key>
+			<string>keyword.other.css</string>
+		</dict>
+		<key>illegal-pseudo-element</key>
+		<dict>
+			<key>comment</key>
+			<string>Invalid pseudo-elements (:after instead of ::after)</string>
+			<key>match</key>
+			<string>:(after|before|first-(letter|line))</string>
+			<key>name</key>
+			<string>invalid.illegal</string>
+		</dict>
+		<key>number</key>
+		<dict>
+			<key>comment</key>
+			<string>Numeric literals (42, 3.14)</string>
+			<key>match</key>
+			<string>[-+]?[0-9]+|[0-9]*\.[0-9]+</string>
+			<key>name</key>
+			<string>constant.numeric.css</string>
+		</dict>
+		<key>property</key>
+		<dict>
+			<key>comment</key>
+			<string>Properties (color, margin-left)</string>
+			<key>match</key>
+			<string>(?&lt;!@)(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)</string>
+			<key>name</key>
+			<string>storage.type.css</string>
+		</dict>
+		<key>property-value</key>
+		<dict>
+			<key>comment</key>
+			<string>Property values (flex, left, uppercase, disc)</string>
+			<key>match</key>
+			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(-(caps|caption))?|smaller|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))</string>
+			<key>name</key>
+			<string>variable.parameter.css</string>
+		</dict>
+		<key>pseudo-class</key>
+		<dict>
+			<key>comment</key>
+			<string>Pseudo class (:hover, :first-child)</string>
+			<key>match</key>
+			<string>:(active|checked|default|dir|disabled|empty|enabled|first(-(child|of-type))?|focus|fullscreen|hover|indeterminate|in-range|invalid|lang|last-(child|of-type)|left|link|not|nth-(child|last-(child|of-type)|of-type)|only-(child|of-type)|optional|out-of-range|read-(only|write)|required|right|root|scope|target|valid|visited)</string>
+			<key>name</key>
+			<string>variable.parameter.css</string>
+		</dict>
+		<key>pseudo-element</key>
+		<dict>
+			<key>comment</key>
+			<string>Pseudo element (::first-line, ::after)</string>
+			<key>match</key>
+			<string>::(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
+			<key>name</key>
+			<string>constant.numeric.css</string>
+		</dict>
+		<key>single-quoted-string</key>
+		<dict>
+			<key>comment</key>
+			<string>Single-quoted strings</string>
+			<key>match</key>
+			<string>\'([^\n\r\f\\']|\\(\n|\r\n|\r|\f)|((\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)|\\[^\n\r\f0-9a-f]))*\'</string>
+			<key>name</key>
+			<string>string.quoted.single.css</string>
+		</dict>
+		<key>tag</key>
+		<dict>
+			<key>comment</key>
+			<string>HTML elements (body, nav)</string>
+			<key>match</key>
+			<string>\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\b</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
+		</dict>
+		<key>unit</key>
+		<dict>
+			<key>comment</key>
+			<string>Units (px, rad, %)</string>
+			<key>match</key>
+			<string>(?&lt;=[0-9])(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%)</string>
+			<key>name</key>
+			<string>keyword.other.css</string>
+		</dict>
+	</dict>
+	<key>scopeName</key>
+	<string>text.css</string>
+	<key>uuid</key>
+	<string>f0aff4e9-b17d-4b8a-9720-e30313131572</string>
+</dict>
+</plist>
