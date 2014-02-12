@@ -6,6 +6,99 @@
     "uuid": "f0aff4e9-b17d-4b8a-9720-e30313131572",
 
     "patterns": [
-
-    ]
+        {
+            "name": "comment.block.css",
+            "begin": "\/\\*",
+            "end": "\\*\/",
+            "comment": "Block comments"
+        }
+    ],
+    "repository":{
+        "double-quoted-string":{
+            "name": "string.quoted.double.css",
+            "match": "\\\"([^\\n\\r\\f\\\\\"]|\\\\(\\n|\\r\\n|\\r|\\f)|((\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?)|\\\\[^\\n\\r\\f0-9a-f]))*\\\"",
+            "comment": "Double-quoted strings"
+        },
+        "single-quoted-string":{
+            "name": "string.quoted.single.css",
+            "match": "\\'([^\\n\\r\\f\\\\']|\\\\(\\n|\\r\\n|\\r|\\f)|((\\\\[0-9a-f]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?)|\\\\[^\\n\\r\\f0-9a-f]))*\\'",
+            "comment": "Single-quoted strings"
+        },
+        "class":{
+            "name": "entity.name.function.css",
+            "match": "\\.[_a-zA-Z]+[_a-zA-Z0-9-]*",
+            "comment": "Element class (.comment, .alert)"
+        },
+        "id":{
+            "name": "entity.name.tag.css",
+            "match": "#[_a-zA-Z]+[_a-zA-Z0-9-]*",
+            "comment": "Element ID (#header, #logo)"
+        },
+        "tag":{
+            "name": "entity.name.function.css",
+            "match": "\\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\\b",
+            "comment": "HTML elements (body, nav)"
+        },
+        "pseudo-element":{
+            "name": "constant.numeric.css",
+            "match": "::(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)",
+            "comment": "Pseudo element (::first-line, ::after)"
+        },
+        "pseudo-class":{
+            "name": "variable.parameter.css",
+            "match": ":(active|checked|default|dir|disabled|empty|enabled|first(-(child|of-type))?|focus|fullscreen|hover|indeterminate|in-range|invalid|lang|last-(child|of-type)|left|link|not|nth-(child|last-(child|of-type)|of-type)|only-(child|of-type)|optional|out-of-range|read-(only|write)|required|right|root|scope|target|valid|visited)",
+            "comment": "Pseudo class (:hover, :first-child)"
+        },
+        "at-rule":{
+            "name": "keyword.other.css",
+            "match": "@(charset|document|font-(face|feature-values)|import|keyframes|media|namespace|page|supports|viewport)\\b",
+            "comment": "@ rules (@media, @import)"
+        },
+        "function":{
+            "name": "entity.name.function.css",
+            "match": "((attr|blur|brightness|calc|contrast|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\\()",
+            "comment": "Function (url(), calc())"
+        },
+        "unit":{
+            "name": "keyword.other.css",
+            "match": "(?<=[0-9])(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%)",
+            "comment": "Units (px, rad, %)"
+        },
+        "illegal-pseudo-element":{
+            "name": "invalid.illegal",
+            "match": ":(after|before|first-(letter|line))",
+            "comment": "Invalid pseudo-elements (:after instead of ::after)"
+        },
+        "color-name":{
+            "name": "constant.other.css",
+            "match": "\\b(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)\\b",
+            "comment": "Color names (teal, aqua)"
+        },
+        "property":{
+            "name": "storage.type.css",
+            "match": "(?<!@)(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)",
+            "comment": "Properties (color, margin-left)"
+        },
+        "hex-color":{
+            "name": "constant.numeric.css",
+            "match": "#(\\b[0-9a-fA-F]{6}\\b|\\b[0-9a-fA-F]{3}\\b)",
+            "comment": "Hex colors (#fff, #00ff00)"
+        },
+        "block-comment":{
+            "name": "comment.block.css",
+            "begin": "\/\\*",
+            "end": "\\*\/",
+            "comment": "Block comments"
+        },
+        "number":{
+            "name": "constant.numeric.css",
+            "match": "[-+]?[0-9]+|[0-9]*\\.[0-9]+",
+            "comment": "Numeric literals (42, 3.14)"
+        },
+        "property-value":{
+            "name": "variable.parameter.css",
+            "match": "(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(-(caps|caption))?|smaller|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))",
+            "comment": "Property values (flex, left, uppercase, disc)"
+        }
+    }
 }
