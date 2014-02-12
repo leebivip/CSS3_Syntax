@@ -18,7 +18,7 @@
         }
     }
 
-    em, s{
+    em, s, p::after{
         line-height: 1em;
         transition-duration: 120ms;
         transition-duration: 2s;
