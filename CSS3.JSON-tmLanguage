@@ -16,6 +16,7 @@
         {"include": "#pseudo-class"},
         // {"include": "#at-rule"},  // TODO: Replace with individual rules for each at-rule
         {"include": "#at-charset"},
+        {"include": "#url"},         // FIXME: is the the right place for url?
         {"include": "#function"},
         {"include": "#unit"},
         {"include": "#color-name"},
@@ -59,9 +60,21 @@
         //     "name":
         //     "begin":
         // },
+        "url": {
+            "name": "",
+            "begin": "(url)\\(",
+            "beginCaptures": {
+                "1": {"name": "comment.block.css"}
+            },
+            "patterns": [
+                {"include": "#double-quoted-string"},
+                {"include": "#single-quoted-string"},
+                {"include": "#url-unquoted"}
+            ],
+            "end": "\\)"
+        },
         "url-unquoted": {
             "name": "invalid.illegal.css",
-            // "match": "([^"'()\s])+"
             "match": "([^\\\"\\'\\(\\)\\s\\p{^Print}]|\\\\([^\\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\\s))+"
         },
         "identifier": {

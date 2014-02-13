@@ -17,6 +17,7 @@
         html{
             background-image: url("background.png");
             background-image: url('background.png');
+            background-image: url(http://example.com/hello.png)
             font-family: "Hello", 'World', Helvetica, Arial, sans-serif;
         }
     }

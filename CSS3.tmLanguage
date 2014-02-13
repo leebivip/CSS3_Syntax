@@ -40,6 +40,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#url</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#function</string>
 		</dict>
 		<dict>
@@ -274,6 +278,38 @@
 			<string>(?&lt;=[0-9])(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%)</string>
 			<key>name</key>
 			<string>keyword.other.css</string>
+		</dict>
+		<key>url</key>
+		<dict>
+			<key>begin</key>
+			<string>(url)\(</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#double-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url-unquoted</string>
+				</dict>
+			</array>
 		</dict>
 		<key>url-unquoted</key>
 		<dict>
