@@ -6,6 +6,7 @@
     comment.
 */
 
+@charset 'utf8';
 
 @media screen and (max-width: 719px){
     p::after{
@@ -16,7 +17,7 @@
         html{
             background-image: url("background.png");
             background-image: url('background.png');
-            font-family: "Hello", 'World', Helvetica, sans-serif;
+            font-family: "Hello", 'World', Helvetica, Arial, sans-serif;
         }
     }
 
@@ -39,7 +40,12 @@
     }
 }
 
-ñπøˆ˚∆˜¡˜¬…˚˜ß∂
+/* Unicodes */
+ñ π ø ˆ ˚ ∆ ˜ ¡ ˜ ¬ … ˚ ˜ ß ∂
+-ñhello˚˜˚∆åß∂ ˜¬å˚ß∂
+
+#hello .hi .ñiplle #ññhello
+
 
 p:after{
     border: 1px solid #ccc;

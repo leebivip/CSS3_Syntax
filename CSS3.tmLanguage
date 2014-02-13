@@ -36,6 +36,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-charset</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#function</string>
 		</dict>
 		<dict>
@@ -132,7 +136,7 @@
 			<key>comment</key>
 			<string>Element class (.comment, .alert)</string>
 			<key>match</key>
-			<string>\.-?([a-zA-Z_]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_]|\\[0-9a-fA-F]{1,6}\s?)*</string>
+			<string>\.-?([a-zA-Z_\p{^ASCII}]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_\p{^ASCII}]|\\[0-9a-fA-F]{1,6}\s?)*</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
@@ -177,7 +181,7 @@
 			<key>comment</key>
 			<string>Element ID (#header, #logo)</string>
 			<key>match</key>
-			<string>#-?([a-zA-Z_]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_]|\\[0-9a-fA-F]{1,6}\s?)*</string>
+			<string>#-?([a-zA-Z_\p{^ASCII}]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_\p{^ASCII}]|\\[0-9a-fA-F]{1,6}\s?)*</string>
 			<key>name</key>
 			<string>entity.name.tag.css</string>
 		</dict>
@@ -186,7 +190,7 @@
 			<key>comment</key>
 			<string>Generic identifiers</string>
 			<key>match</key>
-			<string>-?([a-zA-Z_]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_]|\\[0-9a-fA-F]{1,6}\s?)*</string>
+			<string>-?([a-zA-Z_\p{^ASCII}]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_\p{^ASCII}]|\\[0-9a-fA-F]{1,6}\s?)*</string>
 			<key>name</key>
 			<string>string.quoted.css</string>
 		</dict>
@@ -261,6 +265,13 @@
 			<string>\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\b</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
+		</dict>
+		<key>unicode</key>
+		<dict>
+			<key>match</key>
+			<string>\p{^ASCII}</string>
+			<key>name</key>
+			<string>invalid.illegal.css</string>
 		</dict>
 		<key>unit</key>
 		<dict>
