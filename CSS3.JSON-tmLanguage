@@ -4,67 +4,29 @@
     "scopeName": "text.css",
     "fileTypes": ["css"],
     "uuid": "f0aff4e9-b17d-4b8a-9720-e30313131572",
-    // "foldingStartMarker": "\\{\\s*$",  # TODO: Test folding markers
+    // "foldingStartMarker": "\\{\\s*$",  # TODO: Test folding start/stop markers
     // "foldingStopMarker": "^\\s*\\}",
 
-    // {"include": "#block-comment"},
-    // {"include": "#double-quoted-string"},
-    // {"include": "#single-quoted-string"},
-    // {"include": "#pseudo-element"},
-    // {"include": "#illegal-pseudo-element"},
-    // {"include": "#pseudo-class"},
-    // {"include": "#at-rule"},
-    // {"include": "#function"},
-    // {"include": "#unit"},
-    // {"include": "#color-name"},
-    // {"include": "#property"},
-    // {"include": "#hex-color"},
-    // {"include": "#id"},
-    // {"include": "#class"},
-    // {"include": "#property-value"},
-    // {"include": "#tag"},
-    // {"include": "#number"},
-
     "patterns": [
-        {"include": "#at-charset"},
-        {"include": "#identifier"}
-
-        // // Top level rules for selectors or at-rules
-        // {"include": "#block-comment"},
-        // {"include": "#double-quoted-string"},
-        // {"include": "#single-quoted-string"},
-        // {"include": "#pseudo-element"},
-        // {"include": "#illegal-pseudo-element"},
-        // {"include": "#pseudo-class"}
-        // {"include": "#at-rule"},
-        // {"include": "#function"},
-        // {"include": "#unit"},
-        // {"include": "#color-name"},
-        // {"include": "#property"},
-        // {"include": "#hex-color"},
-        // {"include": "#id"},
-        // {"include": "#class"},
-        // {"include": "#property-value"},
-        // {"include": "#tag"},
-        // {"include": "#number"},
-        // {
-        //     "name": "",
-        //     "begin": "\\{",
-        //     "patterns": [
-        //         // The rules preceding the recursive call are for anything that
-        //         // can appear in a selector line. This includes HTML tag names,
-        //         // selectors, functions, strings, properties, numbers, units,
-        //         // pseudoclasses, pseudoelements, unquoted URLs, @document prefixes
-        //         {"include": "$self"}
-        //         // The rules following the recursive call are for anything
-        //         // that can be in the most deeply nested curly braces (properties
-        //         // and property values)
-        //     ],
-        //     "end": "\\}"
-        // }
+        {"include": "#block-comment"},
+        {"include": "#double-quoted-string"},
+        {"include": "#single-quoted-string"},
+        {"include": "#pseudo-element"},
+        {"include": "#illegal-pseudo-element"},
+        {"include": "#pseudo-class"},
+        // {"include": "#at-rule"},  // replace with individual rules for each at-rule
+        {"include": "#function"},
+        {"include": "#unit"},
+        {"include": "#color-name"},
+        {"include": "#property"},
+        {"include": "#hex-color"},
+        {"include": "#id"},
+        {"include": "#class"},
+        {"include": "#property-value"},
+        {"include": "#tag"},
+        {"include": "#number"},
+        {"include": "identifier"}
     ],
-
-    // can repository members reference other repository members??? test this
 
     "repository": {
         "at-charset": {
@@ -97,9 +59,10 @@
         //     "begin":
         // },
         "identifier": {
-            "name": "keyword.other.css",
+            "name": "string.quoted.css",
             // "match": "-?([a-zA-Z_]|[^\\x00-\\x7F]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\x00-\\x7f]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))",
-            "match": "-?([a-zA-Z_]|[^\\\\x00-\\\\x7F]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\\\x00-\\\\x7f]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))*",
+            // "match": "-?([a-zA-Z_]|[^\\\\x00-\\\\x7F]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\\\x00-\\\\x7f]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))*\\b",
+            "match": "-?([a-zA-Z_]|\\\\[0-9a-fA-F]{1,6}\\s?)([-a-zA-Z0-9_]|\\\\[0-9a-fA-F]{1,6}\\s?)*",
             "comment": "Generic identifiers"
         },
         "double-quoted-string": {
@@ -114,12 +77,12 @@
         },
         "class": {
             "name": "entity.name.function.css",
-            "match": "\\.[_a-zA-Z]+[_a-zA-Z0-9-]*",
+            "match": "\\.-?([a-zA-Z_]|\\\\[0-9a-fA-F]{1,6}\\s?)([-a-zA-Z0-9_]|\\\\[0-9a-fA-F]{1,6}\\s?)*",
             "comment": "Element class (.comment, .alert)"
         },
         "id": {
             "name": "entity.name.tag.css",
-            "match": "#[_a-zA-Z]+[_a-zA-Z0-9-]*",
+            "match": "#-?([a-zA-Z_]|\\\\[0-9a-fA-F]{1,6}\\s?)([-a-zA-Z0-9_]|\\\\[0-9a-fA-F]{1,6}\\s?)*",
             "comment": "Element ID (#header, #logo)"
         },
         "tag": {
@@ -185,7 +148,7 @@
         },
         "property-value": {
             "name": "variable.parameter.css",
-            "match": "(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(-(caps|caption))?|smaller|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))",
+            "match": "(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))",
             "comment": "Property values (flex, left, uppercase, disc)"
         }
     }

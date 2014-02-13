@@ -12,11 +12,71 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#at-charset</string>
+			<string>#block-comment</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#identifier</string>
+			<string>#double-quoted-string</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#single-quoted-string</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#pseudo-element</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#illegal-pseudo-element</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#pseudo-class</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#function</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#unit</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#color-name</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#property</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#hex-color</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#id</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#class</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#property-value</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#tag</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#number</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>identifier</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -72,7 +132,7 @@
 			<key>comment</key>
 			<string>Element class (.comment, .alert)</string>
 			<key>match</key>
-			<string>\.[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<string>\.-?([a-zA-Z_]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_]|\\[0-9a-fA-F]{1,6}\s?)*</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
@@ -117,7 +177,7 @@
 			<key>comment</key>
 			<string>Element ID (#header, #logo)</string>
 			<key>match</key>
-			<string>#[_a-zA-Z]+[_a-zA-Z0-9-]*</string>
+			<string>#-?([a-zA-Z_]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_]|\\[0-9a-fA-F]{1,6}\s?)*</string>
 			<key>name</key>
 			<string>entity.name.tag.css</string>
 		</dict>
@@ -126,9 +186,9 @@
 			<key>comment</key>
 			<string>Generic identifiers</string>
 			<key>match</key>
-			<string>-?([a-zA-Z_]|[^\\x00-\\x7F]|(\\[0-9a-fA-F]{1,6}(\r\n|[ \n\r\t\f])?|\\[^\n\r\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\x00-\\x7f]|(\\[0-9a-fA-F]{1,6}(\r\n|[ \n\r\t\f])?|\\[^\n\r\f0-9a-fA-F]))*</string>
+			<string>-?([a-zA-Z_]|\\[0-9a-fA-F]{1,6}\s?)([-a-zA-Z0-9_]|\\[0-9a-fA-F]{1,6}\s?)*</string>
 			<key>name</key>
-			<string>keyword.other.css</string>
+			<string>string.quoted.css</string>
 		</dict>
 		<key>illegal-pseudo-element</key>
 		<dict>
@@ -162,7 +222,7 @@
 			<key>comment</key>
 			<string>Property values (flex, left, uppercase, disc)</string>
 			<key>match</key>
-			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(-(caps|caption))?|smaller|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))</string>
+			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(cell|column(-group)?|footer-group|header-group|row(-group)?))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))</string>
 			<key>name</key>
 			<string>variable.parameter.css</string>
 		</dict>
