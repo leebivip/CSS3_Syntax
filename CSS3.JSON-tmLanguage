@@ -59,15 +59,13 @@
         //     "name":
         //     "begin":
         // },
-        // "url-unquoted": {
-        //     "name": "",
-        //     "match": "([^"'()\s])+"
-        //     "match": "([^\\"\'\(\)\\\s])+"
-        // },
+        "url-unquoted": {
+            "name": "invalid.illegal.css",
+            // "match": "([^"'()\s])+"
+            "match": "([^\\\"\\'\\(\\)\\s\\p{^Print}]|\\\\([^\\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\\s))+"
+        },
         "identifier": {
             "name": "string.quoted.css",
-            // "match": "-?([a-zA-Z_]|[^\\x00-\\x7F]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\x00-\\x7f]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))",
-            // "match": "-?([a-zA-Z_]|[^\\\\x00-\\\\x7F]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))([_a-zA-Z0-9-]|[^\\\\x00-\\\\x7f]|(\\\\[0-9a-fA-F]{1,6}(\\r\\n|[ \\n\\r\\t\\f])?|\\\\[^\\n\\r\\f0-9a-fA-F]))*\\b",
             "match": "-?([a-zA-Z_\\p{^ASCII}]|\\\\[0-9a-fA-F]{1,6}\\s?)([-a-zA-Z0-9_\\p{^ASCII}]|\\\\[0-9a-fA-F]{1,6}\\s?)*",
             "comment": "Generic identifiers"
         },

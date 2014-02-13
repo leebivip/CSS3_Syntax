@@ -266,13 +266,6 @@
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
-		<key>unicode</key>
-		<dict>
-			<key>match</key>
-			<string>\p{^ASCII}</string>
-			<key>name</key>
-			<string>invalid.illegal.css</string>
-		</dict>
 		<key>unit</key>
 		<dict>
 			<key>comment</key>
@@ -281,6 +274,13 @@
 			<string>(?&lt;=[0-9])(r?em|ex|ch|v(h|w|min|max)|p(x|t|c)|(c|m|mozm)m|in|m?s|dp(cm|i|px)|deg|g?rad|turn|k?Hz|%)</string>
 			<key>name</key>
 			<string>keyword.other.css</string>
+		</dict>
+		<key>url-unquoted</key>
+		<dict>
+			<key>match</key>
+			<string>([^\"\'\(\)\s\p{^Print}]|\\([^\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\s))+</string>
+			<key>name</key>
+			<string>invalid.illegal.css</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
