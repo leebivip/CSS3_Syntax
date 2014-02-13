@@ -76,7 +76,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>identifier</string>
+			<string>#identifier</string>
 		</dict>
 	</array>
 	<key>repository</key>

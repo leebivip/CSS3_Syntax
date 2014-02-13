@@ -25,7 +25,7 @@
         {"include": "#property-value"},
         {"include": "#tag"},
         {"include": "#number"},
-        {"include": "identifier"}
+        {"include": "#identifier"}
     ],
 
     "repository": {
