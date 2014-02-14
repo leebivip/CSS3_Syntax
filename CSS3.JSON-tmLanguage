@@ -37,7 +37,6 @@
             "end": "(?=;)"
         },
         "at-media": {
-            // "name": "invalid.illegal.css",
             "name": "",
             "begin": "\\s*@media",
             "beginCaptures": {
@@ -76,7 +75,6 @@
         //     "end": "(?=;)"  // FIXME: match end of line here??? $ or \\n?
         // },
         "selectors": {
-            // "name": "invalid.illegal.css",
             "name": "",
             "begin": "\\s*(?=[:.*@#\\p{L}-])",
             "patterns": [
