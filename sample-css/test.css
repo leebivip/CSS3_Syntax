@@ -54,6 +54,7 @@
 
 progress, small, sub pre {
     border-radius: small, sub, progress;
+    white-space: white;
 }
 
 

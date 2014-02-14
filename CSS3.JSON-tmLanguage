@@ -35,21 +35,38 @@
             "begin": "{",
             "patterns": [
                 {"include": "#block-comment"},
+                {"include": "#properties"},
+                {"include": "#values"}
+            ],
+            "end": "}"
+        },
+        "properties": {
+            "name": "",
+            "begin": "\\s*(?=[-\\p{L}])",
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#property"}
+            ],
+            "end": "(?=:)"
+        },
+        "values": {
+            "name": "",
+            "begin": ":",
+            "patterns": [
+                {"include": "#block-comment"},
                 {"include": "#double-quoted-string"},
                 {"include": "#single-quoted-string"},
                 {"include": "#url"},    // TODO: is #url precedence correct?
                 {"include": "#function"},
                 {"include": "#unit"},
                 {"include": "#color-name"},
-                {"include": "#property"},
                 {"include": "#hex-color"},
                 {"include": "#property-value"},
                 {"include": "#number"},
                 {"include": "#identifier"}
             ],
-            "end": "}"
+            "end": ";"
         },
-
         "at-charset": {
             "name": "",
             "begin": "@charset",

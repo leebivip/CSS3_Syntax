@@ -156,6 +156,26 @@
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
+		<key>properties</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*(?=[-\p{L}])</string>
+			<key>end</key>
+			<string>(?=:)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property</string>
+				</dict>
+			</array>
+		</dict>
 		<key>properties-and-values</key>
 		<dict>
 			<key>begin</key>
@@ -172,47 +192,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#double-quoted-string</string>
+					<string>#properties</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#single-quoted-string</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#url</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#function</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#unit</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#color-name</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#property</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#hex-color</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#property-value</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#number</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#identifier</string>
+					<string>#values</string>
 				</dict>
 			</array>
 		</dict>
@@ -357,6 +341,62 @@
 			<string>([^\"\'\(\)\s\p{^Print}]|\\([^\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\s))+</string>
 			<key>name</key>
 			<string>invalid.illegal.css</string>
+		</dict>
+		<key>values</key>
+		<dict>
+			<key>begin</key>
+			<string>:</string>
+			<key>end</key>
+			<string>;</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#color-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property-value</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#identifier</string>
+				</dict>
+			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
