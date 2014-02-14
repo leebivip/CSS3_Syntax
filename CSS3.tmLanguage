@@ -20,6 +20,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-media</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#selectors</string>
 		</dict>
 		<dict>
@@ -52,6 +56,54 @@
 					<string>(?i)\"(utf-8|utf8|unicode-1-1-utf-8)\"|\'(utf-8|utf8|unicode-1-1-utf-8)\'</string>
 					<key>name</key>
 					<string>string.quoted.css</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-media</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*@media</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>{</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-features</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#color-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
 				</dict>
 			</array>
 		</dict>
@@ -136,7 +188,21 @@
 			<key>match</key>
 			<string>:(after|before|first-(letter|line))</string>
 			<key>name</key>
-			<string>invalid.illegal</string>
+			<string>invalid.illegal.css</string>
+		</dict>
+		<key>media-features</key>
+		<dict>
+			<key>match</key>
+			<string>(((min|max)-)?(((device-)?(width|height|aspect-ratio))|color(-index)?|monochrome|resolution)|orientation|scan|grid)</string>
+			<key>name</key>
+			<string>comment.block.css</string>
+		</dict>
+		<key>media-types</key>
+		<dict>
+			<key>match</key>
+			<string>all|braille|embossed|handheld|print|projection|screen|speech|tty|tv</string>
+			<key>name</key>
+			<string>constant.numeric.css</string>
 		</dict>
 		<key>number</key>
 		<dict>
@@ -230,7 +296,7 @@
 		<key>selectors</key>
 		<dict>
 			<key>begin</key>
-			<string>\s*(?=[:.*#\p{L}-])</string>
+			<string>\s*(?=[:.*@#\p{L}-])</string>
 			<key>end</key>
 			<string>(?={)</string>
 			<key>name</key>
@@ -281,7 +347,7 @@
 			<key>comment</key>
 			<string>HTML elements (body, nav)</string>
 			<key>match</key>
-			<string>\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\b</string>
+			<string>\b(abbr|address|area|article|aside|audio|a|base|bdi|bdo|blockquote|body|br|button|b|canvas|caption|cite|code|col(group)?|data(list)?|dd|del|details|dfn|dialog|div|dl|dt|em(bed)?|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hr|html|i(frame)?|img|input|ins|kbd|keygen|label|legend|li(nk)?|main|map|mark|math|menu(item)?|meta|meter|nav|noscript|object|ol|optgroup|option|output|param|pre|progress|p|q|rb|rp|rtc?|ruby|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|svg|s|table|tbody|td|template|textarea|tfoot|th(ead)?|time|title|tr(ack)?|ul?|var|video|wbr)\b</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
@@ -331,7 +397,7 @@
 			<key>match</key>
 			<string>([^\"\'\(\)\s\p{^Print}]|\\([^\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\s))+</string>
 			<key>name</key>
-			<string>invalid.illegal.css</string>
+			<string>string.css</string>
 		</dict>
 		<key>values</key>
 		<dict>

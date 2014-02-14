@@ -8,18 +8,24 @@
 
 @charset 'utf8';
 
-
 @media screen and (max-width: 719px){
-    p::after{
+
+    p::after {
         display: none;
     }
 
+    p::before {
+        border-radius: 100px;
+    }
+
     @media screen and (min-width: 720px){
-        html{
-            background-image: url("background.png");
-            background-image: url('background.png');
-            background-image: url(http://example.com/hello.png);
-            font-family: "Hello", 'World', Helvetica, Arial, sans-serif;
+        @media projector {
+            html{
+                background-image: url("background.png");
+                background-image: url('background.png');
+                background-image: url(http://example.com/hello.png);
+                font-family: "Hello", 'World', Helvetica, Arial, sans-serif;
+            }
         }
     }
 
@@ -57,6 +63,9 @@ progress, small, sub pre {
     white-space: white;
 }
 
+sub {
+    sub: sub;
+}
 
 p:after
 {

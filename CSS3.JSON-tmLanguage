@@ -10,11 +10,11 @@
     "patterns": [
         {"include": "#block-comment"},
         {"include": "#at-charset"},
-        // include rest of at-rules
+        {"include": "#at-media"},
+        // include rest of at-rules.
         {"include": "#selectors"},
         {"include": "#properties-and-values"}
     ],
-
     "repository": {
         "block-comment": {
             "name": "comment.block.css",
@@ -34,7 +34,35 @@
                     "match": "(?i)\\\"(utf-8|utf8|unicode-1-1-utf-8)\\\"|\\'(utf-8|utf8|unicode-1-1-utf-8)\\'"
                 }
             ],
-            "end": "(?=;)"  // FIXME: match end of line here??? $ or \\n?
+            "end": "(?=;)"
+        },
+        "at-media": {
+            // "name": "invalid.illegal.css",
+            "name": "",
+            "begin": "\\s*@media",
+            "beginCaptures": {
+                "0": {"name": "keyword.other.css"}
+            },
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#media-types"},
+                {"include": "#media-features"},
+                {"include": "#unit"},
+                {"include": "#color-name"},
+                {"include": "#hex-color"},
+                {"include": "#number"}
+            ],
+            "end": "{"
+        },
+        "media-types": {
+            "name": "constant.numeric.css",
+            // "name": "invalid.illegal.css",
+            "match": "all|braille|embossed|handheld|print|projection|screen|speech|tty|tv"
+        },
+        "media-features": {
+            "name": "comment.block.css",
+            // "name": "invalid.illegal.css",
+            "match": "(((min|max)-)?(((device-)?(width|height|aspect-ratio))|color(-index)?|monochrome|resolution)|orientation|scan|grid)"
         },
         // "at-import": {
         //     "name": "",
@@ -47,23 +75,10 @@
         //     ],
         //     "end": "(?=;)"  // FIXME: match end of line here??? $ or \\n?
         // },
-        // "media-query-list": {
-        //     "name":
-        //     "begin":
-        // },
-        // "at-media": {
-        //     "name": "",
-        //     "begin": "@media",
-        //     "beginCaptures": {
-        //         "0": {"name": "keyword.other.css"}
-        //     },
-        //     "patterns": [
-        //     ],
-        //     "end": "(?=\\})"
-        // },
         "selectors": {
+            // "name": "invalid.illegal.css",
             "name": "",
-            "begin": "\\s*(?=[:.*#\\p{L}-])",
+            "begin": "\\s*(?=[:.*@#\\p{L}-])",
             "patterns": [
                 {"include": "#block-comment"},
                 {"include": "#pseudo-element"},
@@ -118,7 +133,7 @@
             "comment": "Pseudo element (::first-line, ::after)"
         },
         "illegal-pseudo-element": {
-            "name": "invalid.illegal",
+            "name": "invalid.illegal.css",
             "match": ":(after|before|first-(letter|line))",
             "comment": "Invalid pseudo-elements (:after instead of ::after)"
         },
@@ -139,7 +154,7 @@
         },
         "tag": {
             "name": "entity.name.function.css",
-            "match": "\\b(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img|iframe|embed|object|param|video|audio|source|track|canvas|map|area|svg|math|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|menuitem|menu)\\b",
+            "match": "\\b(abbr|address|area|article|aside|audio|a|base|bdi|bdo|blockquote|body|br|button|b|canvas|caption|cite|code|col(group)?|data(list)?|dd|del|details|dfn|dialog|div|dl|dt|em(bed)?|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hr|html|i(frame)?|img|input|ins|kbd|keygen|label|legend|li(nk)?|main|map|mark|math|menu(item)?|meta|meter|nav|noscript|object|ol|optgroup|option|output|param|pre|progress|p|q|rb|rp|rtc?|ruby|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|svg|s|table|tbody|td|template|textarea|tfoot|th(ead)?|time|title|tr(ack)?|ul?|var|video|wbr)\\b",
             "comment": "HTML elements (body, nav)"
         },
         "property": {
@@ -171,7 +186,7 @@
             "end": "\\)"
         },
         "url-unquoted": {
-            "name": "invalid.illegal.css",
+            "name": "string.css",
             "match": "([^\\\"\\'\\(\\)\\s\\p{^Print}]|\\\\([^\\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\\s))+"
         },
         "function": {
