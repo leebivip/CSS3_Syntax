@@ -24,7 +24,7 @@
         },
         "at-charset": {
             "name": "",
-            "begin": "@charset",
+            "begin": "\\s*@charset",
             "beginCaptures": {
                 "0": {"name": "keyword.other.css"}
             },
