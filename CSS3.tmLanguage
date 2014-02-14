@@ -20,7 +20,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#selector</string>
+			<string>#selectors</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -54,15 +54,6 @@
 					<string>string.quoted.css</string>
 				</dict>
 			</array>
-		</dict>
-		<key>at-rule</key>
-		<dict>
-			<key>comment</key>
-			<string>@ rules (@media, @import)</string>
-			<key>match</key>
-			<string>@(charset|document|font-(face|feature-values)|import|keyframes|media|namespace|page|supports|viewport)\b</string>
-			<key>name</key>
-			<string>keyword.other.css</string>
 		</dict>
 		<key>block-comment</key>
 		<dict>
@@ -236,7 +227,7 @@
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
-		<key>selector</key>
+		<key>selectors</key>
 		<dict>
 			<key>begin</key>
 			<string>\s*(?=[:.*#\p{L}-])</string>
