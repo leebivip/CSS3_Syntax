@@ -8,6 +8,7 @@
 
 @charset 'utf8';
 
+
 @media screen and (max-width: 719px){
     p::after{
         display: none;
@@ -17,7 +18,7 @@
         html{
             background-image: url("background.png");
             background-image: url('background.png');
-            background-image: url(http://example.com/hello.png)
+            background-image: url(http://example.com/hello.png);
             font-family: "Hello", 'World', Helvetica, Arial, sans-serif;
         }
     }
@@ -43,12 +44,21 @@
 
 /* Unicodes */
 ñ π ø ˆ ˚ ∆ ˜ ¡ ˜ ¬ … ˚ ˜ ß ∂
--ñhello˚˜˚∆åß∂ ˜¬å˚ß∂
-
-#hello .hi .ñiplle #ññhello
+ñhello˚˜˚∆åß∂ ˜¬å˚ß∂
 
 
-p:after{
+#hello .hi .ñiplle #ññhello {
+    border-radius: black;
+    white-space: white;
+}
+
+progress, small, sub pre {
+    border-radius: small, sub, progress;
+}
+
+
+p:after
+{
     border: 1px solid #ccc;
 }
 

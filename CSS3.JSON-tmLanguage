@@ -4,33 +4,52 @@
     "scopeName": "text.css",
     "fileTypes": ["css"],
     "uuid": "f0aff4e9-b17d-4b8a-9720-e30313131572",
-    // "foldingStartMarker": "\\{\\s*$",  # TODO: Test folding start/stop markers
+    // "foldingStartMarker": "\\{\\s*$",  // TODO: Test folding start/stop markers
     // "foldingStopMarker": "^\\s*\\}",
 
     "patterns": [
         {"include": "#block-comment"},
-        {"include": "#double-quoted-string"},
-        {"include": "#single-quoted-string"},
-        {"include": "#pseudo-element"},
-        {"include": "#illegal-pseudo-element"},
-        {"include": "#pseudo-class"},
-        // {"include": "#at-rule"},  // TODO: Replace with individual rules for each at-rule
         {"include": "#at-charset"},
-        {"include": "#url"},         // FIXME: is the the right place for url?
-        {"include": "#function"},
-        {"include": "#unit"},
-        {"include": "#color-name"},
-        {"include": "#property"},
-        {"include": "#hex-color"},
-        {"include": "#id"},
-        {"include": "#class"},
-        {"include": "#property-value"},
-        {"include": "#tag"},
-        {"include": "#number"},
-        {"include": "#identifier"}
+        // include rest of at-rules
+        {"include": "#selector"},
+        {"include": "#properties-and-values"}
     ],
 
     "repository": {
+        "selector": {
+            "name": "",
+            "begin": "\\s*(?=[:.*#\\p{L}-])",
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#pseudo-element"},
+                {"include": "#illegal-pseudo-element"},
+                {"include": "#pseudo-class"},
+                {"include": "#id"},
+                {"include": "#class"},
+                {"include": "#tag"}
+            ],
+            "end": "(?={)"
+        },
+        "properties-and-values": {
+            "name": "",
+            "begin": "{",
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#double-quoted-string"},
+                {"include": "#single-quoted-string"},
+                {"include": "#url"},    // TODO: is #url precedence correct?
+                {"include": "#function"},
+                {"include": "#unit"},
+                {"include": "#color-name"},
+                {"include": "#property"},
+                {"include": "#hex-color"},
+                {"include": "#property-value"},
+                {"include": "#number"},
+                {"include": "#identifier"}
+            ],
+            "end": "}"
+        },
+
         "at-charset": {
             "name": "",
             "begin": "@charset",
@@ -59,6 +78,17 @@
         // "media-query-list": {
         //     "name":
         //     "begin":
+        // },
+        // "at-media": {
+        //     "name": "",
+        //     "begin": "@media",
+        //     "beginCaptures": {
+        //         "0": {"name": "keyword.other.css"}
+        //     },
+        //     "patterns": [
+
+        //     ],
+        //     "end": "(?=\\})"
         // },
         "url": {
             "name": "",
@@ -144,8 +174,6 @@
         },
         "property": {
             "name": "storage.type.css",
-            // FIXME: will the lookbehind assertion still be necessary after all the at-rules
-            // are finished? (?<!@)
             "match": "(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\\s*(?=:)",
             "comment": "Properties (color, margin-left)"
         },

@@ -16,75 +16,15 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#double-quoted-string</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#single-quoted-string</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#pseudo-element</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#illegal-pseudo-element</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#pseudo-class</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#at-charset</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#url</string>
+			<string>#selector</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#function</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#unit</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#color-name</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#property</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#hex-color</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#id</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#class</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#property-value</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#tag</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#number</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#identifier</string>
+			<string>#properties-and-values</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -216,6 +156,66 @@
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
+		<key>properties-and-values</key>
+		<dict>
+			<key>begin</key>
+			<string>{</string>
+			<key>end</key>
+			<string>}</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#color-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property-value</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#identifier</string>
+				</dict>
+			</array>
+		</dict>
 		<key>property</key>
 		<dict>
 			<key>comment</key>
@@ -251,6 +251,46 @@
 			<string>::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
+		</dict>
+		<key>selector</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*(?=[:.*#\p{L}-])</string>
+			<key>end</key>
+			<string>(?={)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#illegal-pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#id</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag</string>
+				</dict>
+			</array>
 		</dict>
 		<key>single-quoted-string</key>
 		<dict>
