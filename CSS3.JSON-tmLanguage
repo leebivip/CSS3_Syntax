@@ -12,6 +12,7 @@
         {"include": "#at-charset"},
         {"include": "#at-media"},
         {"include": "#at-import"},
+        {"include": "#at-namespace"},
         // include rest of at-rules.
         {"include": "#selectors"},
         {"include": "#properties-and-values"}
@@ -55,6 +56,19 @@
                 {"include": "#color-name"},
                 {"include": "#hex-color"},
                 {"include": "#number"}
+            ],
+            "end": "(?=;)"
+        },
+        "at-namespace": {
+            "name": "",
+            "begin": "\\s*@namespace",
+            "beginCaptures": {
+                "0": {"name": "keyword.other.css"}
+            },
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#url"},
+                {"include": "#identifier"}
             ],
             "end": "(?=;)"
         },

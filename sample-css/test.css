@@ -8,6 +8,9 @@
 
 @charset 'utf8';
 
+@namespace url(http://www.w3.org/1999/xhtml);
+@namespace svg url(http://www.w3.org/2000/svg);
+
 @import url("fineprint.css") print;
 @import url("bluish.css") projection, tv;
 @import 'custom.css';

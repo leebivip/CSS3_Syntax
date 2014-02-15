@@ -28,6 +28,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-namespace</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#selectors</string>
 		</dict>
 		<dict>
@@ -176,6 +180,38 @@
 				<dict>
 					<key>include</key>
 					<string>#number</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-namespace</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*@namespace</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?=;)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#identifier</string>
 				</dict>
 			</array>
 		</dict>
