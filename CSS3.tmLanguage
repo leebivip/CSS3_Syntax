@@ -24,6 +24,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-import</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#selectors</string>
 		</dict>
 		<dict>
@@ -59,6 +63,70 @@
 				</dict>
 			</array>
 		</dict>
+		<key>at-import</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*@import</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?=;)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-features</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-feature-values</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#color-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
+			</array>
+		</dict>
 		<key>at-media</key>
 		<dict>
 			<key>begin</key>
@@ -88,6 +156,10 @@
 				<dict>
 					<key>include</key>
 					<string>#media-features</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-feature-values</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -189,6 +261,13 @@
 			<string>:(after|before|first-(letter|line))</string>
 			<key>name</key>
 			<string>invalid.illegal.css</string>
+		</dict>
+		<key>media-feature-values</key>
+		<dict>
+			<key>match</key>
+			<string>(interlace|landscape|portrait|progressive)\b</string>
+			<key>name</key>
+			<string>variable.parameter.css</string>
 		</dict>
 		<key>media-features</key>
 		<dict>

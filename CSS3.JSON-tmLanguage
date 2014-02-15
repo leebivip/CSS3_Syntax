@@ -11,6 +11,7 @@
         {"include": "#block-comment"},
         {"include": "#at-charset"},
         {"include": "#at-media"},
+        {"include": "#at-import"},
         // include rest of at-rules.
         {"include": "#selectors"},
         {"include": "#properties-and-values"}
@@ -36,6 +37,27 @@
             ],
             "end": "(?=;)"
         },
+        "at-import": {
+            "name": "",
+            "begin": "\\s*@import",
+            "beginCaptures": {
+                "0": {"name": "keyword.other.css"}
+            },
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#url"},
+                {"include": "#media-types"},
+                {"include": "#media-features"},
+                {"include": "#media-feature-values"},
+                {"include": "#double-quoted-string"},
+                {"include": "#single-quoted-string"},
+                {"include": "#unit"},
+                {"include": "#color-name"},
+                {"include": "#hex-color"},
+                {"include": "#number"}
+            ],
+            "end": "(?=;)"
+        },
         "at-media": {
             "name": "",
             "begin": "\\s*@media",
@@ -46,6 +68,7 @@
                 {"include": "#block-comment"},
                 {"include": "#media-types"},
                 {"include": "#media-features"},
+                {"include": "#media-feature-values"},
                 {"include": "#unit"},
                 {"include": "#color-name"},
                 {"include": "#hex-color"},
@@ -55,25 +78,16 @@
         },
         "media-types": {
             "name": "constant.numeric.css",
-            // "name": "invalid.illegal.css",
             "match": "all|braille|embossed|handheld|print|projection|screen|speech|tty|tv"
         },
         "media-features": {
             "name": "comment.block.css",
-            // "name": "invalid.illegal.css",
             "match": "(((min|max)-)?(((device-)?(width|height|aspect-ratio))|color(-index)?|monochrome|resolution)|orientation|scan|grid)"
         },
-        // "at-import": {
-        //     "name": "",
-        //     "begin": "@import",
-        //     "beginCaptures": {
-        //         "0": {"name": "keyword.other.css"}
-        //     },
-        //     "patterns": [
-        //         {"include": "#url"},
-        //     ],
-        //     "end": "(?=;)"  // FIXME: match end of line here??? $ or \\n?
-        // },
+        "media-feature-values": {
+            "name": "variable.parameter.css",
+            "match": "(interlace|landscape|portrait|progressive)\\b"
+        },
         "selectors": {
             "name": "",
             "begin": "\\s*(?=[:.*@#\\p{L}-])",
