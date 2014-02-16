@@ -13,9 +13,12 @@
         {"include": "#at-media"},
         {"include": "#at-import"},
         {"include": "#at-namespace"},
+        {"include": "#at-page"},
+        {"include": "#at-page-outer-property"},
+        {"include": "#at-page-selector"},
         // include rest of at-rules.
-        {"include": "#selectors"},
-        {"include": "#properties-and-values"}
+        {"include": "#selector"},
+        {"include": "#property-or-value"}
     ],
     "repository": {
         "block-comment": {
@@ -47,9 +50,9 @@
             "patterns": [
                 {"include": "#block-comment"},
                 {"include": "#url"},
-                {"include": "#media-types"},
-                {"include": "#media-features"},
-                {"include": "#media-feature-values"},
+                {"include": "#media-type"},
+                {"include": "#media-feature"},
+                {"include": "#media-feature-value"},
                 {"include": "#double-quoted-string"},
                 {"include": "#single-quoted-string"},
                 {"include": "#unit"},
@@ -80,9 +83,9 @@
             },
             "patterns": [
                 {"include": "#block-comment"},
-                {"include": "#media-types"},
-                {"include": "#media-features"},
-                {"include": "#media-feature-values"},
+                {"include": "#media-feature-value"},
+                {"include": "#media-type"},
+                {"include": "#media-feature"},
                 {"include": "#unit"},
                 {"include": "#color-name"},
                 {"include": "#hex-color"},
@@ -90,19 +93,51 @@
             ],
             "end": "{"
         },
-        "media-types": {
+        "media-type": {
             "name": "constant.numeric.css",
             "match": "all|braille|embossed|handheld|print|projection|screen|speech|tty|tv"
         },
-        "media-features": {
+        "media-feature": {
             "name": "comment.block.css",
             "match": "(((min|max)-)?(((device-)?(width|height|aspect-ratio))|color(-index)?|monochrome|resolution)|orientation|scan|grid)"
         },
-        "media-feature-values": {
+        "media-feature-value": {
             "name": "variable.parameter.css",
             "match": "(interlace|landscape|portrait|progressive)\\b"
         },
-        "selectors": {
+        "at-page": {
+            "name": "",
+            "begin": "\\s*@page",
+            "beginCaptures": {
+                "0": {"name": "keyword.other.css"}
+            },
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#at-page-pseudo-class"},
+                {"include": "#function"},
+                {"include": "#identifier"}
+            ],
+            "end": "(?={)"
+        },
+        "at-page-pseudo-class": {
+            "name": "variable.parameter.css",
+            "match": ":(blank|first|left|right)"
+        },
+        "at-page-outer-property": {
+            "name": "",
+            "begin": "{",
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#property"},
+                {"include": "#value"}
+            ],
+            "end": "(?=@)|}"
+        },
+        "at-page-selector": {
+            "name": "keyword.other.css",
+            "match": "\\s*@((top|bottom)-((left|right)(-corner)?|center)|(left|right)-(top|middle|bottom))\\s*(?={)"
+        },
+        "selector": {
             "name": "",
             "begin": "\\s*(?=[:.*@#\\p{L}-])",
             "patterns": [
@@ -116,17 +151,17 @@
             ],
             "end": "(?={)"
         },
-        "properties-and-values": {
+        "property-or-value": {
             "name": "",
             "begin": "{",
             "patterns": [
                 {"include": "#block-comment"},
-                {"include": "#properties"},
-                {"include": "#values"}
+                {"include": "#property"},
+                {"include": "#value"}
             ],
             "end": "}"
         },
-        "properties": {
+        "property": {
             "name": "",
             "begin": "\\s*(?=[-\\p{L}])",
             "patterns": [
@@ -135,7 +170,7 @@
             ],
             "end": "(?=:)"
         },
-        "values": {
+        "value": {
             "name": "",
             "begin": ":",
             "patterns": [
@@ -217,7 +252,7 @@
         },
         "function": {
             "name": "entity.name.function.css",
-            "match": "((attr|blur|brightness|calc|contrast|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\\()",
+            "match": "((attr|blur|brightness|calc|contrast|counter(-increment)?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\\()",
             "comment": "Function (url(), calc())"
         },
         "unit": {
