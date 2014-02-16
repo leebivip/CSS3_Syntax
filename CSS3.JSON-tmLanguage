@@ -17,6 +17,8 @@
         {"include": "#at-page-outer-property"},
         {"include": "#at-page-selector"},
         {"include": "#at-font-face"},
+        {"include": "#at-keyframes"},
+        {"include": "#at-keyframes-selector"},
         // include rest of at-rules.
         {"include": "#selector"},
         {"include": "#property-or-value"}
@@ -141,6 +143,29 @@
         "at-font-face": {
             "name": "keyword.other.css",
             "match": "\\s*@font-face\\s*(?={)"
+        },
+        "at-keyframes": {
+            "name": "",
+            "begin": "\\s*@keyframes",
+            "beginCaptures": {
+                "0": {"name": "keyword.other.css"}
+            },
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "identifier"}
+            ],
+            "end": "{"
+        },
+        "at-keyframes-selector": {
+            "name": "",
+            "begin": "(?=[0-9])",
+            "patterns": [
+                {
+                    "name": "entity.name.function.css",
+                    "match": "[0-9]{1,3}%"
+                }
+            ],
+            "end": "(?={)"
         },
         "selector": {
             "name": "",

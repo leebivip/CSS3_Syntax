@@ -48,6 +48,14 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-keyframes</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-keyframes-selector</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#selector</string>
 		</dict>
 		<dict>
@@ -151,6 +159,52 @@
 				<dict>
 					<key>include</key>
 					<string>#number</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-keyframes</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*@keyframes</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>{</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>identifier</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-keyframes-selector</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=[0-9])</string>
+			<key>end</key>
+			<string>(?={)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[0-9]{1,3}%</string>
+					<key>name</key>
+					<string>entity.name.function.css</string>
 				</dict>
 			</array>
 		</dict>
