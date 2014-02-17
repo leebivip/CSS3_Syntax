@@ -19,6 +19,7 @@
         {"include": "#at-font-face"},
         {"include": "#at-keyframes"},
         {"include": "#at-keyframes-selector"},
+        {"include": "#at-supports"},
         // include rest of at-rules.
         {"include": "#selector"},
         {"include": "#property-or-value"}
@@ -166,6 +167,49 @@
                 }
             ],
             "end": "(?={)"
+        },
+        "at-supports": {
+            "name": "",
+            "begin": "\\s*@supports",
+            "beginCaptures": {
+                "0": {"name": "keyword.other.css"}
+            },
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#at-supports-condition"}
+            ],
+            "end": "{"
+        },
+        "at-supports-condition": {
+            "name": "",
+            "begin": "\\(",
+            "patterns": [
+                // {"include": "$self"}
+                {"include": "#block-comment"},
+                {"include": "#property"},
+                {"include": "#at-supports-value"}
+            ],
+            "end": "(?<=\\))"
+        },
+        "at-supports-value": {
+            // This is identical to #value, except that it ends on a closing paren ')'
+            // instead of a closing curly '}'
+            "name": "",
+            "begin": ":",
+            "patterns": [
+                {"include": "#block-comment"},
+                {"include": "#double-quoted-string"},
+                {"include": "#single-quoted-string"},
+                {"include": "#url"},    // TODO: is #url precedence correct?
+                {"include": "#function"},
+                {"include": "#unit"},
+                {"include": "#color-name"},
+                {"include": "#hex-color"},
+                {"include": "#property-value"},
+                {"include": "#number"},
+                {"include": "#identifier"}
+            ],
+            "end": "\\)"
         },
         "selector": {
             "name": "",

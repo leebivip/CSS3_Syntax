@@ -14,6 +14,52 @@
 @font-face {
   font-family: "Bitstream Vera Serif Bold";
   src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
+  @font-face {
+    font-family: Hello;
+    @media screen and (orientation: landscape) {
+        @font-face {
+            src: url("sheet");
+        }
+    }
+  }
+  @keyframes something {
+    0% {
+        @font-face {
+            font-family: hello, goodbye, "sup";
+            @media (min-width: 200px) {
+                @keyframes kablah {
+                    100% {
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+@supports (transition-property: color) or
+          ((animation-name: foo) and
+           (transform: rotate(10deg))) {
+    .noticebox {
+      border: 1px solid black;
+      padding: 1px;
+    }
+}
+
+@supports ( box-shadow: 0 0 2px black inset ) or
+          ( -moz-box-shadow: 0 0 2px black inset ) or
+          ( -webkit-box-shadow: 0 0 2px black inset ) or
+          ( -o-box-shadow: 0 0 2px black inset ) {
+  .noticebox {
+    -moz-box-shadow: 0 0 2px black inset;
+    -webkit-box-shadow: 0 0 2px black inset;
+    -o-box-shadow: 0 0 2px black inset;
+    box-shadow: 0 0 2px black inset; /* unprefixed last */
+    /* override the rule above the @supports rule */
+    border: none;
+    padding: 2px;
+  }
 }
 
 @font-face {

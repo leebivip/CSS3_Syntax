@@ -56,6 +56,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-supports</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#selector</string>
 		</dict>
 		<dict>
@@ -365,6 +369,114 @@
 			<string>\s*@((top|bottom)-((left|right)(-corner)?|center)|(left|right)-(top|middle|bottom))\s*(?={)</string>
 			<key>name</key>
 			<string>keyword.other.css</string>
+		</dict>
+		<key>at-supports</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*@supports</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>{</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#at-supports-condition</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-supports-condition</key>
+		<dict>
+			<key>begin</key>
+			<string>\(</string>
+			<key>end</key>
+			<string>(?&lt;=\))</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#at-supports-value</string>
+				</dict>
+			</array>
+		</dict>
+		<key>at-supports-value</key>
+		<dict>
+			<key>begin</key>
+			<string>:</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string></string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#color-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property-value</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#identifier</string>
+				</dict>
+			</array>
 		</dict>
 		<key>block-comment</key>
 		<dict>
