@@ -333,7 +333,7 @@ repository:
 
   selector:
     name: ''
-    begin: \s*(?=[:.*@#\p{L}-])
+    begin: (?=[:.*#\p{L}-])
     end: (?={)
     patterns:
     - include: '#block-comment'

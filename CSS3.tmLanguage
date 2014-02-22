@@ -833,6 +833,22 @@
 			<key>name</key>
 			<string>support.type.css</string>
 		</dict>
+		<key>selector</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=[:.*#\p{L}-])</string>
+			<key>end</key>
+			<string>(?={)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+			</array>
+		</dict>
 		<key>single-quoted-string</key>
 		<dict>
 			<key>match</key>

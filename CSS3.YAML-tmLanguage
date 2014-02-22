@@ -15,6 +15,7 @@ patterns:
 - include: '#at-media'
 - include: '#at-namespace'
 - include: '#at-page'
+# - include: '#selector'
 
 repository:
 
@@ -372,6 +373,14 @@ repository:
     # TODO: assign a proper name to this
     name: support.type.css
     match: :(blank|first|left|right)
+
+  selector:
+    # DEBUG
+    name: invalid.deprecated.css
+    begin: (?=[:.*#\p{L}-])
+    patterns:
+    - include: '#block-comment'
+    end: (?={)
 
   single-quoted-string:
     name: string.quoted.single.css
