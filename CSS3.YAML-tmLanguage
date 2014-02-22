@@ -368,7 +368,7 @@ repository:
 
   punctuation:
     # TODO: assign a proper name to this
-    # name: invalid.deprecated.css
+    name: invalid.deprecated.css
     # name: meta.punctuation.css
     match: ([:,;\{\}\(\)])
 
@@ -403,15 +403,20 @@ repository:
       '4': {name: keyword.unit.css}
 
   url:
-    begin: (url)(?=\()
-    beginCaptures:
-      '1': {name: entity.name.function.css}
+    begin: (?=url\()
     patterns:
     - include: '#block-comment'
+    - include: '#url-function-name'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#url-unquoted'
+    - include: '#punctuation'
     end: (?<=\))
+
+  url-function-name:
+    # ensures the name of the url function is consumed
+    name: entity.name.function.css
+    match: url
 
   url-unquoted:
     name: string.unquoted.css

@@ -822,6 +822,8 @@
 		<dict>
 			<key>match</key>
 			<string>([:,;\{\}\(\)])</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
 		</dict>
 		<key>ratio</key>
 		<dict>
@@ -890,15 +892,7 @@
 		<key>url</key>
 		<dict>
 			<key>begin</key>
-			<string>(url)(?=\()</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-			</dict>
+			<string>(?=url\()</string>
 			<key>end</key>
 			<string>(?&lt;=\))</string>
 			<key>patterns</key>
@@ -906,6 +900,10 @@
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url-function-name</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -919,7 +917,18 @@
 					<key>include</key>
 					<string>#url-unquoted</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#punctuation</string>
+				</dict>
 			</array>
+		</dict>
+		<key>url-function-name</key>
+		<dict>
+			<key>match</key>
+			<string>url</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
 		</dict>
 		<key>url-unquoted</key>
 		<dict>
