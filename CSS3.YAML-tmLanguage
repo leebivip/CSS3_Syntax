@@ -1,6 +1,6 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
-name: CSS5
+name: CSS3
 scopeName: text.css
 fileTypes: [css]
 uuid: 8195f5b1-d6d5-4ceb-b15b-e939b3d3fcdd
@@ -32,7 +32,7 @@ repository:
     beginCaptures:
       '0': {name: keyword.at-rule.css}
     patterns:
-    # Despite what the MDN CSS Reference says, @font-face is not nestable
+    # despite what the MDN CSS Reference says, @font-face is not nestable
     # in the Sep 17, 2013 draft of the Fonts Module Level 3 spec. Therefore,
     # include: $self is not present.
     - include: '#block-comment'
@@ -95,9 +95,9 @@ repository:
     - include: '#block-comment'
     - include: '#media-condition-list'
     - include: $self
-    # TODO: include #selector and #block. any rules after self should
-    # only match the interior of the most deeply nested block
-    # - include: '#selector' selector matches up until (?=\{)
+    # TODO: include #selector. any rules after self should
+    # only match the interior of the most deeply nested block.
+    # '#selector' matches up until (?=\{)
     - include: '#block'
     end: \}
 
@@ -143,7 +143,6 @@ repository:
     begin: \{
     patterns:
     - include: '#block-comment'
-    # TODO: implement #property
     - include: '#property'
     - include: '#value'
     end: \}
@@ -187,7 +186,7 @@ repository:
   font-descriptor-value-discrete:
     # named values for a font descriptor
     # e.g. normal, italic, historical-forms, bold, 900
-    # TODO: assign the right name to this
+    # TODO: assign a proper name to this
     name: variable.value.css
     match: \b([1-9]00|(all-)?(petite|small)-caps|bold|(no-)?(common-ligatures|contextual|discretionary-ligatures|historical-ligatures|)|(diagonal|stacked)-fractions|((extra|semi|ultra)-)?condensed|((extra|semi|ultra)-)?expanded|historical-forms|italic|(jis)(78|83|90|04)|simplified|traditional|(full|proportional)-width|(lining|oldstyle|proportional|tabular)-nums|off|on|none|normal|oblique|ordinal|ruby|slashed-zero|titling-caps|unicase)\b
 
@@ -270,7 +269,7 @@ repository:
     # name: invalid.illegal.css
     begin: (\b(from|to)\b|([0-9]|[1-9][0-9]|100)%)
     beginCaptures:
-      # TODO: assign proper name to this
+      # TODO: assign a proper name to this
       '0': {name: entity.name.function.css}
     patterns:
     - include: '#block-comment'
@@ -303,7 +302,7 @@ repository:
     # name: invalid.illegal.css
     match: :\s*((coarse|dim|enabled|fine|initial-only|interlace|landscape|none|normal|on-demand|optional-paged|over|paged|portrait|progressive|scroll|slow|washed))\b
     captures:
-      # TODO: assign right name to this
+      # TODO: assign a proper name to this
       '1': {name: entity.name.function.css}
 
   media-feature-property:
@@ -317,8 +316,8 @@ repository:
     # be treated as a discrete property value, not a numeric.
     match: (grid)((?=\))|\s*:\s*([01])\s*)
     captures:
+      # TODO: assign proper names to these
       '1': {name: support.type.css}
-      # TODO: assign right name to this ('3')
       '3': {name: entity.name.function.css}
 
   media-logic-operator:
@@ -334,59 +333,12 @@ repository:
     name: variable.media-type.css
     match: all|print|screen|speech
 
-  # RANGE TYPE MEDIA FEATURES
-  # width
-  # height
-  # aspect-ratio
-  # device-width
-  # device-height
-  # device-aspect-ratio
-  # resolution
-  # color
-  # color-index
-  # monochrome
-
-  # BOOLEAN MEDIA FEATURES
-  # color
-  # color-index
-  # grid
-  # hover
-  # monochrome
-  # overflow-block
-  # overflow-inline
-  # pointer
-  # scripting
-  # update-frequency
-
-  # NAME VALUE MEDIA FEATURES
-  # width                 non-negative number
-  # height                non-negative number
-  # aspect-ratio          width/height
-  # orientation           landscape|portrait
-  # device-width          non-negative number
-  # device-height         non-negative number
-  # device-aspect-ratio   device-width/device-height
-  # min/max-resolution    non-negative number  just prefixed min/max-resolution, not resolution by itself, which is a range     deviation from spec: spec doesn't say non-negative
-  # scan                  interlace|progressive
-  # grid                  0|1                  deviation: spec permits -0
-  # update-frequency      none|normal|slow
-  # overflow-block        none|optional-paged|paged|scroll
-  # overflow-inline       none|scroll
-  # color                 non-negative integer
-  # color-index           non-negative integer
-  # monochrome            non-negative integer
-  # pointer               course|fine|none
-  # hover                 none|on-demand|over
-  # light-level           dim|normal|washed
-  # scripting             enabled|initial-only|none
-
   named-value:
     # TODO: assign a proper name to this
     name: variable.parameter.css
     match: (absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b
 
   number:
-    # TODO: doesn't cover scientific notation
     name: constant.numeric.css
     match: '[-+]?([0-9]+|[0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?'
 
@@ -395,9 +347,8 @@ repository:
   #   match: (?<!-)[0-9]+
 
   # non-negative-number:
-  #   # TODO: doesn't cover scientific notation
   #   name: constant.numeric.css
-  #   match: (?<!-)(\+?[0-9]+|[0-9]*\.[0-9]+)
+  #   match: (?<!-)(\+?[0-9]+|[0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?
 
   page-margin-block:
     # DEBUG
@@ -411,10 +362,10 @@ repository:
     end: (?<=\})
 
   property:
-    # DEBUG
-    name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    # DEBUG
+    # name: invalid.deprecated.css
+    name: storage.type.css
     match: (-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)
 
   pseudo-page:
@@ -427,7 +378,7 @@ repository:
     match: \'([^\n\r\f\\']|\\(\n|\r\n|\r|\f)|((\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)|\\[^\n\r\f0-9a-f]))*\'
 
   unicode-range:
-    # TODO: is this the right name?
+    # TODO: assign a proper name to this
     name: constant.numeric.css
     match: \b[uU]\+[0-9a-fA-F\?]{1,6}(-[0-9a-fA-F\?]{1,6})?
 
@@ -475,5 +426,7 @@ repository:
 # TODO
 # - many of these rules should be matched case-insensitively, but
 # they're not. see CSS3 Syntax Module Level 3
+# - An+B microsyntax
+# - generic selector class
 
 ...

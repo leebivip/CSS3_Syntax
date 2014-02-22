@@ -659,5 +659,3 @@ div:nth-last-column(n) {}
 
 /* Case insensitive HTML tag and case-insensitive pseudo-class */
 OL > LI:only-child {}
-
-
