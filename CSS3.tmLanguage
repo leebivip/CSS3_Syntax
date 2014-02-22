@@ -77,8 +77,6 @@
 			<string>(?=@font-face)</string>
 			<key>end</key>
 			<string>(?&lt;=\})</string>
-			<key>name</key>
-			<string>invalid.deprecated.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -209,10 +207,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#keyframes-selector</string>
 				</dict>
 				<dict>
@@ -308,10 +302,6 @@
 				<dict>
 					<key>include</key>
 					<string>#at-rule</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
 				</dict>
 				<dict>
 					<key>include</key>
