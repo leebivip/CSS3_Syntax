@@ -46,6 +46,10 @@
 			<key>include</key>
 			<string>#at-page</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#selector</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -836,7 +840,7 @@
 		<key>selector</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=[:.*#\p{L}-])</string>
+			<string>^\s*(?=[:.*#\p{L}-])</string>
 			<key>end</key>
 			<string>(?={)</string>
 			<key>name</key>

@@ -15,7 +15,7 @@ patterns:
 - include: '#at-media'
 - include: '#at-namespace'
 - include: '#at-page'
-# - include: '#selector'
+- include: '#selector'
 
 repository:
 
@@ -377,7 +377,7 @@ repository:
   selector:
     # DEBUG
     name: invalid.deprecated.css
-    begin: (?=[:.*#\p{L}-])
+    begin: ^\s*(?=[:.*#\p{L}-])
     patterns:
     - include: '#block-comment'
     end: (?={)
