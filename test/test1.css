@@ -40,7 +40,7 @@
 @import url("fineprint.css") only print;
 @import 'custom.css';
 @import url("chrome://communicator/skin/");
-@import url('landscape.css') screen and (orientation:landscape) not (grid: 0);
+@import url('landscape.css') screen and (orientation:landscape) not (grid:0);
 @import url("narrow.css") screen and (100px <= width <= 400px);
 @import url("bluish.css") projection, tv;  /* deprecated media types */
 @import url("narrow.css") handheld and (max-width: 400px);
@@ -49,6 +49,7 @@
 
 /* valid url() */
 
+/*
 url("http://www.example.com/pinkish.gif");
 url(http://www.example.com/pinkish.gif);
 url("tile.png");
@@ -130,7 +131,8 @@ url("tile.png");
       @media {
         @page
         {
-          color: black;
+        /*
+          color: black; */
         }
       }
     }
@@ -151,6 +153,9 @@ url("tile.png");
 @media example {
   @keyframes {
     from {
+
+    }
+    to {
 
     }
 
@@ -322,6 +327,7 @@ size: 8.5in 11in;/* width height */
 @page :first, :blank { @bottom-center { content: none; } }
 @page :first:left { @bottom-left { content: none; } }
 
+
 /* valid @font-face */
 
 @font-face {
@@ -351,9 +357,11 @@ size: 8.5in 11in;/* width height */
   src: local(Futura-Medium),
        url(fonts.svg#MyGeometricModern) format("svg");
 }
-@font-face {
-  font-family: jpgothic;
-  src: local(HiraKakuPro-W3), local(Meiryo), local(IPAPGothic);
+@supports {
+  @font-face {
+    font-family: jpgothic;
+    src: local(HiraKakuPro-W3), local(Meiryo), local(IPAPGothic);
+  }
 }
 @font-face {
   font-family: Hoefler Text Ornaments;
