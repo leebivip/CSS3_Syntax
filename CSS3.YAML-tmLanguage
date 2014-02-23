@@ -9,13 +9,14 @@ patterns:
 - include: '#block-comment'
 - include: '#at-charset'
 - include: '#at-font-face'
-# - include: '#at-font-feature-values'
-# - include: '#at-import'
-# - include: '#at-keyframes'
-# - include: '#at-media'
-# - include: '#at-namespace'
-# - include: '#at-page'
-# - include: '#selector'
+- include: '#at-font-feature-values'
+- include: '#at-import'
+- include: '#at-keyframes'
+- include: '#at-media'
+- include: '#at-namespace'
+- include: '#at-page'
+- include: '#selector'
+- include: '#block'
 
 repository:
 
@@ -31,7 +32,7 @@ repository:
     begin: (@font-face)
     beginCaptures:
       '0': {name: keyword.at-rule.css}
-    contentName: variable.parameter.css
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
     - include: '#font-descriptor'
@@ -41,20 +42,24 @@ repository:
 
   at-font-feature-values:
     # name: invalid.deprecated.css
-    begin: (?=@font-feature-values)
+    begin: (@font-feature-values)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
-    - include: '#at-rule'
     - include: '#font-family-name-list'
     - include: '#font-feature-block'
     end: \}
 
   at-import:
     # name: invalid.deprecated.css
-    begin: (?=@import)
+    begin: (@import)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
-    - include: '#at-rule'
     - include: '#url'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
@@ -62,51 +67,59 @@ repository:
     - include: '#media-type'
     - include: '#media-logic-operator'
     - include: '#media-feature'
-    end: (?<=;)
+    end: ;
 
   at-keyframes:
     # name: invalid.deprecated.css
-    begin: (?=@keyframes)
+    begin: (@keyframes)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
-    - include: '#at-rule'
     - include: '#keyframes-identifier'
     - include: '#keyframes-selector'
     - include: '#block'
-    end: (?<=\})
+    end: \}
 
   at-media:
     # name: invalid.deprecated.css
-    begin: (?=@media)
+    begin: (@media)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
-    - include: '#media-condition-list'
-    - include: '#at-rule'
     - include: $self
+    - include: '#media-condition-list'
     # TODO: include #selector. any rules after self should
     # only match the interior of the most deeply nested block.
     # '#selector' matches up until (?=\{)
     - include: '#block'
-    end: (?<=\})
+    end: \}
 
   at-namespace:
     # name: invalid.deprecated.css
-    begin: (?=@namespace)
+    begin: (@namespace)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
-    - include: '#at-rule'
     - include: '#url'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#identifier'
-    end: (?<=;)
+    end: ;
 
   at-page:
     # name: invalid.deprecated.css
-    begin: (?=@page)
+    begin: (@page)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
     patterns:
     - include: '#block-comment'
-    - include: '#at-rule'
     - include: '#at-page-selector'
     - include: '#page-margin-block'
     - include: '#property'
@@ -119,18 +132,18 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#pseudo-page'
+    - include: '#identifier'
     end: (?=\{)
 
   # at-supports:
   #   begin: (?=@supports)
   #   patterns:
   #   - include: '#block-comment'
-  #   - include: '#at-rule'
   #   - include: $self
   #   end: (?<=\})
 
   block:
-    # name: invalid.deprecated.css
+    name: invalid.deprecated.css
     begin: \{
     patterns:
     - include: '#block-comment'
@@ -162,45 +175,46 @@ repository:
       '1': {name: support.type.css}
 
   font-descriptor-value:
-    begin: '(?=:)'
+    begin: ':'
     patterns:
     - include: '#block-comment'
     - include: '#url'
-    - include: '#font-format-function'
+    - include: '#font-function-format'
     - include: '#font-function'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#font-descriptor-named-value'
     - include: '#unicode-range'
     - include: '#identifier'
-    end: (?<=;)
+    end: ;
 
   font-descriptor-named-value:
     # named values for a font descriptor
     # e.g. normal, italic, historical-forms, bold, 900
     # TODO: assign a proper name to this
     name: variable.value.css
-    match: \b([1-9]00|(all-)?(petite|small)-caps|bold|(no-)?(common-ligatures|contextual|discretionary-ligatures|historical-ligatures|)|(diagonal|stacked)-fractions|((extra|semi|ultra)-)?condensed|((extra|semi|ultra)-)?expanded|historical-forms|italic|(jis)(78|83|90|04)|simplified|traditional|(full|proportional)-width|(lining|oldstyle|proportional|tabular)-nums|off|on|none|normal|oblique|ordinal|ruby|slashed-zero|titling-caps|unicase)\b
+    match: \b(normal|italic|oblique|bold|[1-9]00|((ultra|extra|semi)-)?(condensed|expanded)|none|(no-)?(common|discretionary|historical)-ligatures|(no-)?contextual|historical-forms|(all-)?(small|petite)-caps|unicase|titling-caps|(lining|oldstyle|proportional|tabular)-nums|(diagonal|stacked)-fractions|ordinal|slashed-zero|jis(78|83|90|04)|simplified|traditional|(full|proportional)-width|ruby|off|on)\b
 
   font-family-name-list:
-    name: invalid.illegal.css
+    # name: invalid.deprecated.css
     begin: (?<=@font-feature-values)
     patterns:
     - include: '#block-comment'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#identifier'
-    end: (?<=\{)
+    end: (?=\{)
 
   font-feature-block:
     # name: invalid.deprecated.css
-    begin: (?=@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
+    begin: (@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
+    beginCaptures:
+      '0': {name: keyword.font-feature-type.css}
     patterns:
     - include: '#block-comment'
-    - include: '#font-feature-type'
     - include: '#font-feature-property'
     - include: '#number'
-    end: (?<=\})
+    end: \}
 
   font-feature-property:
     # custom identifiers associated with fonts that specify font variations
@@ -210,23 +224,19 @@ repository:
     captures:
       '1': {name: support.type.css}
 
-  font-feature-type:
-    # this is the selector for a nested code block inside @font-feature-values
-    name: keyword.font-feature-type.css
-    match: (@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
-
-  font-format-function:
-    match: (format)\(\s*(\"(woff|(true|(embedded-)?open)type|svg)\"|\'(woff|(true|(embedded-)?open)type|svg)\')\s*\)
-    captures:
-      '1': {name: entity.name.function.css}
-      '2': {name: string.quoted.css}
-
   font-function:
     # deviation from spec: no space permitted between the function name and
     # the opening paren
     match: ((annotation|character-variant|local|ornaments|styl(eset|istic)|swash))\(
     captures:
       '1': {name: entity.name.function.css}
+
+  font-function-format:
+    # special rule for function() that enumerates all possible valid arguments
+    match: (format)\(\s*(\"(woff|(true|(embedded-)?open)type|svg)\"|\'(woff|(true|(embedded-)?open)type|svg)\')\s*\)
+    captures:
+      '1': {name: entity.name.function.css}
+      '2': {name: string.quoted.css}
 
   function:
     name: entity.name.function.css
@@ -244,6 +254,7 @@ repository:
   keyframes-identifier:
     # identical to the generic identifier, except that it ends in an opening
     # curly brace {
+    # name: invalid.deprecated.css
     begin: (?<=@keyframes)
     patterns:
     - include: '#block-comment'
@@ -252,14 +263,13 @@ repository:
 
   keyframes-selector:
     # deviation from spec: percentage selectors are limited to integers between 0 and 100
-    # name: invalid.illegal.css
+    # name: invalid.deprecated.css
     begin: (\b(from|to)\b|([0-9]|[1-9][0-9]|100)%)
     beginCaptures:
       # TODO: assign a proper name to this
       '0': {name: entity.name.function.css}
     patterns:
     - include: '#block-comment'
-    - include: '#block'
     end: (?=\{)
 
   media-condition-list:
@@ -273,7 +283,7 @@ repository:
     end: \{
 
   media-feature:
-    begin: (?=\()
+    begin: \(
     patterns:
     - include: '#block-comment'
     - include: '#media-feature-discrete-value'
@@ -282,7 +292,7 @@ repository:
     - include: '#ratio'
     - include: '#number'
     - include: '#operator'
-    end: (?<=\))
+    end: \)
 
   media-feature-discrete-value:
     # name: invalid.deprecated.css
@@ -294,7 +304,7 @@ repository:
   media-feature-property:
     # name: invalid.deprecated.css
     name: support.type.css
-    match: ((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)
+    match: \b((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)\b
 
   media-logic-operator:
     # name: keyword.deprecated.css
@@ -359,11 +369,12 @@ repository:
       '2': {name: constant.numeric.css}
 
   selector:
-    # name: invalid.deprecated.css
-    begin: ^\s*(?=[:\.*#\p{L}-])
+    name: invalid.illegal.css
+    begin: ([:.*#\p{L}-])
     patterns:
     - include: '#block-comment'
-    end: (?={)
+    # TODO: try removing the semicolon from end when project is almost finished
+    end: (?=\{|;)
 
   single-quoted-string:
     name: string.quoted.single.css

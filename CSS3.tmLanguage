@@ -22,6 +22,38 @@
 			<key>include</key>
 			<string>#at-font-face</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-font-feature-values</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-import</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-keyframes</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-media</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-namespace</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#at-page</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#selector</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#block</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -56,7 +88,7 @@
 				</dict>
 			</dict>
 			<key>contentName</key>
-			<string>variable.parameter.css</string>
+			<string>punctuation.css</string>
 			<key>end</key>
 			<string>\}</string>
 			<key>patterns</key>
@@ -77,16 +109,22 @@
 					<key>include</key>
 					<string>#font-descriptor-value</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
 			</array>
 		</dict>
 		<key>at-font-feature-values</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@font-feature-values)</string>
+			<string>(@font-feature-values)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
 			<key>end</key>
 			<string>\}</string>
 			<key>patterns</key>
@@ -97,37 +135,35 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#at-rule</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#font-family-name-list</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#font-feature-block</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
 			</array>
 		</dict>
 		<key>at-import</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@import)</string>
+			<string>(@import)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
 			<key>end</key>
-			<string>(?&lt;=;)</string>
+			<string>;</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#at-rule</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -157,27 +193,29 @@
 					<key>include</key>
 					<string>#media-feature</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
 			</array>
 		</dict>
 		<key>at-keyframes</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@keyframes)</string>
+			<string>(@keyframes)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
 			<key>end</key>
-			<string>(?&lt;=\})</string>
+			<string>\}</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#at-rule</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -196,9 +234,19 @@
 		<key>at-media</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@media)</string>
+			<string>(@media)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
 			<key>end</key>
-			<string>(?&lt;=\})</string>
+			<string>\}</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -207,15 +255,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#media-condition-list</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#at-rule</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>$self</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-condition-list</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -226,18 +270,24 @@
 		<key>at-namespace</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@namespace)</string>
+			<string>(@namespace)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
 			<key>end</key>
-			<string>(?&lt;=;)</string>
+			<string>;</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#at-rule</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -253,10 +303,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#identifier</string>
 				</dict>
 			</array>
@@ -264,7 +310,17 @@
 		<key>at-page</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@page)</string>
+			<string>(@page)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
 			<key>end</key>
 			<string>\}</string>
 			<key>patterns</key>
@@ -272,10 +328,6 @@
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#at-rule</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -311,6 +363,10 @@
 					<key>include</key>
 					<string>#pseudo-page</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#identifier</string>
+				</dict>
 			</array>
 		</dict>
 		<key>block</key>
@@ -319,6 +375,8 @@
 			<string>\{</string>
 			<key>end</key>
 			<string>\}</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -381,16 +439,16 @@
 		<key>font-descriptor-named-value</key>
 		<dict>
 			<key>match</key>
-			<string>\b([1-9]00|(all-)?(petite|small)-caps|bold|(no-)?(common-ligatures|contextual|discretionary-ligatures|historical-ligatures|)|(diagonal|stacked)-fractions|((extra|semi|ultra)-)?condensed|((extra|semi|ultra)-)?expanded|historical-forms|italic|(jis)(78|83|90|04)|simplified|traditional|(full|proportional)-width|(lining|oldstyle|proportional|tabular)-nums|off|on|none|normal|oblique|ordinal|ruby|slashed-zero|titling-caps|unicase)\b</string>
+			<string>\b(normal|italic|oblique|bold|[1-9]00|((ultra|extra|semi)-)?(condensed|expanded)|none|(no-)?(common|discretionary|historical)-ligatures|(no-)?contextual|historical-forms|(all-)?(small|petite)-caps|unicase|titling-caps|(lining|oldstyle|proportional|tabular)-nums|(diagonal|stacked)-fractions|ordinal|slashed-zero|jis(78|83|90|04)|simplified|traditional|(full|proportional)-width|ruby|off|on)\b</string>
 			<key>name</key>
 			<string>variable.value.css</string>
 		</dict>
 		<key>font-descriptor-value</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=:)</string>
+			<string>:</string>
 			<key>end</key>
-			<string>(?&lt;=;)</string>
+			<string>;</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -403,7 +461,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#font-format-function</string>
+					<string>#font-function-format</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -427,10 +485,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#identifier</string>
 				</dict>
 			</array>
@@ -440,9 +494,7 @@
 			<key>begin</key>
 			<string>(?&lt;=@font-feature-values)</string>
 			<key>end</key>
-			<string>(?&lt;=\{)</string>
-			<key>name</key>
-			<string>invalid.illegal.css</string>
+			<string>(?=\{)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -459,10 +511,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#identifier</string>
 				</dict>
 			</array>
@@ -470,9 +518,17 @@
 		<key>font-feature-block</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=@(annotation|character-variant|ornaments|styl(eset|istic)|swash))</string>
+			<string>(@(annotation|character-variant|ornaments|styl(eset|istic)|swash))</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.font-feature-type.css</string>
+				</dict>
+			</dict>
 			<key>end</key>
-			<string>(?&lt;=\})</string>
+			<string>\}</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -481,19 +537,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#font-feature-type</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#font-feature-property</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#number</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
 				</dict>
 			</array>
 		</dict>
@@ -510,14 +558,20 @@
 			<key>match</key>
 			<string>(-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*)\s*:</string>
 		</dict>
-		<key>font-feature-type</key>
+		<key>font-function</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>(@(annotation|character-variant|ornaments|styl(eset|istic)|swash))</string>
-			<key>name</key>
-			<string>keyword.font-feature-type.css</string>
+			<string>((annotation|character-variant|local|ornaments|styl(eset|istic)|swash))\(</string>
 		</dict>
-		<key>font-format-function</key>
+		<key>font-function-format</key>
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -534,19 +588,6 @@
 			</dict>
 			<key>match</key>
 			<string>(format)\(\s*(\"(woff|(true|(embedded-)?open)type|svg)\"|\'(woff|(true|(embedded-)?open)type|svg)\')\s*\)</string>
-		</dict>
-		<key>font-function</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>((annotation|character-variant|local|ornaments|styl(eset|istic)|swash))\(</string>
 		</dict>
 		<key>function</key>
 		<dict>
@@ -607,10 +648,6 @@
 					<key>include</key>
 					<string>#block-comment</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#block</string>
-				</dict>
 			</array>
 		</dict>
 		<key>media-condition-list</key>
@@ -646,9 +683,9 @@
 		<key>media-feature</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\()</string>
+			<string>\(</string>
 			<key>end</key>
-			<string>(?&lt;=\))</string>
+			<string>\)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -679,10 +716,6 @@
 					<key>include</key>
 					<string>#operator</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
 			</array>
 		</dict>
 		<key>media-feature-discrete-value</key>
@@ -701,7 +734,7 @@
 		<key>media-feature-property</key>
 		<dict>
 			<key>match</key>
-			<string>((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)</string>
+			<string>\b((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)\b</string>
 			<key>name</key>
 			<string>support.type.css</string>
 		</dict>
@@ -786,11 +819,6 @@
 			<key>name</key>
 			<string>support.type.css</string>
 		</dict>
-		<key>punctuation</key>
-		<dict>
-			<key>match</key>
-			<string>([:,;\{\}\(\)])</string>
-		</dict>
 		<key>ratio</key>
 		<dict>
 			<key>captures</key>
@@ -812,9 +840,11 @@
 		<key>selector</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(?=[:\.*#\p{L}-])</string>
+			<string>([:.*#\p{L}-])</string>
 			<key>end</key>
-			<string>(?={)</string>
+			<string>(?=\{|;)</string>
+			<key>name</key>
+			<string>invalid.illegal.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -883,10 +913,6 @@
 					<key>include</key>
 					<string>#url-unquoted</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
-				</dict>
 			</array>
 		</dict>
 		<key>url-function-name</key>
@@ -950,10 +976,6 @@
 				<dict>
 					<key>include</key>
 					<string>#number</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#punctuation</string>
 				</dict>
 				<dict>
 					<key>include</key>
