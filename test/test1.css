@@ -650,6 +650,7 @@ size: 8.5in 11in;/* width height */
 /* css selectors level 4 draft - feb 13, 2014 */
 
 * {}
+*:not(foo)
 div {}
 div:not(s1, s2) {}
 div:matches(s1, s2) {}

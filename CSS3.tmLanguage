@@ -443,6 +443,13 @@
 			<key>name</key>
 			<string>constant.other.css</string>
 		</dict>
+		<key>deprecated-html-tag</key>
+		<dict>
+			<key>match</key>
+			<string>\b(applet|acronym|bgsound|dir|frame|frameset|noframes|hgroup|isindex|listing|nextid|noembed|plaintext|strike|xmp|basefont|big|blink|center|font|marquee|multicol|nobr|spacer|tt)\b</string>
+			<key>name</key>
+			<string>invalid.illegal.css</string>
+		</dict>
 		<key>deprecated-media-type</key>
 		<dict>
 			<key>match</key>
