@@ -164,9 +164,18 @@ repository:
     name: constant.other.css
     match: \b(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)\b
 
+  # deprecated-html-tag:
+  #   name: invalid.deprecated.css
+  #   # TODO: add complete list of deprecated tags
+  #   match: \bhgroup\b
+
   deprecated-media-type:
     name: invalid.deprecated.css
     match: \b(aural|braille|embossed|handheld|projection|tty|tv)\b
+
+  deprecated-pseudo-element:
+    name: invalid.deprecated.css
+    match: :(after|before|first-(letter|line))
 
   double-quoted-string:
     name: string.quoted.double.css
@@ -249,6 +258,11 @@ repository:
   hex-color:
     name: constant.numeric.css
     match: '#(\b[0-9a-fA-F]{6}\b|\b[0-9a-fA-F]{3}\b)'
+
+  html-tag:
+    # TODO: assign a proper name to this
+    name: variable.parameter.css
+    match: \b(abbr|address|area|article|aside|audio|a|base|bdi|bdo|blockquote|body|br|button|b|canvas|caption|cite|code|col(group)?|data(list)?|dd|del|details|dfn|dialog|div|dl|dt|em(bed)?|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hr|html|i(frame)?|img|input|ins|kbd|keygen|label|legend|li(nk)?|main|map|mark|math|menu(item)?|meta|meter|nav|noscript|object|ol|optgroup|option|output|param|pre|progress|p|q|rb|rp|rtc?|ruby|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|svg|s|table|tbody|td|template|textarea|tfoot|th(ead)?|time|title|tr(ack)?|ul?|var|video|wbr)\b
 
   identifier:
     # TODO: assign a proper name to this
@@ -360,6 +374,11 @@ repository:
     name: storage.type.css
     match: (-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)
 
+  pseudo-element:
+    # TODO: assign a proper name to this
+    name: constant.numeric.css
+    match: ::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|first-(letter|line)|selection)
+
   pseudo-page:
     # TODO: assign a proper name to this
     name: support.type.css
@@ -373,10 +392,17 @@ repository:
       '2': {name: constant.numeric.css}
 
   selector:
-    name: invalid.illegal.css
-    begin: (?=[:.*#\p{L}-])
+    # name: invalid.illegal.css
+    begin: (?=[!:.*#\p{L}-])
     patterns:
     - include: '#block-comment'
+    - include: '#pseudo-element'
+    - include: '#deprecated-pseudo-element'
+    # - include: '#pseudo-class'
+    # - include: '#html-id'
+    # - include: '#html-class'
+    - include: '#deprecated-html-tag'
+    - include: '#html-tag'
 
     # TODO: try removing the semicolon from end when project is almost finished
     end: (?=\{|;)
