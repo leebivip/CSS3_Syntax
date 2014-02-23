@@ -867,6 +867,19 @@
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
+		<key>pseudo-class</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:((((any|local)-)?link|visited|target|scope|current|past|future|active|hover|focus|(active|(in)?valid)-drop|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))</string>
+		</dict>
 		<key>pseudo-element</key>
 		<dict>
 			<key>match</key>
@@ -918,6 +931,10 @@
 				<dict>
 					<key>include</key>
 					<string>#deprecated-pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class</string>
 				</dict>
 				<dict>
 					<key>include</key>
