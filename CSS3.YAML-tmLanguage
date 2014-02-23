@@ -9,36 +9,35 @@ patterns:
 - include: '#block-comment'
 - include: '#at-charset'
 - include: '#at-font-face'
-- include: '#at-font-feature-values'
-- include: '#at-import'
-- include: '#at-keyframes'
-- include: '#at-media'
-- include: '#at-namespace'
-- include: '#at-page'
-- include: '#selector'
+# - include: '#at-font-feature-values'
+# - include: '#at-import'
+# - include: '#at-keyframes'
+# - include: '#at-media'
+# - include: '#at-namespace'
+# - include: '#at-page'
+# - include: '#selector'
 
 repository:
 
   at-charset:
-    # deviation from spec: This rule requires that everything from @charset to
-    # the final semicolon be on the same line. The spec would allow them to be
-    # on different lines, but this should not be done in practice.
-    match: (@charset)\s+(?i)(\"(utf-8|utf8|unicode-1-1-utf-8)\"|\'(utf-8|utf8|unicode-1-1-utf-8)\');
+    # deviation from spec: must be on one line.
+    match: (@charset)\s+(?i)(\"(unicode-1-1-)?utf-?8\"|\'(unicode-1-1-)?utf-?8\')\s*;
     captures:
       '1': {name: keyword.at-rule.css}
       '2': {name: string.quoted.css}
 
   at-font-face:
     # name: invalid.deprecated.css
-    begin: (?=@font-face)
+    begin: (@font-face)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: variable.parameter.css
     patterns:
     - include: '#block-comment'
-    - include: '#at-rule'
     - include: '#font-descriptor'
     - include: '#unicode-range'
     - include: '#font-descriptor-value'
-    - include: '#punctuation'
-    end: (?<=\})
+    end: \}
 
   at-font-feature-values:
     # name: invalid.deprecated.css
@@ -47,10 +46,8 @@ repository:
     - include: '#block-comment'
     - include: '#at-rule'
     - include: '#font-family-name-list'
-    - include: '#font-feature-type'
     - include: '#font-feature-block'
-    # - include: '#punctuation'
-    end: (?<=\})
+    end: \}
 
   at-import:
     # name: invalid.deprecated.css
@@ -65,7 +62,6 @@ repository:
     - include: '#media-type'
     - include: '#media-logic-operator'
     - include: '#media-feature'
-    - include: '#punctuation'
     end: (?<=;)
 
   at-keyframes:
@@ -94,6 +90,7 @@ repository:
     end: (?<=\})
 
   at-namespace:
+    # name: invalid.deprecated.css
     begin: (?=@namespace)
     patterns:
     - include: '#block-comment'
@@ -101,7 +98,6 @@ repository:
     - include: '#url'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
-    - include: '#punctuation'
     - include: '#identifier'
     end: (?<=;)
 
@@ -110,8 +106,8 @@ repository:
     begin: (?=@page)
     patterns:
     - include: '#block-comment'
-    - include: '#at-page-selector'
     - include: '#at-rule'
+    - include: '#at-page-selector'
     - include: '#page-margin-block'
     - include: '#property'
     - include: '#value'
@@ -124,10 +120,6 @@ repository:
     - include: '#block-comment'
     - include: '#pseudo-page'
     end: (?=\{)
-
-  at-rule:
-    name: keyword.at-rule.css
-    match: (@(font-(face|feature-values)|import|keyframes|media|namespace|page|supports))\b
 
   # at-supports:
   #   begin: (?=@supports)
@@ -180,7 +172,6 @@ repository:
     - include: '#single-quoted-string'
     - include: '#font-descriptor-named-value'
     - include: '#unicode-range'
-    - include: '#punctuation'
     - include: '#identifier'
     end: (?<=;)
 
@@ -192,23 +183,24 @@ repository:
     match: \b([1-9]00|(all-)?(petite|small)-caps|bold|(no-)?(common-ligatures|contextual|discretionary-ligatures|historical-ligatures|)|(diagonal|stacked)-fractions|((extra|semi|ultra)-)?condensed|((extra|semi|ultra)-)?expanded|historical-forms|italic|(jis)(78|83|90|04)|simplified|traditional|(full|proportional)-width|(lining|oldstyle|proportional|tabular)-nums|off|on|none|normal|oblique|ordinal|ruby|slashed-zero|titling-caps|unicase)\b
 
   font-family-name-list:
-    # name: invalid.illegal.css
+    name: invalid.illegal.css
     begin: (?<=@font-feature-values)
     patterns:
     - include: '#block-comment'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#identifier'
-    end: (?=\{)
+    end: (?<=\{)
 
   font-feature-block:
     # name: invalid.deprecated.css
-    begin: \{
+    begin: (?=@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
     patterns:
     - include: '#block-comment'
+    - include: '#font-feature-type'
     - include: '#font-feature-property'
     - include: '#number'
-    end: \}
+    end: (?<=\})
 
   font-feature-property:
     # custom identifiers associated with fonts that specify font variations
@@ -220,13 +212,8 @@ repository:
 
   font-feature-type:
     # this is the selector for a nested code block inside @font-feature-values
-    name: invalid.deprecated.css
-    begin: (@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
-    beginCaptures:
-      '0': {name: keyword.at-rule.css}
-    patterns:
-    - include: '#block-comment'
-    end: (?=\{)
+    name: keyword.font-feature-type.css
+    match: (@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
 
   font-format-function:
     match: (format)\(\s*(\"(woff|(true|(embedded-)?open)type|svg)\"|\'(woff|(true|(embedded-)?open)type|svg)\')\s*\)
@@ -264,8 +251,7 @@ repository:
     end: \{
 
   keyframes-selector:
-    # deviation from spec: percentages are limited to integers between 0 and 100
-    # DEBUG
+    # deviation from spec: percentage selectors are limited to integers between 0 and 100
     # name: invalid.illegal.css
     begin: (\b(from|to)\b|([0-9]|[1-9][0-9]|100)%)
     beginCaptures:
@@ -296,7 +282,6 @@ repository:
     - include: '#ratio'
     - include: '#number'
     - include: '#operator'
-    - include: '#punctuation'
     end: (?<=\))
 
   media-feature-discrete-value:
@@ -346,7 +331,7 @@ repository:
     match: (?<=\s)([-+<>=*/]|<=|>=)(?=\s)
 
   page-margin-block:
-    # name: invalid.deprecated.css
+    # name: invalid.illegal.css
     begin: (@((top|bottom)-((left|right)(-corner)?|center)|(left|right)-(top|middle|bottom)))
     beginCaptures:
       '1': {name: keyword.at-rule.css}
@@ -365,12 +350,6 @@ repository:
     # TODO: assign a proper name to this
     name: support.type.css
     match: :(blank|first|left|right)
-
-  punctuation:
-    # TODO: assign a proper name to this
-    name: invalid.deprecated.css
-    # name: meta.punctuation.css
-    match: ([:,;\{\}\(\)])
 
   ratio:
     # name: invalid.deprecated.css
@@ -410,7 +389,6 @@ repository:
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#url-unquoted'
-    - include: '#punctuation'
     end: (?<=\))
 
   url-function-name:
@@ -423,7 +401,6 @@ repository:
     match: ([^\"\'\(\)\s\p{^Print}]|\\([^\n0-9a-fA-F]|[0-9a-fA-F]{1,6}\s))+
 
   value:
-    # DEBUG
     # name: invalid.deprecated.css
     begin: '(?=:)'
     patterns:
@@ -437,7 +414,6 @@ repository:
     - include: '#hex-color'
     - include: '#named-value'
     - include: '#number'
-    - include: '#punctuation'
     - include: '#identifier'
     end: (?<=;)
 

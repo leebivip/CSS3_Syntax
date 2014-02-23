@@ -327,7 +327,6 @@ size: 8.5in 11in;/* width height */
 @page :first, :blank { @bottom-center { content: none; } }
 @page :first:left { @bottom-left { content: none; } }
 
-
 /* valid @font-face */
 
 @font-face {
@@ -357,7 +356,7 @@ size: 8.5in 11in;/* width height */
   src: local(Futura-Medium),
        url(fonts.svg#MyGeometricModern) format("svg");
 }
-@supports {
+@font-feature-values {
   @font-face {
     font-family: jpgothic;
     src: local(HiraKakuPro-W3), local(Meiryo), local(IPAPGothic);
