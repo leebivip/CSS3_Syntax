@@ -411,8 +411,6 @@
 			<string>\{</string>
 			<key>end</key>
 			<string>\}</string>
-			<key>name</key>
-			<string>invalid.deprecated.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -876,7 +874,7 @@
 		<key>selector</key>
 		<dict>
 			<key>begin</key>
-			<string>([:.*#\p{L}-])</string>
+			<string>(?=[:.*#\p{L}-])</string>
 			<key>end</key>
 			<string>(?=\{|;)</string>
 			<key>name</key>

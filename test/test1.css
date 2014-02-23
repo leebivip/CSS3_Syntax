@@ -592,7 +592,7 @@ size: 8.5in 11in;/* width height */
 @supports not ( not ( transform-origin: 2px ) ) {
   @supports (transform-origin: 2px) {
     p {
-      line-spacing: 1.5em;
+      line-height: 1.5em;
     }
   }
   /* specific rules */

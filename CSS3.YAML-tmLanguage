@@ -147,7 +147,7 @@ repository:
     end: \}
 
   block:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     begin: \{
     patterns:
     - include: '#block-comment'
@@ -374,9 +374,10 @@ repository:
 
   selector:
     name: invalid.illegal.css
-    begin: ([:.*#\p{L}-])
+    begin: (?=[:.*#\p{L}-])
     patterns:
     - include: '#block-comment'
+
     # TODO: try removing the semicolon from end when project is almost finished
     end: (?=\{|;)
 
@@ -389,7 +390,6 @@ repository:
     begin: \(
     patterns:
     - include: '#block-comment'
-    # - include: $self
     - include: '#supports-condition'
     - include: '#property'
     - include: '#supports-condition-value'
@@ -471,9 +471,12 @@ repository:
 
 # TODO
 # - many of these rules should be matched case-insensitively, but
-# they're not. see CSS3 Syntax Module Level 3
+#   they're not. see CSS3 Syntax Module Level 3
 # - An+B microsyntax
 # - generic selector class
 # - !important
+# - support all experimental prefixed properties, values, at-rules, pseudo-classes
+#   pseudo-elements
+# - var-*
 
 ...
