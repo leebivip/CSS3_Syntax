@@ -15,6 +15,7 @@ patterns:
 - include: '#at-media'
 - include: '#at-namespace'
 - include: '#at-page'
+- include: '#at-supports'
 - include: '#selector'
 - include: '#block'
 
@@ -22,6 +23,7 @@ repository:
 
   at-charset:
     # deviation from spec: must be on one line.
+    # name: invalid.illegal.css
     match: (@charset)\s+(?i)(\"(unicode-1-1-)?utf-?8\"|\'(unicode-1-1-)?utf-?8\')\s*;
     captures:
       '1': {name: keyword.at-rule.css}
@@ -65,7 +67,7 @@ repository:
     - include: '#single-quoted-string'
     - include: '#deprecated-media-type'
     - include: '#media-type'
-    - include: '#media-logic-operator'
+    - include: '#logic-operator'
     - include: '#media-feature'
     end: ;
 
@@ -92,10 +94,6 @@ repository:
     - include: '#block-comment'
     - include: $self
     - include: '#media-condition-list'
-    # TODO: include #selector. any rules after self should
-    # only match the interior of the most deeply nested block.
-    # '#selector' matches up until (?=\{)
-    - include: '#block'
     end: \}
 
   at-namespace:
@@ -135,12 +133,18 @@ repository:
     - include: '#identifier'
     end: (?=\{)
 
-  # at-supports:
-  #   begin: (?=@supports)
-  #   patterns:
-  #   - include: '#block-comment'
-  #   - include: $self
-  #   end: (?<=\})
+  at-supports:
+    # name: invalid.deprecated.css
+    begin: (@supports)
+    beginCaptures:
+      '0': {name: keyword.at-rule.css}
+    contentName: punctuation.css
+    patterns:
+    - include: '#block-comment'
+    - include: $self
+    - include: '#supports-selector'
+    - include: '#block'
+    end: \}
 
   block:
     name: invalid.deprecated.css
@@ -192,7 +196,7 @@ repository:
     # named values for a font descriptor
     # e.g. normal, italic, historical-forms, bold, 900
     # TODO: assign a proper name to this
-    name: variable.value.css
+    name: variable.parameter.css
     match: \b(normal|italic|oblique|bold|[1-9]00|((ultra|extra|semi)-)?(condensed|expanded)|none|(no-)?(common|discretionary|historical)-ligatures|(no-)?contextual|historical-forms|(all-)?(small|petite)-caps|unicase|titling-caps|(lining|oldstyle|proportional|tabular)-nums|(diagonal|stacked)-fractions|ordinal|slashed-zero|jis(78|83|90|04)|simplified|traditional|(full|proportional)-width|ruby|off|on)\b
 
   font-family-name-list:
@@ -278,7 +282,7 @@ repository:
     - include: '#block-comment'
     - include: '#deprecated-media-type'
     - include: '#media-type'
-    - include: '#media-logic-operator'
+    - include: '#logic-operator'
     - include: '#media-feature'
     end: \{
 
@@ -306,7 +310,7 @@ repository:
     name: support.type.css
     match: \b((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)\b
 
-  media-logic-operator:
+  logic-operator:
     # name: keyword.deprecated.css
     match: \s((and|not|only|or))\s
     captures:
@@ -321,7 +325,7 @@ repository:
   named-value:
     # TODO: assign a proper name to this
     name: variable.parameter.css
-    match: (absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b
+    match: (absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flexbox|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve(-3d)?|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b
 
   number:
     name: constant.numeric.css
@@ -380,6 +384,46 @@ repository:
     name: string.quoted.single.css
     match: \'([^\n\r\f\\']|\\(\n|\r\n|\r|\f)|((\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)|\\[^\n\r\f0-9a-f]))*\'
 
+  supports-condition:
+    # name: invalid.deprecated.css
+    begin: \(
+    patterns:
+    - include: '#block-comment'
+    # - include: $self
+    - include: '#supports-condition'
+    - include: '#property'
+    - include: '#supports-condition-value'
+    - include: '#logic-operator'
+    end: \)
+
+  supports-condition-value:
+    # this is identical to #value except that it ends just before a closing paren
+    # name: invalid.deprecated.css
+    begin: ':'
+    patterns:
+    - include: '#block-comment'
+    - include: '#double-quoted-string'
+    - include: '#single-quoted-string'
+    - include: '#url'
+    - include: '#function'
+    - include: '#unit'
+    - include: '#color-name'
+    - include: '#hex-color'
+    - include: '#named-value'
+    - include: '#number'
+    - include: '#identifier'
+    end: (?=\))
+
+  supports-selector:
+    # name: invalid.deprecated.css
+    begin: (?<=@supports)
+    patterns:
+    - include: '#block-comment'
+    - include: '#property'
+    - include: '#supports-condition'
+    - include: '#logic-operator'
+    end: \{
+
   unicode-range:
     # TODO: assign a proper name to this
     name: constant.numeric.css
@@ -393,19 +437,16 @@ repository:
       '4': {name: keyword.unit.css}
 
   url:
-    begin: (?=url\()
+    # name: invalid.deprecated.css
+    begin: (url)\(
+    beginCaptures:
+      '1': {name: entity.name.function.css}
     patterns:
     - include: '#block-comment'
-    - include: '#url-function-name'
     - include: '#double-quoted-string'
     - include: '#single-quoted-string'
     - include: '#url-unquoted'
-    end: (?<=\))
-
-  url-function-name:
-    # ensures the name of the url function is consumed
-    name: entity.name.function.css
-    match: url
+    end: \)
 
   url-unquoted:
     name: string.unquoted.css
@@ -413,7 +454,7 @@ repository:
 
   value:
     # name: invalid.deprecated.css
-    begin: '(?=:)'
+    begin: ':'
     patterns:
     - include: '#block-comment'
     - include: '#double-quoted-string'
@@ -426,12 +467,13 @@ repository:
     - include: '#named-value'
     - include: '#number'
     - include: '#identifier'
-    end: (?<=;)
+    end: ;
 
 # TODO
 # - many of these rules should be matched case-insensitively, but
 # they're not. see CSS3 Syntax Module Level 3
 # - An+B microsyntax
 # - generic selector class
+# - !important
 
 ...

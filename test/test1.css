@@ -107,6 +107,9 @@ url("tile.png");
 
       }
     }
+    @media (color) {
+
+    }
   }
 }
 
@@ -367,6 +370,9 @@ size: 8.5in 11in;/* width height */
     font-family: jpgothic;
     src: local(HiraKakuPro-W3), local(Meiryo), local(IPAPGothic);
   }
+  @media (color) {
+
+  }
 }
 @font-face {
   font-family: Hoefler Text Ornaments;
@@ -523,7 +529,22 @@ size: 8.5in 11in;/* width height */
 /* valid @keyframes */
 
 @media screen {
-  color: blue;
+  #sidebar ul li a {
+
+  }
+
+  body {
+
+  }
+
+  @media (color) {
+    html {
+
+    }
+    p:nth-child(2n+1) {
+
+    }
+  }
 
   @keyframes identifier {
     0% { top: 0; }
@@ -538,19 +559,45 @@ size: 8.5in 11in;/* width height */
     100% { top: 0; }
   }
 }
-/* valid @keyframes */
+/* valid @supports */
 
-@supports ( transform-origin: 5% 5% ) {
-  /* specific rules */
-  @keyframes {}
+@supports (display: flexbox) {
+  @supports (border: 5px solid red) {
+
+  }
+}
+
+
+@media screen {
+  @supports ( transform-origin: 5% 5% ) {
+    @supports (display: flexbox) {
+      @media screen {
+        html {
+
+        }
+        p {
+
+        }
+      }
+    }
+
+    /* specific rules */
+    @keyframes {}
+  }
 }
 
 @supports not ( transform-origin: 10em 10em 10em ) {
   /* specific rules */
 }
 @supports not ( not ( transform-origin: 2px ) ) {
+  @supports (transform-origin: 2px) {
+    p {
+      line-spacing: 1.5em;
+    }
+  }
   /* specific rules */
 }
+
 @supports (display: flexbox) and
   ( not (display: inline-grid) ) {
   /* specific rules */
@@ -568,6 +615,12 @@ size: 8.5in 11in;/* width height */
 
 @supports ( transform-style: preserve ) or ( -moz-transform-style: preserve ) {
   /* specific rules */
+  html {
+
+  }
+  #button {
+    border: 1px solid black;
+  }
 }
 
 @supports ( transform-style: preserve ) or (-moz-transform-style: preserve) or
@@ -582,8 +635,6 @@ size: 8.5in 11in;/* width height */
 @supports (animation-name: test) {
     /* specific CSS applied when animations are supported unprefixed */
     @keyframes { /* @supports being a CSS conditional group at-rule, it can includes other relevent at-rules */
-      @supports (animation-name: blah) {
-      }
     }
 }
 
@@ -592,7 +643,7 @@ size: 8.5in 11in;/* width height */
     /* specific CSS applied when 3D transforms, eventually prefixed, are supported */
 }
 
-@supports ( not ((text-align-last:justify) or (-moz-text-align-last:justify) ){
+@supports ( not ((text-align-last:justify) or (-moz-text-align-last:justify) )){
     /* specific CSS applied to simulate text-align-last:justify */
 }
 

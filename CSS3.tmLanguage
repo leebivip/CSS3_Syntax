@@ -48,6 +48,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at-supports</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#selector</string>
 		</dict>
 		<dict>
@@ -187,7 +191,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#media-logic-operator</string>
+					<string>#logic-operator</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -260,10 +264,6 @@
 				<dict>
 					<key>include</key>
 					<string>#media-condition-list</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#block</string>
 				</dict>
 			</array>
 		</dict>
@@ -369,6 +369,42 @@
 				</dict>
 			</array>
 		</dict>
+		<key>at-supports</key>
+		<dict>
+			<key>begin</key>
+			<string>(@supports)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.at-rule.css</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>punctuation.css</string>
+			<key>end</key>
+			<string>\}</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#supports-selector</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block</string>
+				</dict>
+			</array>
+		</dict>
 		<key>block</key>
 		<dict>
 			<key>begin</key>
@@ -441,7 +477,7 @@
 			<key>match</key>
 			<string>\b(normal|italic|oblique|bold|[1-9]00|((ultra|extra|semi)-)?(condensed|expanded)|none|(no-)?(common|discretionary|historical)-ligatures|(no-)?contextual|historical-forms|(all-)?(small|petite)-caps|unicase|titling-caps|(lining|oldstyle|proportional|tabular)-nums|(diagonal|stacked)-fractions|ordinal|slashed-zero|jis(78|83|90|04)|simplified|traditional|(full|proportional)-width|ruby|off|on)\b</string>
 			<key>name</key>
-			<string>variable.value.css</string>
+			<string>variable.parameter.css</string>
 		</dict>
 		<key>font-descriptor-value</key>
 		<dict>
@@ -650,6 +686,19 @@
 				</dict>
 			</array>
 		</dict>
+		<key>logic-operator</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\s((and|not|only|or))\s</string>
+		</dict>
 		<key>media-condition-list</key>
 		<dict>
 			<key>begin</key>
@@ -672,7 +721,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#media-logic-operator</string>
+					<string>#logic-operator</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -738,19 +787,6 @@
 			<key>name</key>
 			<string>support.type.css</string>
 		</dict>
-		<key>media-logic-operator</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.css</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\s((and|not|only|or))\s</string>
-		</dict>
 		<key>media-type</key>
 		<dict>
 			<key>match</key>
@@ -761,7 +797,7 @@
 		<key>named-value</key>
 		<dict>
 			<key>match</key>
-			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve-3d|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b</string>
+			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flexbox|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve(-3d)?|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b</string>
 			<key>name</key>
 			<string>variable.parameter.css</string>
 		</dict>
@@ -860,6 +896,116 @@
 			<key>name</key>
 			<string>string.quoted.single.css</string>
 		</dict>
+		<key>supports-condition</key>
+		<dict>
+			<key>begin</key>
+			<string>\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#supports-condition</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#supports-condition-value</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#logic-operator</string>
+				</dict>
+			</array>
+		</dict>
+		<key>supports-condition-value</key>
+		<dict>
+			<key>begin</key>
+			<string>:</string>
+			<key>end</key>
+			<string>(?=\))</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#double-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quoted-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#url</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#color-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#named-value</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#identifier</string>
+				</dict>
+			</array>
+		</dict>
+		<key>supports-selector</key>
+		<dict>
+			<key>begin</key>
+			<string>(?&lt;=@supports)</string>
+			<key>end</key>
+			<string>\{</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#supports-condition</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#logic-operator</string>
+				</dict>
+			</array>
+		</dict>
 		<key>unicode-range</key>
 		<dict>
 			<key>match</key>
@@ -888,18 +1034,22 @@
 		<key>url</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=url\()</string>
+			<string>(url)\(</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
 			<key>end</key>
-			<string>(?&lt;=\))</string>
+			<string>\)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#url-function-name</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -915,13 +1065,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>url-function-name</key>
-		<dict>
-			<key>match</key>
-			<string>url</string>
-			<key>name</key>
-			<string>entity.name.function.css</string>
-		</dict>
 		<key>url-unquoted</key>
 		<dict>
 			<key>match</key>
@@ -932,9 +1075,9 @@
 		<key>value</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=:)</string>
+			<string>:</string>
 			<key>end</key>
-			<string>(?&lt;=;)</string>
+			<string>;</string>
 			<key>patterns</key>
 			<array>
 				<dict>
