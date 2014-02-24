@@ -26,6 +26,29 @@ repository:
     name: variable.parameter.css
     match: ([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd
 
+  attribute-selector:
+    # name: invalid.deprecated.css
+    begin: \[
+    patterns:
+    - include: '#block-comment'
+    - include: '#double-quoted-string'
+    - include: '#single-quoted-string'
+    - include: '#attribute-selector-operator'
+    - include: '#attribute-selector-universal'
+    - include: '#identifier'
+    end: \]
+
+  attribute-selector-operator:
+    name: keyword.operator.css
+    match: \||[~^$*|]?=
+
+  attribute-selector-universal:
+    # special rule for the universal attribute selector (*). distinct from
+    # universal element selector. this pattern will only be matched inside
+    # attribute selector brackets ([]).
+    name: string.unquoted.css
+    match: \*
+
   at-charset:
     # deviation from spec: must be on one line.
     # name: invalid.illegal.css
@@ -279,7 +302,7 @@ repository:
   html-tag:
     # TODO: assign a proper name to this
     name: variable.parameter.css
-    match: \b(abbr|address|area|article|aside|audio|a|base|bdi|bdo|blockquote|body|br|button|b|canvas|caption|cite|code|col(group)?|data(list)?|dd|del|details|dfn|dialog|div|dl|dt|em(bed)?|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hr|html|i(frame)?|img|input|ins|kbd|keygen|label|legend|li(nk)?|main|map|mark|math|menu(item)?|meta|meter|nav|noscript|object|ol|optgroup|option|output|param|pre|progress|p|q|rb|rp|rtc?|ruby|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|svg|s|table|tbody|td|template|textarea|tfoot|th(ead)?|time|title|tr(ack)?|ul?|var|video|wbr)\b
+    match: \*|\b(abbr|address|area|article|aside|audio|a|base|bdi|bdo|blockquote|body|br|button|b|canvas|caption|cite|code|col(group)?|data(list)?|dd|del|details|dfn|dialog|div|dl|dt|em(bed)?|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hr|html|i(frame)?|img|input|ins|kbd|keygen|label|legend|li(nk)?|main|map|mark|math|menu(item)?|meta|meter|nav|noscript|object|ol|optgroup|option|output|param|pre|progress|p|q|rb|rp|rtc?|ruby|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|svg|s|table|tbody|td|template|textarea|tfoot|th(ead)?|time|title|tr(ack)?|ul?|var|video|wbr)\b
 
   identifier:
     # TODO: assign a proper name to this
@@ -423,6 +446,7 @@ repository:
     patterns:
     # TODO: make sure this has the exact same includes as #selector
     - include: '#block-comment'
+    - include: '#attribute-selector'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
     - include: '#pseudo-class-function-nth'
@@ -475,9 +499,10 @@ repository:
 
   selector:
     # name: invalid.illegal.css
-    begin: (?=[!:.*#\p{L}-])
+    begin: (?=[!:.#*\p{L}\[-])
     patterns:
     - include: '#block-comment'
+    - include: '#attribute-selector'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
     - include: '#pseudo-class-function-nth'

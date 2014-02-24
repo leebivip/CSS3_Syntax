@@ -655,6 +655,7 @@ div {}
 div:not(p, li, dt, dd) {}
 div:matches(p, li, dt, dd:link) {}
 div.warning {}
+*.warning {}
 div#myid {}
 div[foo] {}
 div[foo="bar"] {}
@@ -664,6 +665,10 @@ div[foo^="bar"] {}
 div[foo$="bar"] {}
 div[foo*="bar"] {}
 div[foo|="en"] {}
+[foo|att=val] { color: blue; }
+[*|att] { color: yellow; }
+[|att] { color: green; }
+[att] { color: green; }
 div:dir(ltr) {}
 div:lang(zh, *-hant) {}
 div:any-link {}
@@ -755,11 +760,6 @@ p {
   var-hello: #ffffff;
   var-hi: #eeeeee;
 }
-
-[foo|att=val] { color: blue; }
-[*|att] { color: yellow; }
-[|att] { color: green; }
-[att] { color: green; }
 
 /* Case insensitive HTML tag and case-insensitive pseudo-class */
 
