@@ -502,6 +502,13 @@
 			<key>name</key>
 			<string>constant.other.css</string>
 		</dict>
+		<key>combinator</key>
+		<dict>
+			<key>match</key>
+			<string>[&gt;+~]|\|\|?|\/-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*\/</string>
+			<key>name</key>
+			<string>keyword.operator.css</string>
+		</dict>
 		<key>deprecated-html-tag</key>
 		<dict>
 			<key>match</key>
@@ -699,7 +706,7 @@
 		<key>function</key>
 		<dict>
 			<key>match</key>
-			<string>(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counter(-increment)?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\()</string>
+			<string>(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
@@ -715,7 +722,7 @@
 			<key>match</key>
 			<string>\.-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
 			<key>name</key>
-			<string>invalid.illegal.css</string>
+			<string>entity.name.function.css</string>
 		</dict>
 		<key>html-id</key>
 		<dict>
@@ -737,6 +744,13 @@
 			<string>-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
 			<key>name</key>
 			<string>string.unquoted.css</string>
+		</dict>
+		<key>important</key>
+		<dict>
+			<key>match</key>
+			<string>!important</string>
+			<key>name</key>
+			<string>keyword.other.css</string>
 		</dict>
 		<key>keyframes-identifier</key>
 		<dict>
@@ -1078,6 +1092,10 @@
 					<key>include</key>
 					<string>#an-plus-b</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#combinator</string>
+				</dict>
 			</array>
 		</dict>
 		<key>pseudo-class-function-selector-list</key>
@@ -1188,6 +1206,10 @@
 				<dict>
 					<key>include</key>
 					<string>#html-tag</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#combinator</string>
 				</dict>
 			</array>
 		</dict>
@@ -1421,6 +1443,10 @@
 				<dict>
 					<key>include</key>
 					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#important</string>
 				</dict>
 				<dict>
 					<key>include</key>

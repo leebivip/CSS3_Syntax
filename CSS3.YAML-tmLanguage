@@ -193,6 +193,10 @@ repository:
     name: constant.other.css
     match: \b(aliceblue|antiquewhite|aqua(marine)?|azure|beige|bisque|black|blanchedalmond|blue(violet)?|brown|burlywood|cadetblue|chartreuse|chocolate|coral|corn(flowerblue|silk)|crimson|currentColor|dark(blue|cyan|goldenrod|gray|green|grey|khaki|magenta|olivegreen|orange|orchid|red|salmon|seagreen|slateblue|slategray|slategrey|turquoise|violet)|deep(pink|skyblue)|dimgr(a|e)y|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold(enrod)?|gr(a|e)y|green(yellow)?|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender(blush)?|lawngreen|lemonchiffon|light(blue|coral|cyan|goldenrodyellow|gray|green|grey|pink|salmon|seagreen|skyblue|slategray|slategrey|steelblue|yellow)|lime(green)?|linen|maroon|medium(aquamarine|blue|orchid|purple|seagreen|slateblue|springgreen|turquoise|violetred)|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive(drab)?|orange(red)?|orchid|pale(goldenrod|green|turquoise|violetred)|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|sea(green|shell)|sienna|silver|skyblue|slate(blue|gr(a|e)y)|snow|springgreen|steelblue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white(smoke)?|yellow(green)?)\b
 
+  combinator:
+    name: keyword.operator.css
+    match: '[>+~]|\|\|?|\/-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*\/'
+
   deprecated-html-tag:
     name: invalid.illegal.css
     match: \b(applet|acronym|bgsound|dir|frame|frameset|noframes|hgroup|isindex|listing|nextid|noembed|plaintext|strike|xmp|basefont|big|blink|center|font|marquee|multicol|nobr|spacer|tt)\b
@@ -280,8 +284,11 @@ repository:
       '2': {name: string.quoted.css}
 
   function:
+    # deviation from spec: no space permitted between function name and opening
+    # paren
+    # name: invalid.deprecated.css
     name: entity.name.function.css
-    match: (-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counter(-increment)?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|rotate(x|y|z|3d)?|saturate|scale(x|y|z|3d)?|sepia|skew(x|y)?|steps|translate(x|y|z|3d)?|url|var))(?=\()
+    match: (-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()
 
   hex-color:
     name: constant.numeric.css
@@ -289,8 +296,8 @@ repository:
 
   html-class:
     # this the regex for an identifier with a leading .
-    name: invalid.illegal.css
-    # name: entity.name.function.css
+    # name: invalid.illegal.css
+    name: entity.name.function.css
     match: '\.-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*'
 
   html-id:
@@ -308,6 +315,10 @@ repository:
     # TODO: assign a proper name to this
     name: string.unquoted.css
     match: -?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*
+
+  important:
+    name: keyword.other.css
+    match: '!important'
 
   keyframes-identifier:
     # identical to the generic identifier, except that it ends in an opening
@@ -444,7 +455,9 @@ repository:
     beginCaptures:
       '1': {name: entity.name.function.css}
     patterns:
-    # TODO: make sure this has the exact same includes as #selector
+    # the nth-match and nth-last-match functions take selector lists as arguments.
+    # that's why there's so many rules here. otherwise, only #an-plus-b would be
+    # necessary.
     - include: '#block-comment'
     - include: '#attribute-selector'
     - include: '#pseudo-element'
@@ -460,6 +473,7 @@ repository:
     - include: '#deprecated-html-tag'
     - include: '#html-tag'
     - include: '#an-plus-b'
+    - include: '#combinator'
     end: \)
 
   pseudo-class-function-selector-list:
@@ -515,7 +529,7 @@ repository:
     - include: '#html-class'
     - include: '#deprecated-html-tag'
     - include: '#html-tag'
-
+    - include: '#combinator'
     # TODO: try removing the semicolon from end when project is almost finished
     end: (?=\{|;)
 
@@ -604,6 +618,7 @@ repository:
     - include: '#hex-color'
     - include: '#named-value'
     - include: '#number'
+    - include: '#important'
     - include: '#identifier'
     end: ;
 
@@ -615,12 +630,14 @@ repository:
       '1': {name: storage.type.css}
 
 # TODO
-# - many of these rules should be matched case-insensitively, but
-#   they're not. see CSS3 Syntax Module Level 3
-# - generic selector class
-# - !important
+# - many of these rules are supposed to be matched case-insensitively, but
+#   they're not. is this ok?
+#   - !important
+#   - HTML tags
+#   - url()
+#   - an+b  // n is supposed to be case insensitive
+#   - values
+#   - properties
 # - support all experimental prefixed properties, values, at-rules, pseudo-classes
 #   pseudo-elements
-# - functions like var() and calc() (generic function class?)
-
 ...
