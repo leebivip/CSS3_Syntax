@@ -478,6 +478,22 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#prefixed-property-apple</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-epub</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-moz</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-ms</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#property</string>
 				</dict>
 				<dict>
@@ -946,6 +962,34 @@
 					<string>#block</string>
 				</dict>
 			</array>
+		</dict>
+		<key>prefixed-property-apple</key>
+		<dict>
+			<key>match</key>
+			<string>-apple-dashboard-region\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-epub</key>
+		<dict>
+			<key>match</key>
+			<string>-epub-(caption-side|hyphens|text-(combine|orientation|transform)|word-break|writing-mode)\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-moz</key>
+		<dict>
+			<key>match</key>
+			<string>-moz-(appearance|background-inline-policy|binding|border-((bottom|left|right|top)-colors|end(-(color|style|width))?|start(-(color|style|width))?)|box-(align|direction|flex|ordinal-group|orient|pack)|column-(count|fill|gap|rule(-(color|style|width))?|width)|columns|control-character-visibility|float-ge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|math-(display|variant)|orient|osx-font-smoothing|outline-radius(-(bottom(left|right)|top(left|right)))?|padding-(end|start)|sipt-(level|min-size|size-multiplier)|stack-sizing|tab-size|text-(align-last|decoration-(color|line|style)|size-adjust)|transform|user-(focus|input|modify|select)|window-shadow)\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-ms</key>
+		<dict>
+			<key>match</key>
+			<string>-ms-(background-position-(x|y)|behavior|block-progression|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|overflow-(style|x|y)|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|justify|kashida-space|overflow|underline-position)|touch-action|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
 		</dict>
 		<key>property</key>
 		<dict>
