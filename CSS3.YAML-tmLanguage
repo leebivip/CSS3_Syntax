@@ -156,6 +156,7 @@ repository:
     begin: \{
     patterns:
     - include: '#block-comment'
+    - include: '#variable'
     - include: '#property'
     - include: '#value'
     end: \}
@@ -404,7 +405,7 @@ repository:
   pseudo-class-function-nth:
     # deviation from spec: no space permitted between function name and opening
     # name: invalid.deprecated.css
-    begin: :(nth-(last-)?(child|of-type|match))\(
+    begin: :(nth-(last-)?(column|child|of-type|match))\(
     beginCaptures:
       '1': {name: entity.name.function.css}
     patterns:
@@ -569,16 +570,24 @@ repository:
     - include: '#identifier'
     end: ;
 
+  variable:
+    # this is the regex for an identifier, but with the var- prefix
+    match: (var-([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*)\s*(?=:)
+    captures:
+      # TODO: assign a proper name to this
+      '1': {name: storage.type.css}
+
 # TODO
 # - many of these rules should be matched case-insensitively, but
 #   they're not. see CSS3 Syntax Module Level 3
-# - An+B microsyntax
 # - generic selector class
 # - !important
 # - support all experimental prefixed properties, values, at-rules, pseudo-classes
 #   pseudo-elements
-# - var-*
 # - functions like var() and calc() (generic function class?)
-# - come up with replacement for language-code regex on #pseudo-class-function-lang
+
+
+# COLLISIONS
+# color is a named-value and a property
 
 ...

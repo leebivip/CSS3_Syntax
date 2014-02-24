@@ -426,6 +426,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#property</string>
 				</dict>
 				<dict>
@@ -939,7 +943,7 @@
 		<key>pseudo-class-function-nth</key>
 		<dict>
 			<key>begin</key>
-			<string>:(nth-(last-)?(child|of-type|match))\(</string>
+			<string>:(nth-(last-)?(column|child|of-type|match))\(</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1337,6 +1341,19 @@
 					<string>#identifier</string>
 				</dict>
 			</array>
+		</dict>
+		<key>variable</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(var-([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*)\s*(?=:)</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>

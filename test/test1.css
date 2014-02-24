@@ -732,25 +732,34 @@ div:nth-last-match(n of h1, html, p, body) {}
 div:nth-last-match(even of body:nth-last-match()) {}
 div:nth-last-match(n of p:root) {}
 div:nth-last-match(n of div:local-link(0)) {}
-div F {}
-div > F {}
-div + F {}
-div ~ F {}
-div /foo/ F {}
-!div > F {}
-F || div {}
+div p {}
+div > p {}
+div + p {}
+div ~ p {}
+div /foo/ p {}
+!div > p {}
+p || div {}
 div:nth-column(n) {}
 div:nth-last-column(n) {}
-div::after
-div::before
-::selection
-div::first-line
-div::first-letter
-:not(:not(:link))
-p:not(p)
-html|*:not(:link):not(:visited)
-*|*:matches(:hover, :focus)
-*|*:matches(*:hover, *:focus)
+div::after {}
+div::before {}
+::selection {}
+div::first-line {}
+div::first-letter {}
+:not(:not(:link)) {}
+p:not(p) {}
+html|*:not(:link):not(:visited) {}
+*|*:matches(:hover, :focus) {}
+*|*:matches(*:hover, *:focus) {}
+p {
+  var-hello: #ffffff;
+  var-hi: #eeeeee;
+}
+
+[foo|att=val] { color: blue }
+[*|att] { color: yellow }
+[|att] { color: green }
+[att] { color: green }
 
 /* Case insensitive HTML tag and case-insensitive pseudo-class */
 
