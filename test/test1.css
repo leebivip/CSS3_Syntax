@@ -650,10 +650,10 @@ size: 8.5in 11in;/* width height */
 /* css selectors level 4 draft - feb 13, 2014 */
 
 * {}
-*:not(foo)
+*:not(div:first-child)
 div {}
-div:not(s1, s2) {}
-div:matches(s1, s2) {}
+div:not(p, li, dt, dd) {}
+div:matches(p, li, dt, dd:link) {}
 div.warning {}
 div#myid {}
 div[foo] {}
@@ -674,7 +674,7 @@ div:local-link(0) {}
 div:target {}
 div:scope {}
 div:current {}
-div:current(s) {}
+div:current(p, li, dt, dd) {}
 div:past {}
 div:future {}
 div:active {}
@@ -702,7 +702,22 @@ div:optional {}
 div:root {}
 div:empty {}
 div:blank {}
+div:nth-child(0) {}
+div:nth-child(1) {}
+div:nth-child(-1) {}
+div:nth-child(-100) {}
 div:nth-child(n) {}
+div:nth-child(-n+3) {}
+div:nth-child(2n) {}
+div:nth-child(2n+1) {}
+div:nth-child(odd) {}
+div:nth-child(even) {}
+div:nth-child(+n) {}
+div:nth-child(-n) {}
+div:nth-child(2n+5) {}
+div:nth-child(+2n+5) {}
+div:nth-child(+n-5) {}
+div:nth-last-child(2n+1) {}
 div:nth-last-child(n) {}
 div:first-child {}
 div:last-child {}
@@ -712,8 +727,11 @@ div:nth-last-of-type(n) {}
 div:first-of-type {}
 div:last-of-type {}
 div:only-of-type {}
-div:nth-match(n of selector) {}
-div:nth-last-match(n of selector) {}
+div:nth-match(2n+1 of p) {}
+div:nth-last-match(n of h1, html, p, body) {}
+div:nth-last-match(even of body:nth-last-match()) {}
+div:nth-last-match(n of p:root) {}
+div:nth-last-match(n of div:local-link(0)) {}
 div F {}
 div > F {}
 div + F {}
@@ -728,6 +746,11 @@ div::before
 ::selection
 div::first-line
 div::first-letter
+:not(:not(:link))
+p:not(p)
+html|*:not(:link):not(:visited)
+*|*:matches(:hover, :focus)
+*|*:matches(*:hover, *:focus)
 
 /* Case insensitive HTML tag and case-insensitive pseudo-class */
 

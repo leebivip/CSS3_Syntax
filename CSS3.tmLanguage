@@ -61,6 +61,13 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>an-plus-b</key>
+		<dict>
+			<key>match</key>
+			<string>([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd</string>
+			<key>name</key>
+			<string>variable.parameter.css</string>
+		</dict>
 		<key>at-charset</key>
 		<dict>
 			<key>captures</key>
@@ -878,7 +885,135 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:((((any|local)-)?link|visited|target|scope|current|past|future|active|hover|focus|(active|(in)?valid)-drop|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))</string>
+			<string>:((((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))</string>
+		</dict>
+		<key>pseudo-class-function-dir</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(dir)\(\s*((ltr|rtl))\s*\)</string>
+		</dict>
+		<key>pseudo-class-function-lang</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(lang)\(.*\)</string>
+		</dict>
+		<key>pseudo-class-function-local-link</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(local-link)\(\s*((?&lt;!-)[0-9]+)\s*\)</string>
+		</dict>
+		<key>pseudo-class-function-nth</key>
+		<dict>
+			<key>begin</key>
+			<string>:(nth-(last-)?(child|of-type|match))\(</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#deprecated-pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-nth</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-selector-list</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-local-link</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-dir</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-lang</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#deprecated-html-tag</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#html-tag</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#an-plus-b</string>
+				</dict>
+			</array>
+		</dict>
+		<key>pseudo-class-function-selector-list</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:((current|not|matches))\(</string>
 		</dict>
 		<key>pseudo-element</key>
 		<dict>
@@ -931,6 +1066,26 @@
 				<dict>
 					<key>include</key>
 					<string>#deprecated-pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-nth</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-selector-list</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-local-link</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-dir</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-lang</string>
 				</dict>
 				<dict>
 					<key>include</key>

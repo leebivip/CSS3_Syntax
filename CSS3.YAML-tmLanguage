@@ -21,6 +21,11 @@ patterns:
 
 repository:
 
+  an-plus-b:
+    # TODO: assign a proper name to this
+    name: variable.parameter.css
+    match: ([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd
+
   at-charset:
     # deviation from spec: must be on one line.
     # name: invalid.illegal.css
@@ -376,10 +381,67 @@ repository:
   pseudo-class:
     # non-function pseudo-classes. pseudo-class functions like :not() have
     # separate rules.
-    match: :((((any|local)-)?link|visited|target|scope|current|past|future|active|hover|focus|(active|(in)?valid)-drop|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))
+    match: :((((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))
     captures:
       # TODO: assign a proper name to this
       '1': {name: entity.name.function.css}
+
+  pseudo-class-function-dir:
+    match: :(dir)\(\s*((ltr|rtl))\s*\)
+    captures:
+      # TODO: assign proper names to these
+      '1': {name: entity.name.function.css}
+      '2': {name: variable.parameter.css}
+
+  pseudo-class-function-lang:
+    # deviation from spec: entire pseudo-class must be on the same line
+    # name: invalid.deprecated.css
+    match: :(lang)\(.*\)
+    captures:
+      # TODO: assign a proper name to this
+      '1': {name: entity.name.function.css}
+
+  pseudo-class-function-nth:
+    # deviation from spec: no space permitted between function name and opening
+    # name: invalid.deprecated.css
+    begin: :(nth-(last-)?(child|of-type|match))\(
+    beginCaptures:
+      '1': {name: entity.name.function.css}
+    patterns:
+    # TODO: make sure this has the exact same includes as #selector
+    - include: '#block-comment'
+    - include: '#pseudo-element'
+    - include: '#deprecated-pseudo-element'
+    - include: '#pseudo-class-function-nth'
+    - include: '#pseudo-class-function-selector-list'
+    - include: '#pseudo-class-function-local-link'
+    - include: '#pseudo-class-function-dir'
+    - include: '#pseudo-class-function-lang'
+    - include: '#pseudo-class'
+    # - include: '#html-id'
+    # - include: '#html-class'
+    - include: '#deprecated-html-tag'
+    - include: '#html-tag'
+    - include: '#an-plus-b'
+    end: \)
+
+  pseudo-class-function-selector-list:
+    # a pseudo-class function that takes a selector list as an argument. these
+    # functions require no special styling since their arguments are already
+    # styled by #selector
+    # deviation from spec: no space permitted between function name and opening
+    # paren
+    match: :((current|not|matches))\(
+    captures:
+      '1': {name: entity.name.function.css}
+
+  pseudo-class-function-local-link:
+    # deviation from spec: no space permitted between function name and opening
+    # paren. also, the pseudo-class and arguments must be on the same line.
+    match: :(local-link)\(\s*((?<!-)[0-9]+)\s*\)
+    captures:
+      '1': {name: entity.name.function.css}
+      '2': {name: constant.numeric.css}
 
   pseudo-element:
     # TODO: assign a proper name to this
@@ -405,6 +467,11 @@ repository:
     - include: '#block-comment'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
+    - include: '#pseudo-class-function-nth'
+    - include: '#pseudo-class-function-selector-list'
+    - include: '#pseudo-class-function-local-link'
+    - include: '#pseudo-class-function-dir'
+    - include: '#pseudo-class-function-lang'
     - include: '#pseudo-class'
     # - include: '#html-id'
     # - include: '#html-class'
@@ -511,5 +578,7 @@ repository:
 # - support all experimental prefixed properties, values, at-rules, pseudo-classes
 #   pseudo-elements
 # - var-*
+# - functions like var() and calc() (generic function class?)
+# - come up with replacement for language-code regex on #pseudo-class-function-lang
 
 ...
