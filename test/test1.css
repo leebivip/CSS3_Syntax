@@ -756,10 +756,10 @@ p {
   var-hi: #eeeeee;
 }
 
-[foo|att=val] { color: blue }
-[*|att] { color: yellow }
-[|att] { color: green }
-[att] { color: green }
+[foo|att=val] { color: blue; }
+[*|att] { color: yellow; }
+[|att] { color: green; }
+[att] { color: green; }
 
 /* Case insensitive HTML tag and case-insensitive pseudo-class */
 

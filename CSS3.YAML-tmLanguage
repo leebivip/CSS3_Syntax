@@ -264,6 +264,12 @@ repository:
     name: constant.numeric.css
     match: '#(\b[0-9a-fA-F]{6}\b|\b[0-9a-fA-F]{3}\b)'
 
+  html-id:
+    # this is the regex for an identifier with a leading #
+    # TODO: assign a proper name to this
+    name: entity.name.function.css
+    match: '#-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*'
+
   html-tag:
     # TODO: assign a proper name to this
     name: variable.parameter.css
@@ -419,7 +425,7 @@ repository:
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
     - include: '#pseudo-class'
-    # - include: '#html-id'
+    - include: '#html-id'
     # - include: '#html-class'
     - include: '#deprecated-html-tag'
     - include: '#html-tag'
@@ -474,7 +480,7 @@ repository:
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
     - include: '#pseudo-class'
-    # - include: '#html-id'
+    - include: '#html-id'
     # - include: '#html-class'
     - include: '#deprecated-html-tag'
     - include: '#html-tag'
@@ -585,9 +591,5 @@ repository:
 # - support all experimental prefixed properties, values, at-rules, pseudo-classes
 #   pseudo-elements
 # - functions like var() and calc() (generic function class?)
-
-
-# COLLISIONS
-# color is a named-value and a property
 
 ...
