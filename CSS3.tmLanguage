@@ -662,6 +662,13 @@
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
+		<key>html-class</key>
+		<dict>
+			<key>match</key>
+			<string>\.-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
+			<key>name</key>
+			<string>invalid.illegal.css</string>
+		</dict>
 		<key>html-id</key>
 		<dict>
 			<key>match</key>
@@ -1005,6 +1012,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#html-class</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#deprecated-html-tag</string>
 				</dict>
 				<dict>
@@ -1109,6 +1120,10 @@
 				<dict>
 					<key>include</key>
 					<string>#html-id</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#html-class</string>
 				</dict>
 				<dict>
 					<key>include</key>
