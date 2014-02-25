@@ -816,11 +816,17 @@
 			</dict>
 			<key>end</key>
 			<string>(?=\{)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#keyframes-selector</string>
 				</dict>
 			</array>
 		</dict>

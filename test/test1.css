@@ -559,6 +559,85 @@ size: 8.5in 11in;/* width height */
     100% { top: 0; }
   }
 }
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes NAME-YOUR-ANIMATION {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes NAME-YOUR-ANIMATION {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes NAME-YOUR-ANIMATION {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+#box {
+  -webkit-animation: NAME-YOUR-ANIMATION 5s infinite; /* Safari 4+ */
+  -moz-animation:    NAME-YOUR-ANIMATION 5s infinite; /* Fx 5+ */
+  -o-animation:      NAME-YOUR-ANIMATION 5s infinite; /* Opera 12+ */
+  animation:         NAME-YOUR-ANIMATION 5s infinite; /* IE 10+ */
+}
+@keyframes fontbulger {
+  0% {
+    font-size: 10px;
+  }
+  30% {
+    font-size: 15px;
+  }
+  100% {
+    font-size: 12px;
+  }
+}
+#box {
+   -animation: fontbulger 2s infinite;
+}
+
+@keyframes fontbulger {
+  0%, 100% {
+    font-size: 10px;
+  }
+  50% {
+    font-size: 12px;
+  }
+}
+.box {
+ animation-name: bounce;
+ animation-duration: 4s;
+ animation-iteration-count: 10;
+ animation-direction: alternate;
+ animation-timing-function: ease-out;
+ animation-fill-mode: forwards;
+ animation-delay: 2s;
+}
+p {
+  -webkit-animation: test 1s 2s 3 alternate backwards;
+}
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-this {
+   animation:
+      first-animation 2s infinite,
+      another-animation 1s;
+}
+@keyframes move {
+  from { top: 0; left: 0; }
+  to   { top: 100px; left: 100px; }
+}
+.move {
+  animation: move 10s steps(10) infinite alternate;
+}
+
+
 /* valid @supports */
 
 @supports (display: flexbox) {
@@ -645,6 +724,16 @@ size: 8.5in 11in;/* width height */
 
 @supports ( not ((text-align-last:justify) or (-moz-text-align-last:justify) )){
     /* specific CSS applied to simulate text-align-last:justify */
+}
+@supports not (border-image: url(foo.png) 33%) {
+    .foo {
+        border: 3px solid rgba(0,0,0,.3);
+        background: url(alternative-bg.png) beige;
+    }
+}
+@supports not (border-image: url(foo.png) 33%)
+          or (-moz-border-image: url(foo.png) 33%)
+          or (-webkit-border-image: url(foo.png) 33%) {
 }
 
 /* css selectors level 4 draft - feb 13, 2014 */

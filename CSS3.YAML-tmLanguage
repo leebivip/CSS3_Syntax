@@ -347,6 +347,7 @@ repository:
       '0': {name: entity.name.function.css}
     patterns:
     - include: '#block-comment'
+    - include: '#keyframes-selector'
     end: (?=\{)
 
   media-condition-list:
@@ -703,4 +704,7 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes
 #   pseudo-elements
+# - multiple selectors in comma-separated list in @keyframes only style the
+#   first selector
+
 ...
