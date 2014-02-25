@@ -599,6 +599,14 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#supports-condition'
+    - include: '#prefixed-property-apple'
+    - include: '#prefixed-property-epub'
+    - include: '#prefixed-property-moz'
+    - include: '#prefixed-property-ms'
+    - include: '#prefixed-property-o'
+    - include: '#prefixed-property-wap'
+    - include: '#prefixed-property-webkit'
+    - include: '#prefixed-property-xv'
     - include: '#property'
     - include: '#supports-condition-value'
     - include: '#logic-operator'
@@ -627,7 +635,6 @@ repository:
     begin: (?<=@supports)
     patterns:
     - include: '#block-comment'
-    - include: '#property'
     - include: '#supports-condition'
     - include: '#logic-operator'
     end: \{

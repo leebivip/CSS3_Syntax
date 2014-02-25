@@ -1326,6 +1326,38 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#prefixed-property-apple</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-epub</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-moz</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-ms</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-o</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-wap</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-webkit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-xv</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#property</string>
 				</dict>
 				<dict>
@@ -1403,10 +1435,6 @@
 				<dict>
 					<key>include</key>
 					<string>#block-comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#property</string>
 				</dict>
 				<dict>
 					<key>include</key>
