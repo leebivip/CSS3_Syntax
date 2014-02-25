@@ -494,6 +494,22 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#prefixed-property-o</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-wap</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-webkit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#prefixed-property-xv</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#property</string>
 				</dict>
 				<dict>
@@ -988,6 +1004,34 @@
 		<dict>
 			<key>match</key>
 			<string>-ms-(background-position-(x|y)|behavior|block-progression|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|overflow-(style|x|y)|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|justify|kashida-space|overflow|underline-position)|touch-action|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-o</key>
+		<dict>
+			<key>match</key>
+			<string>-o-(border-image|device-pixel-ratio|focus-opacity|link(-source)?|mini-fold|object-(fit|position)|tab-size|table-baseline|transform(-origin)?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-wap</key>
+		<dict>
+			<key>match</key>
+			<string>-wap-(accesskey|input-(format|required)|marquee-(dir|loop|speed|style))\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-webkit</key>
+		<dict>
+			<key>match</key>
+			<string>-webkit-(align-(content|items|self)|alt|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|composite|origin|size)|border-((after|before)(-(color|style|width))?|((bottom|top)-(left|right)-)?radius|(end|start)(-(color|style|width))?|fit|image)|box-(align|decoration-break|flex(-group)?|lines|ordinal-group|orient|pack|reflect|shadow|sizing)|clip-path|column-(axis|break-(after|before|inside)|count|fill|gap|progression|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|flow-(from|into)|font-size-delta|grid-(area|auto-(columns|flow|rows)|column(-(end|start))?|row(-(end|start))?|template-(areas|columns|rows))|justify-content|line-clamp|logical-(height|width)|margin-((after|before)(-collapse)?|((bottom|top)-)?collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|position(-(x|y))?|repeat(-(x|y))?|size|source-type))?|max-logical-height|(max|min)-logical-(height|width)|mix-blend-mode|opacity|order|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|region-(break-(after|before|inside)|fragment)|shape-(image-threshold|inside|margin|outside|padding)|svg-shadow|tap-highlight-color|text-decoration(-(color|line|style))?|touch-callout|transform(-(origin(-(x|y|z))?|style))?|transition(-(delay|duration|property|timing-function))?|user-drag|wrap-(flow|through))\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
+		</dict>
+		<key>prefixed-property-xv</key>
+		<dict>
+			<key>match</key>
+			<string>-xv-(interpret-as|phonemes|voice-(balance|duration|pitch(-range)?|rate|stress|volume))\s*(?=:)</string>
 			<key>name</key>
 			<string>invalid.deprecated.css</string>
 		</dict>
