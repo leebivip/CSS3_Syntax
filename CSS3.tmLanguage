@@ -816,8 +816,6 @@
 			</dict>
 			<key>end</key>
 			<string>(?=\{)</string>
-			<key>name</key>
-			<string>invalid.deprecated.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
