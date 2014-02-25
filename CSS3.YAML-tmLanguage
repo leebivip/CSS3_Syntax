@@ -101,7 +101,7 @@ repository:
 
   at-keyframes:
     # name: invalid.deprecated.css
-    begin: (@keyframes)
+    begin: (@(-(o|moz|webkit)-)?keyframes)
     beginCaptures:
       '0': {name: keyword.at-rule.css}
     contentName: punctuation.css
@@ -332,7 +332,7 @@ repository:
     # identical to the generic identifier, except that it ends in an opening
     # curly brace {
     # name: invalid.deprecated.css
-    begin: (?<=@keyframes)
+    begin: (?<=keyframes)
     patterns:
     - include: '#block-comment'
     - include: '#identifier'
@@ -704,7 +704,5 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes
 #   pseudo-elements
-# - multiple selectors in comma-separated list in @keyframes only style the
-#   first selector
 
 ...

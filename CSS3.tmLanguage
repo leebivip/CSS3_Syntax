@@ -209,7 +209,7 @@
 		<key>at-keyframes</key>
 		<dict>
 			<key>begin</key>
-			<string>(@keyframes)</string>
+			<string>(@(-(o|moz|webkit)-)?keyframes)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -787,7 +787,7 @@
 		<key>keyframes-identifier</key>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=@keyframes)</string>
+			<string>(?&lt;=keyframes)</string>
 			<key>end</key>
 			<string>\{</string>
 			<key>patterns</key>
