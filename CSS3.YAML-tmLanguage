@@ -321,7 +321,7 @@ repository:
 
   identifier:
     # TODO: assign a proper name to this
-    name: string.unquoted.css
+    name: meta.identifier.css
     match: -?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*
 
   important:
@@ -554,7 +554,7 @@ repository:
   pseudo-element:
     # TODO: assign a proper name to this
     name: constant.numeric.css
-    match: ::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|first-(letter|line)|selection)
+    match: ::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
 
   pseudo-page:
     # TODO: assign a proper name to this

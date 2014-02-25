@@ -775,7 +775,7 @@
 			<key>match</key>
 			<string>-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
 			<key>name</key>
-			<string>string.unquoted.css</string>
+			<string>meta.identifier.css</string>
 		</dict>
 		<key>important</key>
 		<dict>
@@ -1206,7 +1206,7 @@
 		<key>pseudo-element</key>
 		<dict>
 			<key>match</key>
-			<string>::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|first-(letter|line)|selection)</string>
+			<string>::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
