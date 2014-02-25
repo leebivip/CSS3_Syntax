@@ -428,58 +428,58 @@ repository:
     end: (?<=\})
 
   prefixed-property-apple:
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    name: invalid.deprecated.css
-    # name: storage.type.css
+    name: storage.type.css
     match: -apple-dashboard-region\s*(?=:)
 
   prefixed-property-epub:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -epub-(caption-side|hyphens|text-(combine|orientation|transform)|word-break|writing-mode)\s*(?=:)
 
   prefixed-property-moz:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -moz-(appearance|background-inline-policy|binding|border-((bottom|left|right|top)-colors|end(-(color|style|width))?|start(-(color|style|width))?)|box-(align|direction|flex|ordinal-group|orient|pack)|column-(count|fill|gap|rule(-(color|style|width))?|width)|columns|control-character-visibility|float-ge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|math-(display|variant)|orient|osx-font-smoothing|outline-radius(-(bottom(left|right)|top(left|right)))?|padding-(end|start)|sipt-(level|min-size|size-multiplier)|stack-sizing|tab-size|text-(align-last|decoration-(color|line|style)|size-adjust)|transform|user-(focus|input|modify|select)|window-shadow)\s*(?=:)
 
   prefixed-property-ms:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -ms-(background-position-(x|y)|behavior|block-progression|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|overflow-(style|x|y)|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|justify|kashida-space|overflow|underline-position)|touch-action|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)
 
   prefixed-property-o:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -o-(border-image|device-pixel-ratio|focus-opacity|link(-source)?|mini-fold|object-(fit|position)|tab-size|table-baseline|transform(-origin)?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)
 
   prefixed-property-wap:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -wap-(accesskey|input-(format|required)|marquee-(dir|loop|speed|style))\s*(?=:)
 
   prefixed-property-webkit:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -webkit-(align-(content|items|self)|alt|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|composite|origin|size)|border-((after|before)(-(color|style|width))?|((bottom|top)-(left|right)-)?radius|(end|start)(-(color|style|width))?|fit|image)|box-(align|decoration-break|flex(-group)?|lines|ordinal-group|orient|pack|reflect|shadow|sizing)|clip-path|column-(axis|break-(after|before|inside)|count|fill|gap|progression|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|flow-(from|into)|font-size-delta|grid-(area|auto-(columns|flow|rows)|column(-(end|start))?|row(-(end|start))?|template-(areas|columns|rows))|justify-content|line-clamp|logical-(height|width)|margin-((after|before)(-collapse)?|((bottom|top)-)?collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|position(-(x|y))?|repeat(-(x|y))?|size|source-type))?|max-logical-height|(max|min)-logical-(height|width)|mix-blend-mode|opacity|order|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|region-(break-(after|before|inside)|fragment)|shape-(image-threshold|inside|margin|outside|padding)|svg-shadow|tap-highlight-color|text-decoration(-(color|line|style))?|touch-callout|transform(-(origin(-(x|y|z))?|style))?|transition(-(delay|duration|property|timing-function))?|user-drag|wrap-(flow|through))\s*(?=:)
 
   prefixed-property-xv:
-    name: invalid.deprecated.css
+    # name: invalid.deprecated.css
     # TODO: assign a proper name to this
-    # name: storage.type.css
+    name: storage.type.css
     match: -xv-(interpret-as|phonemes|voice-(balance|duration|pitch(-range)?|rate|stress|volume))\s*(?=:)
 
   property:
     # TODO: assign a proper name to this
     # name: invalid.deprecated.css
     name: storage.type.css
-    match: (-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)
+    match: (align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)
 
   pseudo-class:
     # non-function pseudo-classes. pseudo-class functions like :not() have
@@ -694,6 +694,6 @@ repository:
 #   - an+b  // n is supposed to be case insensitive
 #   - values
 #   - properties
-# - support all experimental prefixed properties, values, at-rules, pseudo-classes
+# - support all experimental prefixed values, at-rules, pseudo-classes
 #   pseudo-elements
 ...
