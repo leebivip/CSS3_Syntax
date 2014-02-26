@@ -486,6 +486,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#prefixed-property-moz-deprecated</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#prefixed-property-moz</string>
 				</dict>
 				<dict>
@@ -738,7 +742,7 @@
 		<key>function</key>
 		<dict>
 			<key>match</key>
-			<string>(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()</string>
+			<string>(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|image-rect|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
@@ -939,9 +943,23 @@
 		<key>named-value</key>
 		<dict>
 			<key>match</key>
-			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|capitalize|caption|cell|center|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flexbox|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve(-3d)?|progress|recto|region|relative|repeat(-(x|y))?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|screen|scroll|se-resize|semi-(condensed|expanded)|separate|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|square|start|static|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|thick|thin|top|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b</string>
+			<string>(absolute|active|alias|all(-scroll)?|alpha|alternate(-reverse)?|always|armenian|auto|available|avoid(-(column|page|region))?|backwards|balance|baseline|bidi-override|block|bold(er)?|border-box|both|bottom|break-(all|word)|bt-(lr|rl)|button(-(arrow-(down|next|previous|up)|bevel))?|capitalize|caption|cell|center|checkbox(-(container|label))?|checkmenuitem|circle|clip|close-quote|col-resize|collapse|color(-(burn|dodge))?|column(-reverse)?|complex|condensed|contain|content(-box)?|context-menu|copy|cover|crisp-edges|crop|cross(hair)?|cursive|darken|dashed|decimal(-leading-zero)?|default|dialog|difference|disabled|disc|dotted|double|e-resize|each-line|ease(-(in(-out)?|out))?|ellipsis|embed|end|ew-resize|exclusion|expanded|extra-(condensed|expanded)|fantasy|fill(-available)?|fit-content|fixed|flat|flex(-(end|start))?|flexbox|flip|forwards|from-image|full-width|geometricPrecision|georgian|grab(bing)?|grid|groove|(group|list)box|hanging|hard-light|help|hidden|hide|horizontal(-tb)?|hue|icon|inactive|infinite|inherit|initial|inline(-(block|flex|grid|table))?|inset|inside|invert|isolate(-override)?|italic|justify|keep-all|larger?|left|lighte(n|r)|line-through|linear|list-item|local|lower-(alpha|greek|latin|roman)|lowercase|lr(-(bt|tb))?|ltr|lumin(ance|osity)|manual|match-parent|max-content|medium|menu(arrow|checkbox|image|item(text)?|list(-(button|text(field)?))?|popup|radio|separator)?|message-box|middle|min-content|monospace|move|multiply|n(esw|e)?-resize|no-(close-quote|drop|open-quote|repeat)|none|normal|not-allowed|nowrap|n(wse|s|w)-resize|oblique|open-quote|optimizeLegibility|optimizeSpeed|outs(et|ide)|overl(ay|ine)|padding-box|page|painted|paused|pixelated|plaintext|pointer|pre(-(line|wrap))?|preserve(-3d)?|progress(bar|chunk)?|radio(-(container|label))?|radiomenuitem|recto|region|relative|repeat(-(x|y))?|resizer(panel)?|reverse|ridge|right|rl(-(bt|tb))?|round|row(-(resize|reverse))?|rtl|run(-in|ning)|s-resize|sans-serif|saturation|scale(thumb)?-(horizontal|vertical)|screen|scrollbar(button-(down|left|right|up)|-small|(thumb|track)-(horizontal|vertical))|scroll|se-resize|semi-(condensed|expanded)|separat(e|or)|serif|show|small(er|-(caps|caption))?|soft-light|solid|space(-(around|between))?|spinner(-((down|up)button|textfield))?|square|start|static|statusbar(panel)?|status-bar|step-(end|start)|sticky|stretch|stroke|sub|super|sw-resize|tab-scroll-arrow-(back|forward)|tab(panels)?|table(-(caption|cell|(column|row)(-group)?|(header|footer)-group))?|tb(-(lr|rl))?|text(-(bottom|top))?|textfield(-multiline)?|thick|thin|tool(bar(button-dropdown)?|box|tip)|top|treeheader(cell|sortarrow)|tree(item|twisty(open)?|view)|ultra-(condensed|expanded)|under(line)?|unset|upper-(alpha|latin|roman)|uppercase|verso|vertical(-(lr|rl|text))?|visible(Fill|Painted|Stroke)?|w-resize|wait|wavy|window|wrap(-reverse)?|x-(large|small)|xx-(large|small)|zoom-(in|out))\b</string>
 			<key>name</key>
 			<string>variable.parameter.css</string>
+		</dict>
+		<key>named-value-moz</key>
+		<dict>
+			<key>match</key>
+			<string>-moz-(all|anchor-decoration|arabic-indic|available|bengali|box|button(default|hover(face|text))?|cellhighlight(text)?|center|cjk-(earthly-branch|heavenly-stem)|crisp-edges|deck|default(-background)?-color|desktop|devanagari|dialog(text)?|document|dragtargetzone|ethiopic-(halehame(-(am|ti-e(r|t)))?|numeric)|field(text)?|fit-content|fixed|grid(-(group|line))?|groupbox|gujarati|gurmukhi|hangul(-consonant)?|hidden-unscrollable|info|initial|inline-(box|grid|stack)|japanese-(formal|informal)|kannada|khmer|lao|left|list|mac-(accent(dark(est)?shadow|face|light(esthighlight|shadow)|regular(highlight|shadow))|chrome-(in)?active|focusring|menu((text)?select|shadow)|unified-toolbar)|malayalam|marker|(max|min)-content|menuhover(text)?|myanmar|none|oriya|persian|popup|pull-down-menu|right|show-background|simp-chinese-(in)?formal|stack|tamil|telugu|thai|trad-chinese-(in)?formal|urdu|(active|native|visited)?hyperlinktext|win-(borderless-glass|browsertabbar-toolbox|(communications|media)(-toolbox|text)|glass)|window(-(button-(box(-maximized)?|close|(max|min)imize|restore)|titlebar(-maximized)?))?|window|workspace)\b</string>
+			<key>name</key>
+			<string>variable.parameter.css</string>
+		</dict>
+		<key>named-value-moz-deprecated</key>
+		<dict>
+			<key>match</key>
+			<string>-moz-(use-text-color|bg-(inset|outset|solid)|inline-(block|table)|scrollbars-(none|horizontal|vertical))\b</string>
+			<key>name</key>
+			<string>invalid.illegal.css</string>
 		</dict>
 		<key>number</key>
 		<dict>
@@ -1000,9 +1018,16 @@
 		<key>prefixed-property-moz</key>
 		<dict>
 			<key>match</key>
-			<string>-moz-(align-(content|items|self)|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|top)-(left|right)-radius|image|radius|(bottom|left|right|top)-colors|end(-(color|style|width))?|start(-(color|style|width))?)|box-(align|direction|flex|ordinal-group|orient|pack|shadow|sizing)|caption-side|clip-path|column-(count|fill|gap|rule(-(color|style|width))?|width)|columns|control-character-visibility|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|ime-mode|justify-content|margin-(end|start)|mask|math-(display|variant)|mix-blend-mode|opacity|order|orient|osx-font-smoothing|outline-radius(-(bottom(left|right)|top(left|right)))?|overflow-(x|y)|padding-(end|start)|perspective(-origin)?|sipt-(level|min-size|size-multiplier)|stack-sizing|tab-size|text-(align-last|decoration(-(color|line|style))?|orientation|overflow|size-adjust|transform)|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-(focus|input|modify|select)|window-shadow|word-(break|wrap)|writing-mode)\s*(?=:)</string>
+			<string>-moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|border-image|box-sizing|clip-path|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width|filter)|font-(feature-settings|language-override)|hyphens|mask|opacity|outline(-(color|offset|style|width))?|perspective(-origin)?|pointer-events|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
+		</dict>
+		<key>prefixed-property-moz-deprecated</key>
+		<dict>
+			<key>match</key>
+			<string>-moz-(binding|border-((bottom|top)-(left|right)-colors|(end|start)(-(color|style|width))?)|box-(align|direction|flex|ordinal-group|orient|pack)|float-edge|force-broken-image-icon|image-region|margin-(end|start)|orient|outline-radius(-(bottom|top)(left|right))?|padding-(end|start)|script-(level|min-size|size-multiplier)|stack-sizing|user-(focus|input|modify|select)|window-shadow)\s*(?=:)</string>
+			<key>name</key>
+			<string>invalid.deprecated.css</string>
 		</dict>
 		<key>prefixed-property-ms</key>
 		<dict>
@@ -1338,6 +1363,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#prefixed-property-moz-deprecated</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#prefixed-property-moz</string>
 				</dict>
 				<dict>
@@ -1413,6 +1442,14 @@
 				<dict>
 					<key>include</key>
 					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#named-value-moz-deprecated</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#named-value-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1555,6 +1592,14 @@
 				<dict>
 					<key>include</key>
 					<string>#hex-color</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#named-value-moz-deprecated</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#named-value-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>

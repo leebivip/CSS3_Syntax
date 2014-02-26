@@ -859,6 +859,198 @@ box-shadow: yellow 0 0 10px;
 
 OL > LI:only-child {}
 
+/* moz unprefixed named values */
+
+p{ color: button;}
+p{ color: button-arrow-down;}
+p{ color: button-arrow-next;}
+p{ color: button-arrow-previous;}
+p{ color: button-arrow-up;}
+p{ color: button-bevel;}
+p{ color: checkbox;}
+p{ color: checkbox-container;}
+p{ color: checkbox-label;}
+p{ color: checkmenuitem;}
+p{ color: dialog;}
+p{ color: groupbox;}
+p{ color: listbox;}
+p{ color: menuarrow;}
+p{ color: menucheckbox;}
+p{ color: menuimage;}
+p{ color: menuitem;}
+p{ color: menuitemtext;}
+p{ color: menulist;}
+p{ color: menulist-button;}
+p{ color: menulist-text;}
+p{ color: menulist-textfield;}
+p{ color: menupopup;}
+p{ color: menuradio;}
+p{ color: menuseparator;}
+p{ color: progressbar;}
+p{ color: progresschunk;}
+p{ color: radio;}
+p{ color: radio-container;}
+p{ color: radio-label;}
+p{ color: radiomenuitem;}
+p{ color: resizer;}
+p{ color: resizerpanel;}
+p{ color: scale-horizontal;}
+p{ color: scalethumb-horizontal;}
+p{ color: scalethumb-vertical;}
+p{ color: scale-vertical;}
+p{ color: scrollbarbutton-down;}
+p{ color: scrollbarbutton-left;}
+p{ color: scrollbarbutton-right;}
+p{ color: scrollbarbutton-up;}
+p{ color: scrollbar-small;}
+p{ color: scrollbarthumb-horizontal;}
+p{ color: scrollbarthumb-vertical;}
+p{ color: scrollbartrack-horizontal;}
+p{ color: scrollbartrack-vertical;}
+p{ color: separator;}
+p{ color: spinner;}
+p{ color: spinner-downbutton;}
+p{ color: spinner-textfield;}
+p{ color: spinner-upbutton;}
+p{ color: statusbar;}
+p{ color: statusbarpanel;}
+p{ color: tab;}
+p{ color: tabpanels;}
+p{ color: tab-scroll-arrow-back;}
+p{ color: tab-scroll-arrow-forward;}
+p{ color: textfield;}
+p{ color: textfield-multiline;}
+p{ color: toolbar;}
+p{ color: toolbarbutton-dropdown;}
+p{ color: toolbox;}
+p{ color: tooltip;}
+p{ color: treeheadercell;}
+p{ color: treeheadersortarrow;}
+p{ color: treeitem;}
+p{ color: treetwisty;}
+p{ color: treetwistyopen;}
+p{ color: treeview;}
+p{ color: window;}
+
+
+/* prefixed named values */
+
+p { color: -moz-activehyperlinktext;}
+p { color: -moz-hyperlinktext;}
+p { color: -moz-visitedhyperlinktext;}
+p { color: -moz-buttondefault;}
+p { color: -moz-buttonhoverface;}
+p { color: -moz-buttonhovertext;}
+p { color: -moz-default-background-color;}
+p { color: -moz-default-color;}
+p { color: -moz-cellhighlight;}
+p { color: -moz-cellhighlighttext;}
+p { color: -moz-field;}
+p { color: -moz-fieldtext;}
+p { color: -moz-dialog;}
+p { color: -moz-dialogtext;}
+p { color: -moz-dragtargetzone;}
+p { color: -moz-mac-accentdarkestshadow;}
+p { color: -moz-mac-accentdarkshadow;}
+p { color: -moz-mac-accentface;}
+p { color: -moz-mac-accentlightesthighlight;}
+p { color: -moz-mac-accentlightshadow;}
+p { color: -moz-mac-accentregularhighlight;}
+p { color: -moz-mac-accentregularshadow;}
+p { color: -moz-mac-chrome-active;}
+p { color: -moz-mac-chrome-inactive;}
+p { color: -moz-mac-focusring;}
+p { color: -moz-mac-menuselect;}
+p { color: -moz-mac-menushadow;}
+p { color: -moz-mac-menutextselect;}
+p { color: -moz-menuhover;}
+p { color: -moz-menuhovertext;}
+p { color: -moz-win-communicationstext;}
+p { color: -moz-win-mediatext;}
+p { color: -moz-nativehyperlinktext;}
+p { color: -moz-box;}
+p { color: -moz-inline-box;}
+p { color: -moz-inline-grid;}
+p { color: -moz-inline-stack;}
+p { color: -moz-grid;}
+p { color: -moz-grid-group;}
+p { color: -moz-grid-line;}
+p { color: -moz-groupbox;}
+p { color: -moz-deck;}
+p { color: -moz-popup;}
+p { color: -moz-stack;}
+p { color: -moz-marker;}
+p { color: -moz-show-background;}
+p { color: -moz-button;}
+p { color: -moz-info;}
+p { color: -moz-desktop;}
+p { color: -moz-dialog;}
+p { color: -moz-document;}
+p { color: -moz-workspace;}
+p { color: -moz-window;}
+p { color: -moz-list;}
+p { color: -moz-pull-down-menu;}
+p { color: -moz-field;}
+p { color: -moz-fixed;}
+p { color: -moz-crisp-edges;}
+p { color: -moz-arabic-indic;}
+p { color: -moz-bengali;}
+p { color: -moz-cjk-earthly-branch;}
+p { color: -moz-cjk-heavenly-stem;}
+p { color: -moz-devanagari;}
+p { color: -moz-ethiopic-halehame;}
+p { color: -moz-ethiopic-halehame-am;}
+p { color: -moz-ethiopic-halehame-ti-er;}
+p { color: -moz-ethiopic-halehame-ti-et;}
+p { color: -moz-ethiopic-numeric;}
+p { color: -moz-gujarati;}
+p { color: -moz-gurmukhi;}
+p { color: -moz-hangul;}
+p { color: -moz-hangul-consonant;}
+p { color: -moz-japanese-formal;}
+p { color: -moz-japanese-informal;}
+p { color: -moz-kannada;}
+p { color: -moz-khmer;}
+p { color: -moz-lao;}
+p { color: -moz-malayalam;}
+p { color: -moz-myanmar;}
+p { color: -moz-oriya;}
+p { color: -moz-persian;}
+p { color: -moz-simp-chinese-formal;}
+p { color: -moz-simp-chinese-informal;}
+p { color: -moz-tamil;}
+p { color: -moz-telugu;}
+p { color: -moz-thai;}
+p { color: -moz-trad-chinese-formal;}
+p { color: -moz-trad-chinese-informal;}
+p { color: -moz-urdu;}
+p { color: -moz-hidden-unscrollable;}
+p { color: -moz-center;}
+p { color: -moz-left;}
+p { color: -moz-right;}
+p { color: -moz-anchor-decoration;}
+p { color: -moz-all;}
+p { color: -moz-none;}
+p { color: -moz-min-content;}
+p { color: -moz-fit-content;}
+p { color: -moz-max-content;}
+p { color: -moz-available;}
+p { color: -moz-mac-unified-toolbar;}
+p { color: -moz-win-borderless-glass;}
+p { color: -moz-win-browsertabbar-toolbox;}
+p { color: -moz-win-communications-toolbox;}
+p { color: -moz-win-glass;}
+p { color: -moz-win-media-toolbox;}
+p { color: -moz-window-button-box;}
+p { color: -moz-window-button-box-maximized;}
+p { color: -moz-window-button-close;}
+p { color: -moz-window-button-maximize;}
+p { color: -moz-window-button-minimize;}
+p { color: -moz-window-button-restore;}
+p { color: -moz-window-titlebar;}
+p { color: -moz-window-titlebar-maximized;}
+
+
 /* deprecated */
 
 hgroup {}
@@ -867,3 +1059,12 @@ div:before
 div:first-line
 div:first-letter
 
+p { color: -moz-use-text-color;}
+p { color: -moz-bg-inset;}
+p { color: -moz-bg-outset;}
+p { color: -moz-bg-solid;}
+p { color: -moz-inline-block;}
+p { color: -moz-inline-table;}
+p { color: -moz-scrollbars-none;}
+p { color: -moz-scrollbars-horizontal;}
+p { color: -moz-scrollbars-vertical;}
