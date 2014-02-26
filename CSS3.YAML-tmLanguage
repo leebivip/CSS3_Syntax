@@ -182,7 +182,6 @@ repository:
     - include: '#variable'
     - include: '#prefixed-property-apple'
     - include: '#prefixed-property-epub'
-    - include: '#prefixed-property-moz-deprecated'
     - include: '#prefixed-property-moz'
     - include: '#prefixed-property-ms'
     - include: '#prefixed-property-o'
@@ -407,20 +406,12 @@ repository:
     match: -moz-(all|anchor-decoration|arabic-indic|available|bengali|box|button(default|hover(face|text))?|cellhighlight(text)?|center|cjk-(earthly-branch|heavenly-stem)|crisp-edges|deck|default(-background)?-color|desktop|devanagari|dialog(text)?|document|dragtargetzone|ethiopic-(halehame(-(am|ti-e(r|t)))?|numeric)|field(text)?|fit-content|fixed|grid(-(group|line))?|groupbox|gujarati|gurmukhi|hangul(-consonant)?|hidden-unscrollable|info|initial|inline-(box|grid|stack)|japanese-(formal|informal)|kannada|khmer|lao|left|list|mac-(accent(dark(est)?shadow|face|light(esthighlight|shadow)|regular(highlight|shadow))|chrome-(in)?active|focusring|menu((text)?select|shadow)|unified-toolbar)|malayalam|marker|(max|min)-content|menuhover(text)?|myanmar|none|oriya|persian|popup|pull-down-menu|right|show-background|simp-chinese-(in)?formal|stack|tamil|telugu|thai|trad-chinese-(in)?formal|urdu|(active|native|visited)?hyperlinktext|win-(borderless-glass|browsertabbar-toolbox|(communications|media)(-toolbox|text)|glass)|window(-(button-(box(-maximized)?|close|(max|min)imize|restore)|titlebar(-maximized)?))?|window|workspace)\b
 
   named-value-moz-deprecated:
-    name: invalid.illegal.css
+    name: invalid.deprecated.css
     match: -moz-(use-text-color|bg-(inset|outset|solid)|inline-(block|table)|scrollbars-(none|horizontal|vertical))\b
 
   number:
     name: constant.numeric.css
     match: '[-+]?([0-9]+|[0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?'
-
-  # non-negative-integer:
-  #   name: constant.numeric.css
-  #   match: (?<!-)[0-9]+
-
-  # non-negative-number:
-  #   name: constant.numeric.css
-  #   match: (?<!-)(\+?[0-9]+|[0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?
 
   operator:
     # name: invalid.deprecated.css
@@ -453,11 +444,7 @@ repository:
     # name: invalid.deprecated.css
     # TODO: assign a proper name to this
     name: storage.type.css
-    match: -moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|border-image|box-sizing|clip-path|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width|filter)|font-(feature-settings|language-override)|hyphens|mask|opacity|outline(-(color|offset|style|width))?|perspective(-origin)?|pointer-events|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)
-
-  prefixed-property-moz-deprecated:
-    name: invalid.deprecated.css
-    match: -moz-(binding|border-((bottom|top)-(left|right)-colors|(end|start)(-(color|style|width))?)|box-(align|direction|flex|ordinal-group|orient|pack)|float-edge|force-broken-image-icon|image-region|margin-(end|start)|orient|outline-radius(-(bottom|top)(left|right))?|padding-(end|start)|script-(level|min-size|size-multiplier)|stack-sizing|user-(focus|input|modify|select)|window-shadow)\s*(?=:)
+    match: -moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)|box-(align|direction|flex|ordinal-group|orient|pack|sizing)|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|opacity|orient|outline(-(color|offset|radius(-(bottom|top)(left|right))?|style|width))?|padding-(end|start)|perspective(-origin)?|script-(level|min-size|size-multiplier)|stack-sizing|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-(focus|input|modify|select)|window-shadow)
 
   prefixed-property-ms:
     # name: invalid.deprecated.css
@@ -481,7 +468,9 @@ repository:
     # name: invalid.deprecated.css
     # TODO: assign a proper name to this
     name: storage.type.css
-    match: -webkit-(align-(content|items|self)|alt|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|composite|origin|position-(x|y)|size)|border-((after|before)(-(color|style|width))?|((bottom|top)-(left|right)-)?radius|(end|start)(-(color|style|width))?|fit|image)|box-(align|decoration-break|flex(-group)?|lines|ordinal-group|orient|pack|reflect|shadow|sizing)|clip-path|column-(axis|break-(after|before|inside)|count|fill|gap|progression|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|flow-(from|into)|font-size-delta|grid-(area|auto-(columns|flow|rows)|column(-(end|start))?|row(-(end|start))?|template-(areas|columns|rows))|justify-content|line-clamp|logical-(height|width)|margin-((after|before)(-collapse)?|((bottom|top)-)?collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|position(-(x|y))?|repeat(-(x|y))?|size|source-type))?|max-logical-height|(max|min)-logical-(height|width)|mix-blend-mode|object-fit|opacity|order|overflow-(x|y)|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|region-(break-(after|before|inside)|fragment)|shape-(image-threshold|inside|margin|outside|padding)|svg-shadow|tap-highlight-color|text-(decoration(-(color|line|style))?|overflow)|touch-callout|transform(-(origin(-(x|y|z))?|style))?|transition(-(delay|duration|property|timing-function))?|user-drag|wrap-(flow|through)|zoom)\s*(?=:)
+    # match: -webkit-(align-(content|items|self)|alt|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|composite|origin|position-(x|y)|size)|border-((after|before)(-(color|style|width))?|((bottom|top)-(left|right)-)?radius|(end|start)(-(color|style|width))?|fit|image)|box-(align|decoration-break|flex(-group)?|lines|ordinal-group|orient|pack|reflect|shadow|sizing)|clip-path|column-(axis|break-(after|before|inside)|count|fill|gap|progression|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|flow-(from|into)|font-size-delta|grid-(area|auto-(columns|flow|rows)|column(-(end|start))?|row(-(end|start))?|template-(areas|columns|rows))|justify-content|line-clamp|logical-(height|width)|margin-((after|before)(-collapse)?|((bottom|top)-)?collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|position(-(x|y))?|repeat(-(x|y))?|size|source-type))?|max-logical-height|(max|min)-logical-(height|width)|mix-blend-mode|object-fit|opacity|order|overflow-(x|y)|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|region-(break-(after|before|inside)|fragment)|shape-(image-threshold|inside|margin|outside|padding)|svg-shadow|tap-highlight-color|text-(decoration(-(color|line|style))?|overflow)|touch-callout|transform(-(origin(-(x|y|z))?|style))?|transition(-(delay|duration|property|timing-function))?|user-drag|wrap-(flow|through)|zoom)\s*(?=:)
+    # MDN version below
+    match: -webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|origin|size)|border-(bottom|top)-(left|right)-radius|border-(image|radius)|box-sizing|column-(count|gap|rule|rule-color|rule-style|rule-width|span|width)|columns|font-(feature-settings|kerning|size-delta|variant-ligatures)|grid-(columns?|rows?)|hyphens|opacity|perspective(-origin)?|region-overflow|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)
 
   prefixed-property-xv:
     # name: invalid.deprecated.css
@@ -499,6 +488,12 @@ repository:
     # non-function pseudo-classes. pseudo-class functions like :not() have
     # separate rules.
     match: :((((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))
+    captures:
+      # TODO: assign a proper name to this
+      '1': {name: entity.name.function.css}
+
+  pseudo-class-prefixed-moz:
+    match: :(-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive))
     captures:
       # TODO: assign a proper name to this
       '1': {name: entity.name.function.css}
@@ -530,13 +525,18 @@ repository:
     # necessary.
     - include: '#block-comment'
     - include: '#attribute-selector'
+    - include: '#pseudo-element-prefixed-moz'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
+    - include: '#pseudo-class-function-prefixed-moz-locale-dir'
+    - include: '#pseudo-class-function-prefixed-moz-sytem-metric'
+    - include: '#pseudo-class-function-prefixed-moz-tree'
     - include: '#pseudo-class-function-nth'
     - include: '#pseudo-class-function-selector-list'
     - include: '#pseudo-class-function-local-link'
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
+    - include: '#pseudo-class-prefixed-moz'
     - include: '#pseudo-class'
     - include: '#html-id'
     - include: '#html-class'
@@ -564,10 +564,38 @@ repository:
       '1': {name: entity.name.function.css}
       '2': {name: constant.numeric.css}
 
+  pseudo-class-function-prefixed-moz-locale-dir:
+    match: :(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)
+    captures:
+      # TODO: assign proper names to these
+      '1': {name: entity.name.function.css}
+      '2': {name: variable.parameter.css}
+
+  pseudo-class-function-prefixed-moz-sytem-metric:
+    match: :(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)
+    captures:
+      # TODO: assign proper names to these
+      '1': {name: entity.name.function.css}
+      '2': {name: variable.parameter.css}
+
+  pseudo-class-function-prefixed-moz-tree:
+    match: :(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)
+    captures:
+      # TODO: assign proper names to these
+      '1': {name: entity.name.function.css}
+      '3': {name: variable.parameter.css}
+
   pseudo-element:
     # TODO: assign a proper name to this
     name: constant.numeric.css
+    # TODO: delete moz, webkit, ms prefixes when they're supported by other rules
     match: ::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
+
+  pseudo-element-prefixed-moz:
+    match: ::(-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block))
+    captures:
+      # TODO: assign a proper name to this
+      '1': {name: constant.numeric.css}
 
   pseudo-page:
     # TODO: assign a proper name to this
@@ -587,13 +615,18 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#attribute-selector'
+    - include: '#pseudo-element-prefixed-moz'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
+    - include: '#pseudo-class-function-prefixed-moz-locale-dir'
+    - include: '#pseudo-class-function-prefixed-moz-sytem-metric'
+    - include: '#pseudo-class-function-prefixed-moz-tree'
     - include: '#pseudo-class-function-nth'
     - include: '#pseudo-class-function-selector-list'
     - include: '#pseudo-class-function-local-link'
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
+    - include: '#pseudo-class-prefixed-moz'
     - include: '#pseudo-class'
     - include: '#html-id'
     - include: '#html-class'
@@ -615,7 +648,6 @@ repository:
     - include: '#supports-condition'
     - include: '#prefixed-property-apple'
     - include: '#prefixed-property-epub'
-    - include: '#prefixed-property-moz-deprecated'
     - include: '#prefixed-property-moz'
     - include: '#prefixed-property-ms'
     - include: '#prefixed-property-o'

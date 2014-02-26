@@ -859,6 +859,105 @@ box-shadow: yellow 0 0 10px;
 
 OL > LI:only-child {}
 
+/* moz prefixed properties */
+
+p{-moz-animation: blue;}
+p{-moz-animation-delay: blue;}
+p{-moz-animation-direction: blue;}
+p{-moz-animation-duration: blue;}
+p{-moz-animation-fill-mode: blue;}
+p{-moz-animation-iteration-count: blue;}
+p{-moz-animation-name: blue;}
+p{-moz-animation-play-state: blue;}
+p{-moz-animation-timing-function: blue;}
+p{-moz-appearance: blue;}
+p{-moz-backface-visibility: blue;}
+p{-moz-background-clip: blue;}
+p{-moz-background-inline-policy: blue;}
+p{-moz-background-origin: blue;}
+p{-moz-background-size: blue;}
+p{-moz-binding: blue;}
+p{-moz-border-bottom-colors: blue;}
+p{-moz-border-end: blue;}
+p{-moz-border-end-color: blue;}
+p{-moz-border-end-style: blue;}
+p{-moz-border-end-width: blue;}
+p{-moz-border-image: blue;}
+p{-moz-border-left-colors: blue;}
+p{-moz-border-right-colors: blue;}
+p{-moz-border-start: blue;}
+p{-moz-border-start-color: blue;}
+p{-moz-border-start-style: blue;}
+p{-moz-border-start-width: blue;}
+p{-moz-border-top-colors: blue;}
+p{-moz-box-align: blue;}
+p{-moz-box-direction: blue;}
+p{-moz-box-flex: blue;}
+p{-moz-box-ordinal-group: blue;}
+p{-moz-box-orient: blue;}
+p{-moz-box-pack: blue;}
+p{-moz-box-sizing: blue;}
+p{-moz-column-count: blue;}
+p{-moz-column-fill: blue;}
+p{-moz-column-gap: blue;}
+p{-moz-column-rule: blue;}
+p{-moz-column-rule-color: blue;}
+p{-moz-column-rule-style: blue;}
+p{-moz-column-rule-width: blue;}
+p{-moz-column-width: blue;}
+p{-moz-float-edge: blue;}
+p{-moz-font-feature-settings: blue;}
+p{-moz-font-language-override: blue;}
+p{-moz-force-broken-image-icon: blue;}
+p{-moz-hyphens: blue;}
+p{-moz-image-region: blue;}
+p{-moz-margin-end: blue;}
+p{-moz-margin-start: blue;}
+p{-moz-opacity: blue;}
+p{-moz-orient: blue;}
+p{-moz-outline: blue;}
+p{-moz-outline-color: blue;}
+p{-moz-outline-offset: blue;}
+p{-moz-outline-radius: blue;}
+p{-moz-outline-radius-bottomleft: blue;}
+p{-moz-outline-radius-bottomright: blue;}
+p{-moz-outline-radius-topleft: blue;}
+p{-moz-outline-radius-topright: blue;}
+p{-moz-outline-style: blue;}
+p{-moz-outline-width: blue;}
+p{-moz-padding-end: blue;}
+p{-moz-padding-start: blue;}
+p{-moz-perspective: blue;}
+p{-moz-perspective-origin: blue;}
+p{-moz-script-level: blue;}
+p{-moz-script-min-size: blue;}
+p{-moz-script-size-multiplier: blue;}
+p{-moz-stack-sizing: blue;}
+p{-moz-text-align-last: blue;}
+p{-moz-text-decoration-color: blue;}
+p{-moz-text-decoration-line: blue;}
+p{-moz-text-decoration-style: blue;}
+p{-moz-transform: blue;}
+p{-moz-transform-origin: blue;}
+p{-moz-transform-style: blue;}
+p{-moz-transition: blue;}
+p{-moz-transition-delay: blue;}
+p{-moz-transition-duration: blue;}
+p{-moz-transition-property: blue;}
+p{-moz-transition-timing-function: blue;}
+p{-moz-user-focus: blue;}
+p{-moz-user-input: blue;}
+p{-moz-user-modify: blue;}
+p{-moz-user-select: blue;}
+p{-moz-window-shadow: blue;}
+
+/* moz unprefixed properties */
+
+p {clip-path: blue;}
+p {filter: blue;}
+p {mask: blue;}
+p {pointer-events: blue;}
+
 /* moz unprefixed named values */
 
 p{ color: button;}
@@ -1049,6 +1148,101 @@ p { color: -moz-window-button-minimize;}
 p { color: -moz-window-button-restore;}
 p { color: -moz-window-titlebar;}
 p { color: -moz-window-titlebar-maximized;}
+
+/* moz prefixed pseudo-elements */
+
+p::-moz-anonymous-block {}
+p::-moz-anonymous-positioned-block {}
+p::-moz-canvas {}
+p::-moz-cell-content {}
+p::-moz-focus-inner {}
+p::-moz-focus-outer {}
+p::-moz-inline-table {}
+p::-moz-math-stretchy {}
+p::-moz-page {}
+p::-moz-page-sequence {}
+p::-moz-pagebreak {}
+p::-moz-pagecontent {}
+p::-moz-placeholder {}
+p::-moz-progress-bar {}
+p::-moz-range-thumb {}
+p::-moz-range-track {}
+p::-moz-selection {}
+p::-moz-scrolled-canvas {}
+p::-moz-scrolled-content {}
+p::-moz-scrolled-page-sequence {}
+p::-moz-svg-foreign-content {}
+p::-moz-table {}
+p::-moz-table-cell {}
+p::-moz-table-column {}
+p::-moz-table-column-group {}
+p::-moz-table-outer {}
+p::-moz-table-row {}
+p::-moz-table-row-group {}
+p::-moz-viewport {}
+p::-moz-viewport-scroll {}
+p::-moz-xul-anonymous-block {}
+
+
+/* moz prefixed pseudo-classes */
+
+p:-moz-any {}
+p:-moz-any-link {}
+p:-moz-bound-element {}
+p:-moz-broken {}
+p:-moz-drag-over {}
+p:-moz-first-node {}
+p:-moz-focusring {}
+p:-moz-full-screen {}
+p:-moz-full-screen-ancestor {}
+p:-moz-handler-blocked {}
+p:-moz-handler-crashed {}
+p:-moz-handler-disabled {}
+p:-moz-last-node {}
+p:-moz-list-bullet {}
+p:-moz-list-number {}
+p:-moz-loading {}
+p:-moz-lwtheme {}
+p:-moz-lwtheme-brighttext {}
+p:-moz-lwtheme-darktext {}
+p:-moz-only-whitespace {}
+p:-moz-placeholder {}
+p:-moz-read-only {}
+p:-moz-read-write {}
+p:-moz-suppressed {}
+p:-moz-submit-invalid {}
+p:-moz-tree-checkbox {}
+p:-moz-tree-cell {}
+p:-moz-tree-cell-text {}
+p:-moz-tree-column {}
+p:-moz-tree-drop-feedback {}
+p:-moz-tree-image {}
+p:-moz-tree-indentation {}
+p:-moz-tree-line {}
+p:-moz-tree-progressmeter {}
+p:-moz-tree-row {}
+p:-moz-tree-separator {}
+p:-moz-tree-twisty {}
+p:-moz-ui-invalid {}
+p:-moz-ui-valid {}
+p:-moz-user-disabled {}
+p:-moz-window-inactive {}
+
+/* moz prefixed pseudo-class functions */
+
+p:-moz-locale-dir(ltr) {}
+p:-moz-locale-dir(rtl) {}
+p:-moz-system-metric(images-in-menus) {}
+p:-moz-system-metric(mac-graphite-theme) {}
+p:-moz-system-metric(scrollbar-end-backward) {}
+p:-moz-system-metric(scrollbar-end-forward) {}
+p:-moz-system-metric(scrollbar-start-backward) {}
+p:-moz-system-metric(scrollbar-start-forward) {}
+p:-moz-system-metric(scrollbar-thumb-proportional) {}
+p:-moz-system-metric(touch-enabled) {}
+p:-moz-system-metric(windows-default-theme) {}
+p:-moz-tree-cell-text(hover) {}
+p:-moz-tree-row(hover) {}
 
 
 /* deprecated */

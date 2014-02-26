@@ -486,10 +486,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-moz-deprecated</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#prefixed-property-moz</string>
 				</dict>
 				<dict>
@@ -959,7 +955,7 @@
 			<key>match</key>
 			<string>-moz-(use-text-color|bg-(inset|outset|solid)|inline-(block|table)|scrollbars-(none|horizontal|vertical))\b</string>
 			<key>name</key>
-			<string>invalid.illegal.css</string>
+			<string>invalid.deprecated.css</string>
 		</dict>
 		<key>number</key>
 		<dict>
@@ -1018,16 +1014,9 @@
 		<key>prefixed-property-moz</key>
 		<dict>
 			<key>match</key>
-			<string>-moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|border-image|box-sizing|clip-path|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width|filter)|font-(feature-settings|language-override)|hyphens|mask|opacity|outline(-(color|offset|style|width))?|perspective(-origin)?|pointer-events|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)</string>
+			<string>-moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)|box-(align|direction|flex|ordinal-group|orient|pack|sizing)|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|opacity|orient|outline(-(color|offset|radius(-(bottom|top)(left|right))?|style|width))?|padding-(end|start)|perspective(-origin)?|script-(level|min-size|size-multiplier)|stack-sizing|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-(focus|input|modify|select)|window-shadow)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
-		</dict>
-		<key>prefixed-property-moz-deprecated</key>
-		<dict>
-			<key>match</key>
-			<string>-moz-(binding|border-((bottom|top)-(left|right)-colors|(end|start)(-(color|style|width))?)|box-(align|direction|flex|ordinal-group|orient|pack)|float-edge|force-broken-image-icon|image-region|margin-(end|start)|orient|outline-radius(-(bottom|top)(left|right))?|padding-(end|start)|script-(level|min-size|size-multiplier)|stack-sizing|user-(focus|input|modify|select)|window-shadow)\s*(?=:)</string>
-			<key>name</key>
-			<string>invalid.deprecated.css</string>
 		</dict>
 		<key>prefixed-property-ms</key>
 		<dict>
@@ -1053,7 +1042,7 @@
 		<key>prefixed-property-webkit</key>
 		<dict>
 			<key>match</key>
-			<string>-webkit-(align-(content|items|self)|alt|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|composite|origin|position-(x|y)|size)|border-((after|before)(-(color|style|width))?|((bottom|top)-(left|right)-)?radius|(end|start)(-(color|style|width))?|fit|image)|box-(align|decoration-break|flex(-group)?|lines|ordinal-group|orient|pack|reflect|shadow|sizing)|clip-path|column-(axis|break-(after|before|inside)|count|fill|gap|progression|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|flow-(from|into)|font-size-delta|grid-(area|auto-(columns|flow|rows)|column(-(end|start))?|row(-(end|start))?|template-(areas|columns|rows))|justify-content|line-clamp|logical-(height|width)|margin-((after|before)(-collapse)?|((bottom|top)-)?collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|position(-(x|y))?|repeat(-(x|y))?|size|source-type))?|max-logical-height|(max|min)-logical-(height|width)|mix-blend-mode|object-fit|opacity|order|overflow-(x|y)|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|region-(break-(after|before|inside)|fragment)|shape-(image-threshold|inside|margin|outside|padding)|svg-shadow|tap-highlight-color|text-(decoration(-(color|line|style))?|overflow)|touch-callout|transform(-(origin(-(x|y|z))?|style))?|transition(-(delay|duration|property|timing-function))?|user-drag|wrap-(flow|through)|zoom)\s*(?=:)</string>
+			<string>-webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|origin|size)|border-(bottom|top)-(left|right)-radius|border-(image|radius)|box-sizing|column-(count|gap|rule|rule-color|rule-style|rule-width|span|width)|columns|font-(feature-settings|kerning|size-delta|variant-ligatures)|grid-(columns?|rows?)|hyphens|opacity|perspective(-origin)?|region-overflow|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
@@ -1159,11 +1148,27 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pseudo-element-prefixed-moz</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#pseudo-element</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#deprecated-pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-prefixed-moz-locale-dir</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-prefixed-moz-sytem-metric</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-prefixed-moz-tree</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1184,6 +1189,10 @@
 				<dict>
 					<key>include</key>
 					<string>#pseudo-class-function-lang</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-prefixed-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1215,6 +1224,60 @@
 				</dict>
 			</array>
 		</dict>
+		<key>pseudo-class-function-prefixed-moz-locale-dir</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)</string>
+		</dict>
+		<key>pseudo-class-function-prefixed-moz-sytem-metric</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)</string>
+		</dict>
+		<key>pseudo-class-function-prefixed-moz-tree</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)</string>
+		</dict>
 		<key>pseudo-class-function-selector-list</key>
 		<dict>
 			<key>captures</key>
@@ -1228,12 +1291,38 @@
 			<key>match</key>
 			<string>:((current|not|matches))\(</string>
 		</dict>
+		<key>pseudo-class-prefixed-moz</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive))</string>
+		</dict>
 		<key>pseudo-element</key>
 		<dict>
 			<key>match</key>
 			<string>::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
+		</dict>
+		<key>pseudo-element-prefixed-moz</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>::(-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block))</string>
 		</dict>
 		<key>pseudo-page</key>
 		<dict>
@@ -1278,11 +1367,27 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pseudo-element-prefixed-moz</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#pseudo-element</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#deprecated-pseudo-element</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-prefixed-moz-locale-dir</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-prefixed-moz-sytem-metric</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-function-prefixed-moz-tree</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1303,6 +1408,10 @@
 				<dict>
 					<key>include</key>
 					<string>#pseudo-class-function-lang</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-prefixed-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1360,10 +1469,6 @@
 				<dict>
 					<key>include</key>
 					<string>#prefixed-property-epub</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#prefixed-property-moz-deprecated</string>
 				</dict>
 				<dict>
 					<key>include</key>
