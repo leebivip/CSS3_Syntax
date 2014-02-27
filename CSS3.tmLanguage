@@ -478,10 +478,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-apple</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#prefixed-property-epub</string>
 				</dict>
 				<dict>
@@ -494,19 +490,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-o</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#prefixed-property-wap</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#prefixed-property-webkit</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#prefixed-property-xv</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -997,13 +985,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>prefixed-property-apple</key>
-		<dict>
-			<key>match</key>
-			<string>-apple-dashboard-region\s*(?=:)</string>
-			<key>name</key>
-			<string>storage.type.css</string>
-		</dict>
 		<key>prefixed-property-epub</key>
 		<dict>
 			<key>match</key>
@@ -1025,31 +1006,17 @@
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
-		<key>prefixed-property-o</key>
-		<dict>
-			<key>match</key>
-			<string>-o-(background-(clip|origin|size)|border-(((bottom|top)-(left|right)-radius|radius)|border-image)|box-(decoration-break|shadow|sizing)|caption-side|clip-path|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|device-pixel-ratio|filter|focus-opacity|link(-source)?|mask|mini-fold|object-(fit|position)|opacity|overflow-(x|y)|scrollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|tab-size|table-baseline|text-(decoration|overflow|transform)|transform(-origin)?|transition(-(delay|duration|property|timing-function))?|word-wrap|writing-mode)\s*(?=:)</string>
-			<key>name</key>
-			<string>storage.type.css</string>
-		</dict>
 		<key>prefixed-property-wap</key>
 		<dict>
 			<key>match</key>
-			<string>-wap-(accesskey|input-(format|required)|marquee-(dir|loop|speed|style))\s*(?=:)</string>
+			<string>-wap-(accesskey|input-(format|required)|marquee(-(dir|loop|speed|style))?)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
 		<key>prefixed-property-webkit</key>
 		<dict>
 			<key>match</key>
-			<string>-webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|origin|size)|border-(bottom|top)-(left|right)-radius|border-(image|radius)|box-sizing|column-(count|gap|rule|rule-color|rule-style|rule-width|span|width)|columns|font-(feature-settings|kerning|size-delta|variant-ligatures)|grid-(columns?|rows?)|hyphens|opacity|perspective(-origin)?|region-overflow|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)</string>
-			<key>name</key>
-			<string>storage.type.css</string>
-		</dict>
-		<key>prefixed-property-xv</key>
-		<dict>
-			<key>match</key>
-			<string>-xv-(interpret-as|phonemes|voice-(balance|duration|pitch(-range)?|rate|stress|volume))\s*(?=:)</string>
+			<string>-webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|origin|size)|border-(bottom|top)-(left|right)-radius|border-(image|radius)|box-sizing|column-(count|gap|rule|rule-color|rule-style|rule-width|span|width)|columns|dashboard-region|font-(feature-settings|kerning|size-delta|variant-ligatures)|grid-(columns?|rows?)|hyphens|opacity|perspective(-origin)?|region-overflow|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
@@ -1464,10 +1431,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-apple</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#prefixed-property-epub</string>
 				</dict>
 				<dict>
@@ -1480,19 +1443,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-o</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#prefixed-property-wap</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#prefixed-property-webkit</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#prefixed-property-xv</string>
 				</dict>
 				<dict>
 					<key>include</key>

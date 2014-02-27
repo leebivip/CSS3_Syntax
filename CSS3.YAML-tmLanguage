@@ -180,14 +180,11 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#variable'
-    - include: '#prefixed-property-apple'
     - include: '#prefixed-property-epub'
     - include: '#prefixed-property-moz'
     - include: '#prefixed-property-ms'
-    - include: '#prefixed-property-o'
     - include: '#prefixed-property-wap'
     - include: '#prefixed-property-webkit'
-    - include: '#prefixed-property-xv'
     - include: '#property'
     - include: '#value'
     end: \}
@@ -364,7 +361,9 @@ repository:
     begin: \(
     patterns:
     - include: '#block-comment'
+    # - include: '#media-feature-discrete-value-prefixed-moz'
     - include: '#media-feature-discrete-value'
+    # - include: '#media-feature-property-prefixed-moz'
     - include: '#media-feature-property'
     - include: '#unit'
     - include: '#ratio'
@@ -428,12 +427,6 @@ repository:
     - include: '#block'
     end: (?<=\})
 
-  prefixed-property-apple:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -apple-dashboard-region\s*(?=:)
-
   prefixed-property-epub:
     # name: invalid.deprecated.css
     # TODO: assign a proper name to this
@@ -452,17 +445,11 @@ repository:
     name: storage.type.css
     match: -ms-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background-(clip|origin|position-(x|y)|size)|border-((bottom|top)-(left|right)-radius|radius)|behavior|block-progression|box-(shadow|sizing)|caption-side|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|font-feature-settings|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|opacity|overflow-(style|x|y)|perspective(-origin)?|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|decoration|justify|kashida-space|overflow|transform|underline-position)|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)
 
-  prefixed-property-o:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -o-(background-(clip|origin|size)|border-(((bottom|top)-(left|right)-radius|radius)|border-image)|box-(decoration-break|shadow|sizing)|caption-side|clip-path|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|device-pixel-ratio|filter|focus-opacity|link(-source)?|mask|mini-fold|object-(fit|position)|opacity|overflow-(x|y)|scrollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|tab-size|table-baseline|text-(decoration|overflow|transform)|transform(-origin)?|transition(-(delay|duration|property|timing-function))?|word-wrap|writing-mode)\s*(?=:)
-
   prefixed-property-wap:
     # name: invalid.deprecated.css
     # TODO: assign a proper name to this
     name: storage.type.css
-    match: -wap-(accesskey|input-(format|required)|marquee-(dir|loop|speed|style))\s*(?=:)
+    match: -wap-(accesskey|input-(format|required)|marquee(-(dir|loop|speed|style))?)\s*(?=:)
 
   prefixed-property-webkit:
     # name: invalid.deprecated.css
@@ -470,13 +457,7 @@ repository:
     name: storage.type.css
     # match: -webkit-(align-(content|items|self)|alt|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|composite|origin|position-(x|y)|size)|border-((after|before)(-(color|style|width))?|((bottom|top)-(left|right)-)?radius|(end|start)(-(color|style|width))?|fit|image)|box-(align|decoration-break|flex(-group)?|lines|ordinal-group|orient|pack|reflect|shadow|sizing)|clip-path|column-(axis|break-(after|before|inside)|count|fill|gap|progression|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|flow-(from|into)|font-size-delta|grid-(area|auto-(columns|flow|rows)|column(-(end|start))?|row(-(end|start))?|template-(areas|columns|rows))|justify-content|line-clamp|logical-(height|width)|margin-((after|before)(-collapse)?|((bottom|top)-)?collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|position(-(x|y))?|repeat(-(x|y))?|size|source-type))?|max-logical-height|(max|min)-logical-(height|width)|mix-blend-mode|object-fit|opacity|order|overflow-(x|y)|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|region-(break-(after|before|inside)|fragment)|shape-(image-threshold|inside|margin|outside|padding)|svg-shadow|tap-highlight-color|text-(decoration(-(color|line|style))?|overflow)|touch-callout|transform(-(origin(-(x|y|z))?|style))?|transition(-(delay|duration|property|timing-function))?|user-drag|wrap-(flow|through)|zoom)\s*(?=:)
     # MDN version below
-    match: -webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|origin|size)|border-(bottom|top)-(left|right)-radius|border-(image|radius)|box-sizing|column-(count|gap|rule|rule-color|rule-style|rule-width|span|width)|columns|font-(feature-settings|kerning|size-delta|variant-ligatures)|grid-(columns?|rows?)|hyphens|opacity|perspective(-origin)?|region-overflow|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)
-
-  prefixed-property-xv:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -xv-(interpret-as|phonemes|voice-(balance|duration|pitch(-range)?|rate|stress|volume))\s*(?=:)
+    match: -webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|origin|size)|border-(bottom|top)-(left|right)-radius|border-(image|radius)|box-sizing|column-(count|gap|rule|rule-color|rule-style|rule-width|span|width)|columns|dashboard-region|font-(feature-settings|kerning|size-delta|variant-ligatures)|grid-(columns?|rows?)|hyphens|opacity|perspective(-origin)?|region-overflow|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)
 
   property:
     # TODO: assign a proper name to this
@@ -646,14 +627,11 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#supports-condition'
-    - include: '#prefixed-property-apple'
     - include: '#prefixed-property-epub'
     - include: '#prefixed-property-moz'
     - include: '#prefixed-property-ms'
-    - include: '#prefixed-property-o'
     - include: '#prefixed-property-wap'
     - include: '#prefixed-property-webkit'
-    - include: '#prefixed-property-xv'
     - include: '#property'
     - include: '#supports-condition-value'
     - include: '#logic-operator'
@@ -754,7 +732,6 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes,
 #   pseudo-elements, and media queries
-#   - #named-value-webkit-deprecated
 #   - #named-value-webkit
 
 ...
