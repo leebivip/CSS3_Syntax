@@ -29,7 +29,7 @@
 /* invalid @charset */
 
 @charset 'iso-8859-15'; /* non UTF-8 */
-@charset 'utf8';        /* mismatched single- and double-quote */
+@charset 'utf8";        /* mismatched single- and double-quote */
 @charset UTF-8;         /* not a quoted string */
 
 /* valid @import */
@@ -1289,6 +1289,63 @@ p{-epub-writing-mode: blue;}
 
 
 p {-webkit-dashboard-region: blue;}
+
+@media (-moz-images-in-menus) {}
+@media (-moz-mac-graphite-theme) {}
+@media (-moz-maemo-classic) {}
+@media (-moz-device-pixel-ratio) {}
+@media (-moz-scrollbar-end-backward) {}
+@media (-moz-scrollbar-end-forward) {}
+@media (-moz-scrollbar-start-backward) {}
+@media (-moz-scrollbar-start-forward) {}
+@media (-moz-scrollbar-thumb-proportional) {}
+@media (-moz-touch-enabled) {}
+@media (-moz-windows-classic) {}
+@media (-moz-windows-compositor) {}
+@media (-moz-windows-default-theme) {}
+@media (-moz-windows-theme) {}
+@media (-moz-images-in-menus) {}
+@media (-moz-mac-graphite-theme) {}
+@media (-moz-maemo-classic) {}
+@media (-moz-device-pixel-ratio) {}
+@media (-moz-scrollbar-end-backward) {}
+@media (-moz-scrollbar-end-forward) {}
+@media (-moz-scrollbar-start-backward) {}
+@media (-moz-scrollbar-start-forward) {}
+@media (-moz-scrollbar-thumb-proportional) {}
+@media (-moz-touch-enabled) {}
+@media (-moz-windows-classic) {}
+@media (-moz-windows-compositor) {}
+@media (-moz-windows-default-theme) {}
+@media (-moz-windows-theme) {}
+@media (-moz-images-in-menus) {}
+@media (-moz-mac-graphite-theme) {}
+@media (-moz-maemo-classic) {}
+@media (-moz-device-pixel-ratio) {}
+@media (-moz-scrollbar-end-backward) {}
+@media (-moz-scrollbar-end-forward) {}
+@media (-moz-scrollbar-start-backward) {}
+@media (-moz-scrollbar-start-forward) {}
+@media (-moz-scrollbar-thumb-proportional) {}
+@media (-moz-touch-enabled) {}
+@media (-moz-windows-classic) {}
+@media (-moz-windows-compositor) {}
+@media (-moz-windows-default-theme) {}
+@media (-moz-windows-theme) {}
+@media (-moz-images-in-menus) {}
+@media (-moz-mac-graphite-theme) {}
+@media (-moz-maemo-classic) {}
+@media (-moz-device-pixel-ratio) {}
+@media (-moz-scrollbar-end-backward) {}
+@media (-moz-scrollbar-end-forward) {}
+@media (-moz-scrollbar-start-backward) {}
+@media (-moz-scrollbar-start-forward) {}
+@media (-moz-scrollbar-thumb-proportional) {}
+@media (-moz-touch-enabled) {}
+@media (-moz-windows-classic) {}
+@media (-moz-windows-compositor) {}
+@media (-moz-windows-default-theme) {}
+@media (-moz-windows-theme) {}
 
 
 

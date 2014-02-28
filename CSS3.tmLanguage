@@ -775,7 +775,7 @@
 		<key>keyframes-identifier</key>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=keyframes)</string>
+			<string>(?&lt;=[@-]keyframes)</string>
 			<key>end</key>
 			<string>\{</string>
 			<key>patterns</key>
@@ -877,6 +877,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#media-feature-property-moz</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#media-feature-property</string>
 				</dict>
 				<dict>
@@ -914,6 +918,13 @@
 		<dict>
 			<key>match</key>
 			<string>\b((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)\b</string>
+			<key>name</key>
+			<string>support.type.css</string>
+		</dict>
+		<key>media-feature-property-moz</key>
+		<dict>
+			<key>match</key>
+			<string>-moz-(images-in-menus|mac-graphite-theme|maemo-classic|device-pixel-ratio|scrollbar-((end|start)-(backward|forward)|thumb-proportional)|touch-enabled|windows-(classic|compositor|(default-)?theme))\b</string>
 			<key>name</key>
 			<string>support.type.css</string>
 		</dict>

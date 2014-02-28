@@ -329,7 +329,7 @@ repository:
     # identical to the generic identifier, except that it ends in an opening
     # curly brace {
     # name: invalid.deprecated.css
-    begin: (?<=keyframes)
+    begin: (?<=[@-]keyframes)
     patterns:
     - include: '#block-comment'
     - include: '#identifier'
@@ -361,9 +361,8 @@ repository:
     begin: \(
     patterns:
     - include: '#block-comment'
-    # - include: '#media-feature-discrete-value-prefixed-moz'
     - include: '#media-feature-discrete-value'
-    # - include: '#media-feature-property-prefixed-moz'
+    - include: '#media-feature-property-moz'
     - include: '#media-feature-property'
     - include: '#unit'
     - include: '#ratio'
@@ -382,6 +381,11 @@ repository:
     # name: invalid.deprecated.css
     name: support.type.css
     match: \b((min|max)-)?((device-)?(aspect-ratio|height|width)|color(-index)?|grid|hover|light-level|resolution|monochrome|orientation|overflow-(block|inline)|pointer|resolution|scan|scripting|update-frequency)\b
+
+  media-feature-property-moz:
+    # name: invalid.deprecated.css
+    name: support.type.css
+    match: -moz-(images-in-menus|mac-graphite-theme|maemo-classic|device-pixel-ratio|scrollbar-((end|start)-(backward|forward)|thumb-proportional)|touch-enabled|windows-(classic|compositor|(default-)?theme))\b
 
   logic-operator:
     # name: keyword.deprecated.css
@@ -732,7 +736,6 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes,
 #   pseudo-elements, and media queries
-#   - moz media queries
 #   - webkit everything
 #   - ms everything
 # - add CSS3 Speech named values to named values
