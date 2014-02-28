@@ -101,7 +101,7 @@ repository:
 
   at-keyframes:
     # name: invalid.deprecated.css
-    begin: (@(-(o|moz|webkit)-)?keyframes)
+    begin: (@(-(moz|webkit)-)?keyframes)
     beginCaptures:
       '0': {name: keyword.at-rule.css}
     contentName: punctuation.css
@@ -431,7 +431,7 @@ repository:
     # name: invalid.deprecated.css
     # TODO: assign a proper name to this
     name: storage.type.css
-    match: -epub-(caption-side|hyphens|text-(combine|orientation|transform)|word-break|writing-mode)\s*(?=:)
+    match: -epub-(break-(after|before|inside)|caption-side|columms|column-(count|fill|gap|rule(-(color|style|width))?|width)|cue(-(after|before))?|hyphens|line-break|pause(-(after|before))?|rest(-(after|before))?|ruby-position|speak(-as)?|text-(align-last|combine|emphasis(-(color|style))?|orientation|transform|trim)|voice-(balance|duration|family|pitch|range|rate|stress|volume)|word-break|writing-mode)\s*(?=:)
 
   prefixed-property-moz:
     # name: invalid.deprecated.css
@@ -732,6 +732,10 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes,
 #   pseudo-elements, and media queries
-#   - #named-value-webkit
-
+#   - moz media queries
+#   - webkit everything
+#   - ms everything
+# - add CSS3 Speech named values to named values
+# - check CSS3 text properties and named values to make sure they're already
+#   included
 ...

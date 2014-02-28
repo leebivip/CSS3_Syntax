@@ -566,10 +566,6 @@ size: 8.5in 11in;/* width height */
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
-@-o-keyframes NAME-YOUR-ANIMATION {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
 @keyframes NAME-YOUR-ANIMATION {
   0%   { opacity: 0; }
   100% { opacity: 1; }
@@ -1244,8 +1240,57 @@ p:-moz-system-metric(windows-default-theme) {}
 p:-moz-tree-cell-text(hover) {}
 p:-moz-tree-row(hover) {}
 
+p{-epub-break-after: blue;}
+p{-epub-break-before: blue;}
+p{-epub-break-inside: blue;}
+p{-epub-caption-side: blue;}
+p{-epub-columms: blue;}
+p{-epub-column-count: blue;}
+p{-epub-column-fill: blue;}
+p{-epub-column-gap: blue;}
+p{-epub-column-rule: blue;}
+p{-epub-column-rule-color: blue;}
+p{-epub-column-rule-style: blue;}
+p{-epub-column-rule-width: blue;}
+p{-epub-column-width: blue;}
+p{-epub-cue: blue;}
+p{-epub-cue-after: blue;}
+p{-epub-cue-before: blue;}
+p{-epub-hyphens: blue;}
+p{-epub-line-break: blue;}
+p{-epub-pause: blue;}
+p{-epub-pause-after: blue;}
+p{-epub-pause-before: blue;}
+p{-epub-rest: blue;}
+p{-epub-rest-after: blue;}
+p{-epub-rest-before: blue;}
+p{-epub-ruby-position: blue;}
+p{-epub-speak: blue;}
+p{-epub-speak-as: blue;}
+p{-epub-text-align-last: blue;}
+p{-epub-text-combine: blue;}
+p{-epub-text-emphasis: blue;}
+p{-epub-text-emphasis-color: blue;}
+p{-epub-text-emphasis-style: blue;}
+p{-epub-text-orientation: blue;}
+p{-epub-text-transform: blue;}
+p{-epub-text-trim: blue;}
+p{-epub-voice-balance: blue;}
+p{-epub-voice-duration: blue;}
+p{-epub-voice-family: blue;}
+p{-epub-voice-pitch: blue;}
+p{-epub-voice-range: blue;}
+p{-epub-voice-rate: blue;}
+p{-epub-voice-stress: blue;}
+p{-epub-voice-volume: blue;}
+p{-epub-word-break: blue;}
+p{-epub-writing-mode: blue;}
+
+
 
 p {-webkit-dashboard-region: blue;}
+
+
 
 /* deprecated */
 

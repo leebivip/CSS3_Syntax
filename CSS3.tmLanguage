@@ -209,7 +209,7 @@
 		<key>at-keyframes</key>
 		<dict>
 			<key>begin</key>
-			<string>(@(-(o|moz|webkit)-)?keyframes)</string>
+			<string>(@(-(moz|webkit)-)?keyframes)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -988,7 +988,7 @@
 		<key>prefixed-property-epub</key>
 		<dict>
 			<key>match</key>
-			<string>-epub-(caption-side|hyphens|text-(combine|orientation|transform)|word-break|writing-mode)\s*(?=:)</string>
+			<string>-epub-(break-(after|before|inside)|caption-side|columms|column-(count|fill|gap|rule(-(color|style|width))?|width)|cue(-(after|before))?|hyphens|line-break|pause(-(after|before))?|rest(-(after|before))?|ruby-position|speak(-as)?|text-(align-last|combine|emphasis(-(color|style))?|orientation|transform|trim)|voice-(balance|duration|family|pitch|range|rate|stress|volume)|word-break|writing-mode)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
