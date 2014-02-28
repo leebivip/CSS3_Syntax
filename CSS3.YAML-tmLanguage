@@ -750,5 +750,6 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes,
 #   pseudo-elements, and media queries
+#   - -webkit- psuedo-elements and pseudo-classes
 
 ...
