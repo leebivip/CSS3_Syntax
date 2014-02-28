@@ -180,11 +180,11 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#variable'
-    - include: '#prefixed-property-epub'
-    - include: '#prefixed-property-moz'
-    - include: '#prefixed-property-ms'
-    - include: '#prefixed-property-wap'
-    - include: '#prefixed-property-webkit'
+    - include: '#property-epub'
+    - include: '#property-moz'
+    - include: '#property-ms'
+    - include: '#property-wap'
+    - include: '#property-webkit'
     - include: '#property'
     - include: '#value'
     end: \}
@@ -431,41 +431,41 @@ repository:
     - include: '#block'
     end: (?<=\})
 
-  prefixed-property-epub:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -epub-(break-(after|before|inside)|caption-side|columms|column-(count|fill|gap|rule(-(color|style|width))?|width)|cue(-(after|before))?|hyphens|line-break|pause(-(after|before))?|rest(-(after|before))?|ruby-position|speak(-as)?|text-(align-last|combine|emphasis(-(color|style))?|orientation|transform|trim)|voice-(balance|duration|family|pitch|range|rate|stress|volume)|word-break|writing-mode)\s*(?=:)
-
-  prefixed-property-moz:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)|box-(align|direction|flex|ordinal-group|orient|pack|sizing)|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|opacity|orient|outline(-(color|offset|radius(-(bottom|top)(left|right))?|style|width))?|padding-(end|start)|perspective(-origin)?|script-(level|min-size|size-multiplier)|stack-sizing|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-(focus|input|modify|select)|window-shadow)
-
-  prefixed-property-ms:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -ms-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background-(clip|origin|position-(x|y)|size)|border-((bottom|top)-(left|right)-radius|radius)|behavior|block-progression|box-(shadow|sizing)|caption-side|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|font-feature-settings|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|opacity|overflow-(style|x|y)|perspective(-origin)?|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|decoration|justify|kashida-space|overflow|transform|underline-position)|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)
-
-  prefixed-property-wap:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -wap-(accesskey|input-(format|required)|marquee(-(dir|loop|speed|style))?)\s*(?=:)
-
-  prefixed-property-webkit:
-    # name: invalid.deprecated.css
-    # TODO: assign a proper name to this
-    name: storage.type.css
-    match: -webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|aspect-ratio|backface-visibility|background-(clip|composite|origin|size)|border-((after|before|end|start)(-(color|style|width))?|(bottom|top)-(left|right)-radius|fit|(horizontal|vertical)-spacing|image|radius)|box-(align|direction|flex(-group)?|lines|ordinal-groups|orient|pack|reflect|shadow|sizing)|column-(axis|break-(after|before|inside)|count|gap|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|font-(feature-settings|kerning|size-delta|smoothing|variant-ligatures)|grid-(columns?|rows?)|highlight|hyphenate-(charset|limit-(after|before|lines))|hyphens|line-(align|box-contain|break|clamp|grid|snap)|locale|logical-(height|width)|margin-((after|before|bottom|top)(-collapse)?|collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(attachment|box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|(position|repeat)(-(x|y))?|size))?|match-nearest-mail-blockquote-color|(max|min)-logical-(height|width)|nbsp-mode|opacity|overflow-scrolling|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|print-color-adjust|region-(break-(after|before|inside)|overflow)|rtl-ordering|shape-(inside|outside)|svg-shadow|tap-highlight-color|text-(decorations-in-effect|emphasis-position|fill-color|security|size-adjust|stroke(-(color|width))?)|touch-callout|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)
-
   property:
     # TODO: assign a proper name to this
     # name: invalid.deprecated.css
     name: storage.type.css
     match: (align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)
+
+  property-epub:
+    # name: invalid.deprecated.css
+    # TODO: assign a proper name to this
+    name: storage.type.css
+    match: -epub-(break-(after|before|inside)|caption-side|columms|column-(count|fill|gap|rule(-(color|style|width))?|width)|cue(-(after|before))?|hyphens|line-break|pause(-(after|before))?|rest(-(after|before))?|ruby-position|speak(-as)?|text-(align-last|combine|emphasis(-(color|style))?|orientation|transform|trim)|voice-(balance|duration|family|pitch|range|rate|stress|volume)|word-break|writing-mode)\s*(?=:)
+
+  property-moz:
+    # name: invalid.deprecated.css
+    # TODO: assign a proper name to this
+    name: storage.type.css
+    match: -moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)|box-(align|direction|flex|ordinal-group|orient|pack|sizing)|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|opacity|orient|outline(-(color|offset|radius(-(bottom|top)(left|right))?|style|width))?|padding-(end|start)|perspective(-origin)?|script-(level|min-size|size-multiplier)|stack-sizing|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-(focus|input|modify|select)|window-shadow)
+
+  property-ms:
+    # name: invalid.deprecated.css
+    # TODO: assign a proper name to this
+    name: storage.type.css
+    match: -ms-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background-(clip|origin|position-(x|y)|size)|border-((bottom|top)-(left|right)-radius|radius)|behavior|block-progression|box-(shadow|sizing)|caption-side|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|font-feature-settings|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|opacity|overflow-(style|x|y)|perspective(-origin)?|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|decoration|justify|kashida-space|overflow|transform|underline-position)|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)
+
+  property-wap:
+    # name: invalid.deprecated.css
+    # TODO: assign a proper name to this
+    name: storage.type.css
+    match: -wap-(accesskey|input-(format|required)|marquee(-(dir|loop|speed|style))?)\s*(?=:)
+
+  property-webkit:
+    # name: invalid.deprecated.css
+    # TODO: assign a proper name to this
+    name: storage.type.css
+    match: -webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|aspect-ratio|backface-visibility|background-(clip|composite|origin|size)|border-((after|before|end|start)(-(color|style|width))?|(bottom|top)-(left|right)-radius|fit|(horizontal|vertical)-spacing|image|radius)|box-(align|direction|flex(-group)?|lines|ordinal-groups|orient|pack|reflect|shadow|sizing)|column-(axis|break-(after|before|inside)|count|gap|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|font-(feature-settings|kerning|size-delta|smoothing|variant-ligatures)|grid-(columns?|rows?)|highlight|hyphenate-(charset|limit-(after|before|lines))|hyphens|line-(align|box-contain|break|clamp|grid|snap)|locale|logical-(height|width)|margin-((after|before|bottom|top)(-collapse)?|collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(attachment|box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|(position|repeat)(-(x|y))?|size))?|match-nearest-mail-blockquote-color|(max|min)-logical-(height|width)|nbsp-mode|opacity|overflow-scrolling|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|print-color-adjust|region-(break-(after|before|inside)|overflow)|rtl-ordering|shape-(inside|outside)|svg-shadow|tap-highlight-color|text-(decorations-in-effect|emphasis-position|fill-color|security|size-adjust|stroke(-(color|width))?)|touch-callout|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)
 
   pseudo-class:
     # non-function pseudo-classes. pseudo-class functions like :not() have
@@ -475,7 +475,7 @@ repository:
       # TODO: assign a proper name to this
       '1': {name: entity.name.function.css}
 
-  pseudo-class-prefixed-moz:
+  pseudo-class-moz:
     match: :(-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive))
     captures:
       # TODO: assign a proper name to this
@@ -508,18 +508,18 @@ repository:
     # necessary.
     - include: '#block-comment'
     - include: '#attribute-selector'
-    - include: '#pseudo-element-prefixed-moz'
+    - include: '#pseudo-element-moz'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
-    - include: '#pseudo-class-function-prefixed-moz-locale-dir'
-    - include: '#pseudo-class-function-prefixed-moz-sytem-metric'
-    - include: '#pseudo-class-function-prefixed-moz-tree'
+    - include: '#pseudo-class-function-moz-locale-dir'
+    - include: '#pseudo-class-function-moz-sytem-metric'
+    - include: '#pseudo-class-function-moz-tree'
     - include: '#pseudo-class-function-nth'
     - include: '#pseudo-class-function-selector-list'
     - include: '#pseudo-class-function-local-link'
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
-    - include: '#pseudo-class-prefixed-moz'
+    - include: '#pseudo-class-moz'
     - include: '#pseudo-class'
     - include: '#html-id'
     - include: '#html-class'
@@ -547,21 +547,21 @@ repository:
       '1': {name: entity.name.function.css}
       '2': {name: constant.numeric.css}
 
-  pseudo-class-function-prefixed-moz-locale-dir:
+  pseudo-class-function-moz-locale-dir:
     match: :(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)
     captures:
       # TODO: assign proper names to these
       '1': {name: entity.name.function.css}
       '2': {name: variable.parameter.css}
 
-  pseudo-class-function-prefixed-moz-sytem-metric:
+  pseudo-class-function-moz-sytem-metric:
     match: :(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)
     captures:
       # TODO: assign proper names to these
       '1': {name: entity.name.function.css}
       '2': {name: variable.parameter.css}
 
-  pseudo-class-function-prefixed-moz-tree:
+  pseudo-class-function-moz-tree:
     match: :(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)
     captures:
       # TODO: assign proper names to these
@@ -574,7 +574,7 @@ repository:
     # TODO: delete moz, webkit, ms prefixes when they're supported by other rules
     match: ::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
 
-  pseudo-element-prefixed-moz:
+  pseudo-element-moz:
     match: ::(-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block))
     captures:
       # TODO: assign a proper name to this
@@ -598,18 +598,18 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#attribute-selector'
-    - include: '#pseudo-element-prefixed-moz'
+    - include: '#pseudo-element-moz'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
-    - include: '#pseudo-class-function-prefixed-moz-locale-dir'
-    - include: '#pseudo-class-function-prefixed-moz-sytem-metric'
-    - include: '#pseudo-class-function-prefixed-moz-tree'
+    - include: '#pseudo-class-function-moz-locale-dir'
+    - include: '#pseudo-class-function-moz-sytem-metric'
+    - include: '#pseudo-class-function-moz-tree'
     - include: '#pseudo-class-function-nth'
     - include: '#pseudo-class-function-selector-list'
     - include: '#pseudo-class-function-local-link'
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
-    - include: '#pseudo-class-prefixed-moz'
+    - include: '#pseudo-class-moz'
     - include: '#pseudo-class'
     - include: '#html-id'
     - include: '#html-class'
@@ -629,11 +629,11 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#supports-condition'
-    - include: '#prefixed-property-epub'
-    - include: '#prefixed-property-moz'
-    - include: '#prefixed-property-ms'
-    - include: '#prefixed-property-wap'
-    - include: '#prefixed-property-webkit'
+    - include: '#property-epub'
+    - include: '#property-moz'
+    - include: '#property-ms'
+    - include: '#property-wap'
+    - include: '#property-webkit'
     - include: '#property'
     - include: '#supports-condition-value'
     - include: '#logic-operator'

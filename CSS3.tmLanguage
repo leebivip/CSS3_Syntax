@@ -478,23 +478,23 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-epub</string>
+					<string>#property-epub</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-moz</string>
+					<string>#property-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-ms</string>
+					<string>#property-ms</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-wap</string>
+					<string>#property-wap</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-webkit</string>
+					<string>#property-webkit</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -996,45 +996,45 @@
 				</dict>
 			</array>
 		</dict>
-		<key>prefixed-property-epub</key>
+		<key>property</key>
+		<dict>
+			<key>match</key>
+			<string>(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)</string>
+			<key>name</key>
+			<string>storage.type.css</string>
+		</dict>
+		<key>property-epub</key>
 		<dict>
 			<key>match</key>
 			<string>-epub-(break-(after|before|inside)|caption-side|columms|column-(count|fill|gap|rule(-(color|style|width))?|width)|cue(-(after|before))?|hyphens|line-break|pause(-(after|before))?|rest(-(after|before))?|ruby-position|speak(-as)?|text-(align-last|combine|emphasis(-(color|style))?|orientation|transform|trim)|voice-(balance|duration|family|pitch|range|rate|stress|volume)|word-break|writing-mode)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
-		<key>prefixed-property-moz</key>
+		<key>property-moz</key>
 		<dict>
 			<key>match</key>
 			<string>-moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)|box-(align|direction|flex|ordinal-group|orient|pack|sizing)|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|opacity|orient|outline(-(color|offset|radius(-(bottom|top)(left|right))?|style|width))?|padding-(end|start)|perspective(-origin)?|script-(level|min-size|size-multiplier)|stack-sizing|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-(focus|input|modify|select)|window-shadow)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
-		<key>prefixed-property-ms</key>
+		<key>property-ms</key>
 		<dict>
 			<key>match</key>
 			<string>-ms-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background-(clip|origin|position-(x|y)|size)|border-((bottom|top)-(left|right)-radius|radius)|behavior|block-progression|box-(shadow|sizing)|caption-side|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|font-feature-settings|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|opacity|overflow-(style|x|y)|perspective(-origin)?|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|decoration|justify|kashida-space|overflow|transform|underline-position)|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
-		<key>prefixed-property-wap</key>
+		<key>property-wap</key>
 		<dict>
 			<key>match</key>
 			<string>-wap-(accesskey|input-(format|required)|marquee(-(dir|loop|speed|style))?)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
-		<key>prefixed-property-webkit</key>
+		<key>property-webkit</key>
 		<dict>
 			<key>match</key>
 			<string>-webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|aspect-ratio|backface-visibility|background-(clip|composite|origin|size)|border-((after|before|end|start)(-(color|style|width))?|(bottom|top)-(left|right)-radius|fit|(horizontal|vertical)-spacing|image|radius)|box-(align|direction|flex(-group)?|lines|ordinal-groups|orient|pack|reflect|shadow|sizing)|column-(axis|break-(after|before|inside)|count|gap|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|font-(feature-settings|kerning|size-delta|smoothing|variant-ligatures)|grid-(columns?|rows?)|highlight|hyphenate-(charset|limit-(after|before|lines))|hyphens|line-(align|box-contain|break|clamp|grid|snap)|locale|logical-(height|width)|margin-((after|before|bottom|top)(-collapse)?|collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(attachment|box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|(position|repeat)(-(x|y))?|size))?|match-nearest-mail-blockquote-color|(max|min)-logical-(height|width)|nbsp-mode|opacity|overflow-scrolling|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|print-color-adjust|region-(break-(after|before|inside)|overflow)|rtl-ordering|shape-(inside|outside)|svg-shadow|tap-highlight-color|text-(decorations-in-effect|emphasis-position|fill-color|security|size-adjust|stroke(-(color|width))?)|touch-callout|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)</string>
-			<key>name</key>
-			<string>storage.type.css</string>
-		</dict>
-		<key>property</key>
-		<dict>
-			<key>match</key>
-			<string>(align-(content|items|self)|all|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|border(-(bottom(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|left(-(color|style|width))?|radius|right(-(color|style|width))?|spacing|style|top(-(color|(left|right)-radius|style|width))?|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|clear|clip(-path)?|color|columns|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|content|counter-(increment|reset)|cursor|direction|display|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|height|hyphens|icon|image-(rendering|resolution|orientation)|ime-mode|inherit|initial|justify-content|left|letter-spacing|line-height|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-type)?|max-(height|width)|min-(height|width)|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y|))?|padding(-(bottom|left|right|top))?|page-break-(after|before|inside)|perspective(-origin)?|pointer-events|position|quotes|resize|right|size|src|table-layout|tab-size|text-(align(-last)?|combine-horizontal|decoration(-(color|line|style))?|indent|orientation|overflow|rendering|shadow|transform|underline-position)|top|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-(bidi|range)|vertical-align|visibility|white-space|widows|width|word-(break|spacing|wrap)|writing-mode|z-index)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
@@ -1100,6 +1100,60 @@
 			<key>match</key>
 			<string>:(local-link)\(\s*((?&lt;!-)[0-9]+)\s*\)</string>
 		</dict>
+		<key>pseudo-class-function-moz-locale-dir</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)</string>
+		</dict>
+		<key>pseudo-class-function-moz-sytem-metric</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)</string>
+		</dict>
+		<key>pseudo-class-function-moz-tree</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)</string>
+		</dict>
 		<key>pseudo-class-function-nth</key>
 		<dict>
 			<key>begin</key>
@@ -1126,7 +1180,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-element-prefixed-moz</string>
+					<string>#pseudo-element-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1138,15 +1192,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-function-prefixed-moz-locale-dir</string>
+					<string>#pseudo-class-function-moz-locale-dir</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-function-prefixed-moz-sytem-metric</string>
+					<string>#pseudo-class-function-moz-sytem-metric</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-function-prefixed-moz-tree</string>
+					<string>#pseudo-class-function-moz-tree</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1170,7 +1224,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-prefixed-moz</string>
+					<string>#pseudo-class-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1202,60 +1256,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>pseudo-class-function-prefixed-moz-locale-dir</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.css</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>:(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)</string>
-		</dict>
-		<key>pseudo-class-function-prefixed-moz-sytem-metric</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.css</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>:(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)</string>
-		</dict>
-		<key>pseudo-class-function-prefixed-moz-tree</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.css</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>:(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)</string>
-		</dict>
 		<key>pseudo-class-function-selector-list</key>
 		<dict>
 			<key>captures</key>
@@ -1269,7 +1269,7 @@
 			<key>match</key>
 			<string>:((current|not|matches))\(</string>
 		</dict>
-		<key>pseudo-class-prefixed-moz</key>
+		<key>pseudo-class-moz</key>
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -1289,7 +1289,7 @@
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
-		<key>pseudo-element-prefixed-moz</key>
+		<key>pseudo-element-moz</key>
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -1345,7 +1345,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-element-prefixed-moz</string>
+					<string>#pseudo-element-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1357,15 +1357,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-function-prefixed-moz-locale-dir</string>
+					<string>#pseudo-class-function-moz-locale-dir</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-function-prefixed-moz-sytem-metric</string>
+					<string>#pseudo-class-function-moz-sytem-metric</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-function-prefixed-moz-tree</string>
+					<string>#pseudo-class-function-moz-tree</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1389,7 +1389,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#pseudo-class-prefixed-moz</string>
+					<string>#pseudo-class-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1442,23 +1442,23 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-epub</string>
+					<string>#property-epub</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-moz</string>
+					<string>#property-moz</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-ms</string>
+					<string>#property-ms</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-wap</string>
+					<string>#property-wap</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#prefixed-property-webkit</string>
+					<string>#property-webkit</string>
 				</dict>
 				<dict>
 					<key>include</key>
