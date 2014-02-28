@@ -726,7 +726,7 @@
 		<key>function</key>
 		<dict>
 			<key>match</key>
-			<string>(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|image-rect|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()</string>
+			<string>(-(epub|moz|ms|wap|webkit)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|image-rect|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()</string>
 			<key>name</key>
 			<string>entity.name.function.css</string>
 		</dict>
@@ -881,6 +881,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#media-feature-property-ms</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#media-feature-property</string>
 				</dict>
 				<dict>
@@ -925,6 +929,13 @@
 		<dict>
 			<key>match</key>
 			<string>-moz-(images-in-menus|mac-graphite-theme|maemo-classic|device-pixel-ratio|scrollbar-((end|start)-(backward|forward)|thumb-proportional)|touch-enabled|windows-(classic|compositor|(default-)?theme))\b</string>
+			<key>name</key>
+			<string>support.type.css</string>
+		</dict>
+		<key>media-feature-property-ms</key>
+		<dict>
+			<key>match</key>
+			<string>-ms-high-contrast\b</string>
 			<key>name</key>
 			<string>support.type.css</string>
 		</dict>
@@ -1020,7 +1031,7 @@
 		<key>property-ms</key>
 		<dict>
 			<key>match</key>
-			<string>-ms-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background-(clip|origin|position-(x|y)|size)|border-((bottom|top)-(left|right)-radius|radius)|behavior|block-progression|box-(shadow|sizing)|caption-side|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|font-feature-settings|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|opacity|overflow-(style|x|y)|perspective(-origin)?|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|decoration|justify|kashida-space|overflow|transform|underline-position)|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)</string>
+			<string>-ms-(accelerator|background-position-(x|y)|behavior|block-progression|content-zoom(-(chaining|limit(-(max|min))?|snap(-(points|type))?)|ing)|filter|flow-(from|into)|grid-(columns?|rows?)(-(align|span))?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|overflow-(style|x|y)|progress-appearance|scroll-(chaining|limit(-((x|y)-(max|min)))?|rails|snap-(points-(x|y)|type|(x|y))|translation)|scrollbar-(3dlight|darkshadow|highlight|shadow|track)-color|text-(align-last|autospace|combine-horizontal|justify|kashida-space|overflow|underline-position)|user-select|word-wrap|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)</string>
 			<key>name</key>
 			<string>storage.type.css</string>
 		</dict>
@@ -1285,7 +1296,7 @@
 		<key>pseudo-element</key>
 		<dict>
 			<key>match</key>
-			<string>::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
+			<string>::(-(epub|moz|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>

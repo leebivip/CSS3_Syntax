@@ -293,7 +293,7 @@ repository:
     # paren
     # name: invalid.deprecated.css
     name: entity.name.function.css
-    match: (-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|image-rect|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()
+    match: (-(epub|moz|ms|wap|webkit)-)?((attr|blur|brightness|calc|contrast|counters?|cross-fade|cubic-bezier|cycle|drop-shadow|element|grayscale|hsla?|hue-rotate|image|image-rect|invert|linear-gradient|matrix(3d)?|opacity|perspective|radial-gradient|rect|repeating-(linear|radial)-gradient|rgba?|(rotate|scale|translate)(x|y|z|3d)?|saturate|sepia|skew(x|y)?|steps|var))(?=\()
 
   hex-color:
     name: constant.numeric.css
@@ -363,6 +363,7 @@ repository:
     - include: '#block-comment'
     - include: '#media-feature-discrete-value'
     - include: '#media-feature-property-moz'
+    - include: '#media-feature-property-ms'
     - include: '#media-feature-property'
     - include: '#unit'
     - include: '#ratio'
@@ -386,6 +387,11 @@ repository:
     # name: invalid.deprecated.css
     name: support.type.css
     match: -moz-(images-in-menus|mac-graphite-theme|maemo-classic|device-pixel-ratio|scrollbar-((end|start)-(backward|forward)|thumb-proportional)|touch-enabled|windows-(classic|compositor|(default-)?theme))\b
+
+  media-feature-property-ms:
+    # name: invalid.deprecated.css
+    name: support.type.css
+    match: -ms-high-contrast\b
 
   logic-operator:
     # name: keyword.deprecated.css
@@ -455,7 +461,7 @@ repository:
     # name: invalid.deprecated.css
     # TODO: assign a proper name to this
     name: storage.type.css
-    match: -ms-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|backface-visibility|background-(clip|origin|position-(x|y)|size)|border-((bottom|top)-(left|right)-radius|radius)|behavior|block-progression|box-(shadow|sizing)|caption-side|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|content-zoom(-(chaining|limit(-(min|max))?|snap(-(points|type))?)|ing)|filter|flex(-(align|direction|order|pack|wrap))?|flow-(from|into)|font-feature-settings|grid-column(-(align|span)|s)?|grid-row(-(align|span)|s)?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|opacity|overflow-(style|x|y)|perspective(-origin)?|progress-appearance|soll-(chaining|limit(-(x|y)-(max|min))?|rails|snap-(points-(x|y)|type|x|y)|translation)|sollbar-(arrow|base|darkshadow|face|highlight|shadow|track)-color|text-(align-last|autospace|decoration|justify|kashida-space|overflow|transform|underline-position)|touch-action|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|user-select|word-(break|wrap)|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)
+    match: -ms-(accelerator|background-position-(x|y)|behavior|block-progression|content-zoom(-(chaining|limit(-(max|min))?|snap(-(points|type))?)|ing)|filter|flow-(from|into)|grid-(columns?|rows?)(-(align|span))?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|overflow-(style|x|y)|progress-appearance|scroll-(chaining|limit(-((x|y)-(max|min)))?|rails|snap-(points-(x|y)|type|(x|y))|translation)|scrollbar-(3dlight|darkshadow|highlight|shadow|track)-color|text-(align-last|autospace|combine-horizontal|justify|kashida-space|overflow|underline-position)|user-select|word-wrap|wrap-(flow|margin|through)|writing-mode|zoom)\s*(?=:)
 
   property-wap:
     # name: invalid.deprecated.css
@@ -574,7 +580,7 @@ repository:
     # TODO: assign a proper name to this
     name: constant.numeric.css
     # TODO: delete moz, webkit, ms prefixes when they're supported by other rules
-    match: ::(-(ah|apple|atsc|epub|hp|ibooks|khtml|moz|mso?|o|prince|rim|ro|tc|wap|weasy|webkit|x)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
+    match: ::(-(epub|moz|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
 
   pseudo-element-moz:
     match: ::(-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block))
@@ -736,6 +742,5 @@ repository:
 #   - properties
 # - support all experimental prefixed values, at-rules, pseudo-classes,
 #   pseudo-elements, and media queries
-#   - ms everything
 
 ...
