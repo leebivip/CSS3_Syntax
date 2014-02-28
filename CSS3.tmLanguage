@@ -1239,6 +1239,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pseudo-class-ms</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#pseudo-class</string>
 				</dict>
 				<dict>
@@ -1292,6 +1296,19 @@
 			</dict>
 			<key>match</key>
 			<string>:(-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive))</string>
+		</dict>
+		<key>pseudo-class-ms</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.css</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>:(-ms-(input-placeholder|keyboard-active))</string>
 		</dict>
 		<key>pseudo-element</key>
 		<dict>
@@ -1401,6 +1418,10 @@
 				<dict>
 					<key>include</key>
 					<string>#pseudo-class-moz</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class-ms</string>
 				</dict>
 				<dict>
 					<key>include</key>

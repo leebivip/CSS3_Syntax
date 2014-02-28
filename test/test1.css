@@ -1938,6 +1938,9 @@ p {-ms-zoom: blue;}
 
 @media (-ms-high-contrast) {}
 
+p:-ms-input-placeholder {}
+p:-ms-keyboard-active {}
+
 /* deprecated */
 
 hgroup {}

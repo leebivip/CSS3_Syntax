@@ -489,6 +489,12 @@ repository:
       # TODO: assign a proper name to this
       '1': {name: entity.name.function.css}
 
+  pseudo-class-ms:
+    match: :(-ms-(input-placeholder|keyboard-active))
+    captures:
+      # TODO: assign a proper name to this
+      '1': {name: entity.name.function.css}
+
   pseudo-class-function-dir:
     match: :(dir)\(\s*((ltr|rtl))\s*\)
     captures:
@@ -528,6 +534,7 @@ repository:
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
     - include: '#pseudo-class-moz'
+    - include: '#pseudo-class-ms'
     - include: '#pseudo-class'
     - include: '#html-id'
     - include: '#html-class'
@@ -618,6 +625,7 @@ repository:
     - include: '#pseudo-class-function-dir'
     - include: '#pseudo-class-function-lang'
     - include: '#pseudo-class-moz'
+    - include: '#pseudo-class-ms'
     - include: '#pseudo-class'
     - include: '#html-id'
     - include: '#html-class'
