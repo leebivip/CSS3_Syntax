@@ -51,7 +51,7 @@ Sublime Text 3 package for CSS3 syntax highlighting.
   more as we find them.)
 
 ## Deviations from the Spec
-* IMPORTANT: You must end every property declaration with a semicolon
+* **IMPORTANT**: You must end every property declaration with a semicolon
   for it to be highlighted properly. CSS does not require this, but
   it is a good practice. The semicolon helps the syntax highlighter
   distiguish between properties and values, and thus avoid applying
