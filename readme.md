@@ -24,6 +24,7 @@ After you've installed the plugin, open any CSS file and set the syntax to CSS.
 
 ## Limitations
 * No support for the following prefixes
+
 <table>
     <tr>
         <td>-ah-</td>
