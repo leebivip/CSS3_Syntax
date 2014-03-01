@@ -504,28 +504,22 @@ repository:
     # name: invalid.deprecated.css
     # non-function pseudo-classes. pseudo-class functions like :not() have
     # separate rules.
-    match: :((((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))
-    captures:
-      # TODO: assign a proper name to this
-      '1': {name: entity.name.function.css}
+    name: entity.name.function.css
+    match: :(((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen)
 
   pseudo-class-moz:
     # name: invalid.deprecated.css
-    match: :(-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive))
-    captures:
-      # TODO: assign a proper name to this
-      '1': {name: entity.name.function.css}
+    name: entity.name.function.css
+    match: :-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive)
 
   pseudo-class-ms:
     # name: invalid.deprecated.css
-    match: :(-ms-(input-placeholder|keyboard-active))
-    captures:
-      # TODO: assign a proper name to this
-      '1': {name: entity.name.function.css}
+    name: entity.name.function.css
+    match: :-ms-(input-placeholder|keyboard-active)
 
   pseudo-class-function-dir:
     # name: invalid.deprecated.css
-    match: :(dir)\(\s*((ltr|rtl))\s*\)
+    match: (:dir)\(\s*((ltr|rtl))\s*\)
     captures:
       # TODO: assign proper names to these
       '1': {name: entity.name.function.css}
@@ -534,7 +528,7 @@ repository:
   pseudo-class-function-lang:
     # name: invalid.deprecated.css
     # deviation from spec: entire pseudo-class must be on the same line
-    match: :(lang)\(.*\)
+    match: (:lang)\(.*\)
     captures:
       # TODO: assign a proper name to this
       '1': {name: entity.name.function.css}
@@ -542,7 +536,7 @@ repository:
   pseudo-class-function-nth:
     # name: invalid.deprecated.css
     # deviation from spec: no space permitted between function name and opening
-    begin: :(nth-(last-)?(column|child|of-type|match))\(
+    begin: (:nth-(last-)?(column|child|of-type|match))\(
     beginCaptures:
       '1': {name: entity.name.function.css}
     patterns:
@@ -580,7 +574,7 @@ repository:
     # styled by #selector
     # deviation from spec: no space permitted between function name and opening
     # paren
-    match: :((current|not|matches))\(
+    match: (:(current|not|matches))\(
     captures:
       '1': {name: entity.name.function.css}
 
@@ -588,14 +582,14 @@ repository:
     # name: invalid.deprecated.css
     # deviation from spec: no space permitted between function name and opening
     # paren. also, the pseudo-class and arguments must be on the same line.
-    match: :(local-link)\(\s*((?<!-)[0-9]+)\s*\)
+    match: (:local-link)\(\s*((?<!-)[0-9]+)\s*\)
     captures:
       '1': {name: entity.name.function.css}
       '2': {name: constant.numeric.css}
 
   pseudo-class-function-moz-locale-dir:
     # name: invalid.deprecated.css
-    match: :(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)
+    match: (:-moz-locale-dir)\(\s*((ltr|rtl))\s*\)
     captures:
       # TODO: assign proper names to these
       '1': {name: entity.name.function.css}
@@ -603,7 +597,7 @@ repository:
 
   pseudo-class-function-moz-sytem-metric:
     # name: invalid.deprecated.css
-    match: :(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)
+    match: (:-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)
     captures:
       # TODO: assign proper names to these
       '1': {name: entity.name.function.css}
@@ -611,7 +605,7 @@ repository:
 
   pseudo-class-function-moz-tree:
     # name: invalid.deprecated.css
-    match: :(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)
+    match: (:-moz-tree-(cell-text|row))\(\s*(hover)\s*\)
     captures:
       # TODO: assign proper names to these
       '1': {name: entity.name.function.css}
@@ -622,14 +616,13 @@ repository:
     # TODO: assign a proper name to this
     name: constant.numeric.css
     # TODO: delete moz, webkit, ms prefixes when they're supported by other rules
-    match: ::(-(epub|moz|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
+    match: ::(-(epub|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)
 
   pseudo-element-moz:
     # name: invalid.deprecated.css
-    match: ::(-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block))
-    captures:
-      # TODO: assign a proper name to this
-      '1': {name: constant.numeric.css}
+    # TODO: assign a proper name to this
+    name: constant.numeric.css
+    match: ::-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block)
 
   pseudo-page:
     # name: invalid.deprecated.css

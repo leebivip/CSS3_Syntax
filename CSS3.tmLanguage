@@ -1051,16 +1051,10 @@
 		</dict>
 		<key>pseudo-class</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>:((((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen))</string>
+			<string>:(((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen)</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
 		</dict>
 		<key>pseudo-class-function-dir</key>
 		<dict>
@@ -1078,7 +1072,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:(dir)\(\s*((ltr|rtl))\s*\)</string>
+			<string>(:dir)\(\s*((ltr|rtl))\s*\)</string>
 		</dict>
 		<key>pseudo-class-function-lang</key>
 		<dict>
@@ -1091,7 +1085,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:(lang)\(.*\)</string>
+			<string>(:lang)\(.*\)</string>
 		</dict>
 		<key>pseudo-class-function-local-link</key>
 		<dict>
@@ -1109,7 +1103,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:(local-link)\(\s*((?&lt;!-)[0-9]+)\s*\)</string>
+			<string>(:local-link)\(\s*((?&lt;!-)[0-9]+)\s*\)</string>
 		</dict>
 		<key>pseudo-class-function-moz-locale-dir</key>
 		<dict>
@@ -1127,7 +1121,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:(-moz-locale-dir)\(\s*((ltr|rtl))\s*\)</string>
+			<string>(:-moz-locale-dir)\(\s*((ltr|rtl))\s*\)</string>
 		</dict>
 		<key>pseudo-class-function-moz-sytem-metric</key>
 		<dict>
@@ -1145,7 +1139,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:(-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)</string>
+			<string>(:-moz-system-metric)\(\s*((images-in-menus|mac-graphite-theme|scrollbar-(end|start)-(backward|forward)|scrollbar-thumb-proportional|touch-enabled|windows-default-theme))\s*\)</string>
 		</dict>
 		<key>pseudo-class-function-moz-tree</key>
 		<dict>
@@ -1163,12 +1157,12 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:(-moz-tree-(cell-text|row))\(\s*(hover)\s*\)</string>
+			<string>(:-moz-tree-(cell-text|row))\(\s*(hover)\s*\)</string>
 		</dict>
 		<key>pseudo-class-function-nth</key>
 		<dict>
 			<key>begin</key>
-			<string>:(nth-(last-)?(column|child|of-type|match))\(</string>
+			<string>(:nth-(last-)?(column|child|of-type|match))\(</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1282,53 +1276,35 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>:((current|not|matches))\(</string>
+			<string>(:(current|not|matches))\(</string>
 		</dict>
 		<key>pseudo-class-moz</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>:(-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive))</string>
+			<string>:-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive)</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
 		</dict>
 		<key>pseudo-class-ms</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.css</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>:(-ms-(input-placeholder|keyboard-active))</string>
+			<string>:-ms-(input-placeholder|keyboard-active)</string>
+			<key>name</key>
+			<string>entity.name.function.css</string>
 		</dict>
 		<key>pseudo-element</key>
 		<dict>
 			<key>match</key>
-			<string>::(-(epub|moz|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
+			<string>::(-(epub|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
 			<key>name</key>
 			<string>constant.numeric.css</string>
 		</dict>
 		<key>pseudo-element-moz</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>constant.numeric.css</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>::(-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block))</string>
+			<string>::-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block)</string>
+			<key>name</key>
+			<string>constant.numeric.css</string>
 		</dict>
 		<key>pseudo-page</key>
 		<dict>
