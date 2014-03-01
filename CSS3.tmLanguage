@@ -1192,6 +1192,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pseudo-element-webkit</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#pseudo-element-moz</string>
 				</dict>
 				<dict>
@@ -1313,6 +1317,13 @@
 			<key>name</key>
 			<string>entity.name.class.css</string>
 		</dict>
+		<key>pseudo-element-webkit</key>
+		<dict>
+			<key>match</key>
+			<string>::-webkit-(calendar-picker-indicator|color-swatch(-wrapper)?|details-marker|file-upload-button|image-inner-element|inner-spin-button|input-(placeholder|speech-button)|keygen-select|media-(controls-(panel|timeline-container)|slider-container)|meter-(bar|(even-less-good|optimum|suboptimal)-value)|progress-(bar|value)|resizer|scrollbar(-(button|corner|thumb|track(-piece)?))?|search-((cancel|results)-button|(results-)?decoration)|slider-(container|runnable-track|thumb)|textfield-decoration-container|validation-bubble(-(arrow(-clipper)?|heading|message|text-block))?)</string>
+			<key>name</key>
+			<string>entity.name.class.css</string>
+		</dict>
 		<key>pseudo-page</key>
 		<dict>
 			<key>match</key>
@@ -1353,6 +1364,10 @@
 				<dict>
 					<key>include</key>
 					<string>#attribute-selector</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-element-webkit</string>
 				</dict>
 				<dict>
 					<key>include</key>
