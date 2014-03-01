@@ -4,7 +4,7 @@ CSS3-Syntax
 Sublime Text 3 package for CSS3 syntax highlighting.
 
 ## Features
-* __Comprehensive__: complete support for CSS3, based on the latest draft
+* __Comprehensive__: near complete support for CSS3, based on the latest draft
   specs, support for many vendor-prefixed CSS extensions (e.g. -moz-, -ms-,
   -webkit-)
 * __Forward-looking__: support for upcoming features like variables, CSS
