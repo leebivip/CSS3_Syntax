@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cp CSS3.tmLanguage ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-
