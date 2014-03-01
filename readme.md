@@ -54,8 +54,8 @@ After you've installed the plugin, open any CSS file and set the syntax to CSS.
 
 ## Deviations from the Spec
 ### All Properties Must End with a Semicolon
-CSS doesn't require this, but it's good practice. Semicolons help the
-highlighter distiguish properties and values. Without a semicolon, the
+CSS doesn't require this, but it's a good practice. Semicolons help the
+highlighter distinguish properties and values. Without a semicolon, the
 highlighting could be off.
 
   ![alt text](https://github.com/y0ssar1an/CSS3-Syntax/raw/master/screenshots/semicolon.png "Comparison between using semicolons or not.")
