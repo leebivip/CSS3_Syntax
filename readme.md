@@ -9,7 +9,7 @@ Sublime Text 3 package for CSS3 syntax highlighting.
   -webkit-)
 * __Forward-looking__: support for upcoming features like variables, CSS
   animation, and @supports
-* __Modern__: flags deprecated/obsolete parts of CSS
+* __Modern__: deprecated or obsolete parts of CSS are flagged as such
 * __Faithful__: extremely close adherence to the W3C specification, with minor deviations
   due to technical limitations (for non-trivial deviations read [below](#deviations-from-the-spec))
 
