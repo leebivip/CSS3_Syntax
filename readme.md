@@ -5,24 +5,25 @@ Sublime Text 3 package for CSS3 syntax highlighting.
 
 ## Features
 * __Comprehensive__: complete support for CSS3, based on the latest draft
-  specs. support for many vendor-prefixed CSS extensions (e.g. -moz-, -ms-,
+  specs, support for many vendor-prefixed CSS extensions (e.g. -moz-, -ms-,
   -webkit-)
-* __Forward-looking__: supports upcoming features like variables, CSS animation,
-  and @supports.
+* __Forward-looking__: support for upcoming features like variables, CSS
+  animation, and @supports
 * __Modern__: flags deprecated/obsolete parts of CSS
-* __Faithful__: extremely close adherence to the spec, with minor deviations
-  due to technical limitations (non-trivial deviations described [below](http://www.google.com))
+* __Faithful__: extremely close adherence to the W3C specification, with minor deviations
+  due to technical limitations (for non-trivial deviations read [below](#deviations-from-the-spec))
 
 ## Installation
 1. [Install Package Control](https://sublime.wbond.net/installation)
-2. _Mac_: Cmd+Shift+P → Package Control: Install Package → CSS3 Syntax<br>
-   _Windows/Linux_: Ctrl+Shift+P → Package Control: Install Package → CSS3 Syntax
-3. Open .css file
-4. _Mac_: Cmd+Shift+P → Set Syntax: CSS3<br>
-   _Windows/Linux_: Ctrl+Shift+P → Set Syntax: CSS3
+2. Mac: `cmd+shift+p` → Package Control: Install Package → CSS3 Syntax<br>
+   Windows/Linux: `ctrl+shift+p` → Package Control: Install Package → CSS3 Syntax
+
+After you've installed the plugin, open any CSS file and set the syntax to CSS.
+* Mac: `cmd+shift+p` → Set Syntax: CSS3<br>
+  Windows/Linux: `ctrl+shift+p` → Set Syntax: CSS3
 
 ## Limitations
-* Will not color these prefixes
+* No support for the following prefixes
 <table>
     <tr>
         <td>-ah-</td>
@@ -47,41 +48,21 @@ Sublime Text 3 package for CSS3 syntax highlighting.
     </tr>
 </table>
 
-* Incomplete support for vendor-prefixed CSS extensions (We're adding
-  more as we find them.)
+* Incomplete support for vendor-prefixed CSS extensions (we're adding
+  more as we find them)
 
 ## Deviations from the Spec
-* **IMPORTANT**: You must end every property declaration with a semicolon
-  for it to be highlighted properly. CSS does not require this, but
-  it is a good practice. The semicolon helps the syntax highlighter
-  distiguish between properties and values, and thus avoid applying
-  the wrong coloring when the names are the same.<br>
-  ```
-  /* not colored */
-  h1 {color: blue}
-  ```
+### All Properties Must End with a Semicolon
+CSS doesn't require this, but it's good practice. Semicolons help the
+highlighter distiguish properties and values. Without a semicolon, the
+highlighting could be off.
 
-  ```css
-  /* colored */
-  h1 {color: blue;}
-  ```
-* The spec says that HTML tags, properties, values, function names,
-  and more should be matched case-insenstively. This syntax highlighter
-  matches only lowercase text, case-sensitively. The code below is
-  legal CSS, but will not be matched by this highlighter.
-  ```
-  /* not colored */
-  BODY LI A:HOVER {
-    COLOR: RED;
-  }
+  ![alt text](https://github.com/y0ssar1an/CSS3-Syntax/raw/master/screenshots/semicolon.png "Comparison between using semicolons or not.")
 
-  ```
-  ```css
-  /* colored */
-  body li a:hover {
-    color: red;
-  }
-  ```
-  If enough people want to write all-caps CSS, we will change the
-  matching to case-insensitive. There will be a small performance
-  cost.
+### All Properties Must be Written in Lowercase
+The spec says that HTML tags, properties, values, function names, and more
+should be matched case-insenstively. However, this syntax highlighter only
+matches lowercase text. If this bothers enough people, we can work to include
+matching uppercase text as well.
+
+  ![alt text](https://github.com/y0ssar1an/CSS3-Syntax/raw/master/screenshots/case.png "Comparison between uppercase and lowercase css.")
