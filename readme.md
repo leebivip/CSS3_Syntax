@@ -11,7 +11,7 @@ Sublime Text 3 package for CSS3 syntax highlighting.
   animation, and @supports
 * __Modern__: deprecated or obsolete parts of CSS are flagged as such
 * __Faithful__: extremely close adherence to the W3C specification, with minor deviations
-  due to technical limitations (for non-trivial deviations read [below](#deviations-from-the-spec))
+  due to technical limitations (for non-trivial deviations read [below](https://github.com/y0ssar1an/CSS3_Syntax#deviations-from-the-spec))
 
 ## Installation
 1. [Install Package Control](https://sublime.wbond.net/installation)
