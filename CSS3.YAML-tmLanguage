@@ -535,6 +535,7 @@ repository:
     # necessary.
     - include: '#block-comment'
     - include: '#attribute-selector'
+    - include: '#pseudo-element-webkit'
     - include: '#pseudo-element-moz'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
@@ -609,6 +610,11 @@ repository:
     name: entity.name.class.css
     match: ::-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block)
 
+  pseudo-element-webkit:
+    # name: invalid.deprecated.css
+    name: entity.name.class.css
+    match: ::-webkit-(calendar-picker-indicator|color-swatch(-wrapper)?|details-marker|file-upload-button|image-inner-element|inner-spin-button|input-(placeholder|speech-button)|keygen-select|media-(controls-(panel|timeline-container)|slider-container)|meter-(bar|(even-less-good|optimum|suboptimal)-value)|progress-(bar|value)|resizer|scrollbar(-(button|corner|thumb|track(-piece)?))?|search-((cancel|results)-button|(results-)?decoration)|slider-(container|runnable-track|thumb)|textfield-decoration-container|validation-bubble(-(arrow(-clipper)?|heading|message|text-block))?)
+
   pseudo-page:
     # name: invalid.deprecated.css
     name: entity.name.class.css
@@ -627,6 +633,7 @@ repository:
     patterns:
     - include: '#block-comment'
     - include: '#attribute-selector'
+    - include: '#pseudo-element-webkit'
     - include: '#pseudo-element-moz'
     - include: '#pseudo-element'
     - include: '#deprecated-pseudo-element'
