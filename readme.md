@@ -1,4 +1,4 @@
-CSS3-Syntax
+CSS3_Syntax
 ===========
 
 Sublime Text 3 package for CSS3 syntax highlighting.
