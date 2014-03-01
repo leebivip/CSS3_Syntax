@@ -66,7 +66,7 @@
 			<key>match</key>
 			<string>([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd</string>
 			<key>name</key>
-			<string>variable.parameter.css</string>
+			<string>constant.other.anplusb.css</string>
 		</dict>
 		<key>at-charset</key>
 		<dict>
@@ -75,7 +75,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -95,7 +95,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -131,7 +131,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -163,7 +163,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -215,7 +215,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -251,7 +251,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -283,7 +283,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -323,7 +323,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -385,7 +385,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.at-rule.css</string>
+					<string>keyword.other.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -411,6 +411,13 @@
 					<string>#block</string>
 				</dict>
 			</array>
+		</dict>
+		<key>attribute-identifier</key>
+		<dict>
+			<key>match</key>
+			<string>-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.css</string>
 		</dict>
 		<key>attribute-selector</key>
 		<dict>
@@ -442,7 +449,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#identifier</string>
+					<string>#attribute-identifier</string>
 				</dict>
 			</array>
 		</dict>
@@ -458,7 +465,7 @@
 			<key>match</key>
 			<string>\*</string>
 			<key>name</key>
-			<string>string.unquoted.css</string>
+			<string>entity.name.tag.css</string>
 		</dict>
 		<key>block</key>
 		<dict>
@@ -564,7 +571,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.type.css</string>
+					<string>storage.type.css</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -575,7 +582,7 @@
 			<key>match</key>
 			<string>\b(normal|italic|oblique|bold|[1-9]00|((ultra|extra|semi)-)?(condensed|expanded)|none|(no-)?(common|discretionary|historical)-ligatures|(no-)?contextual|historical-forms|(all-)?(small|petite)-caps|unicase|titling-caps|(lining|oldstyle|proportional|tabular)-nums|(diagonal|stacked)-fractions|ordinal|slashed-zero|jis(78|83|90|04)|simplified|traditional|(full|proportional)-width|ruby|off|on)\b</string>
 			<key>name</key>
-			<string>variable.parameter.css</string>
+			<string>variable.parameter.named-value.css</string>
 		</dict>
 		<key>font-descriptor-value</key>
 		<dict>
@@ -658,7 +665,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.font-feature-type.css</string>
+					<string>keyword.at-rule.css</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -735,28 +742,28 @@
 			<key>match</key>
 			<string>#(\b[0-9a-fA-F]{6}\b|\b[0-9a-fA-F]{3}\b)</string>
 			<key>name</key>
-			<string>constant.numeric.css</string>
+			<string>constant.other.css</string>
 		</dict>
 		<key>html-class</key>
 		<dict>
 			<key>match</key>
 			<string>\.-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
 			<key>name</key>
-			<string>entity.name.function.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>html-id</key>
 		<dict>
 			<key>match</key>
 			<string>#-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
 			<key>name</key>
-			<string>entity.name.function.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>html-tag</key>
 		<dict>
 			<key>match</key>
 			<string>\*|\b(abbr|address|area|article|aside|audio|a|base|bdi|bdo|blockquote|body|br|button|b|canvas|caption|cite|code|col(group)?|data(list)?|dd|del|details|dfn|dialog|div|dl|dt|em(bed)?|fieldset|figcaption|figure|footer|form|h[1-6]|head(er)?|hr|html|i(frame)?|img|input|ins|kbd|keygen|label|legend|li(nk)?|main|map|mark|math|menu(item)?|meta|meter|nav|noscript|object|ol|optgroup|option|output|param|pre|progress|p|q|rb|rp|rtc?|ruby|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|svg|s|table|tbody|td|template|textarea|tfoot|th(ead)?|time|title|tr(ack)?|ul?|var|video|wbr)\b</string>
 			<key>name</key>
-			<string>variable.parameter.css</string>
+			<string>entity.name.tag.css</string>
 		</dict>
 		<key>identifier</key>
 		<dict>
@@ -873,7 +880,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#media-feature-discrete-value</string>
+					<string>#media-feature-named-value</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -905,14 +912,14 @@
 				</dict>
 			</array>
 		</dict>
-		<key>media-feature-discrete-value</key>
+		<key>media-feature-named-value</key>
 		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.css</string>
+					<string>variable.parameter.css</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -1054,7 +1061,7 @@
 			<key>match</key>
 			<string>:(((any|local)-)?link|visited|target|scope|current|past|future|(active|(in)?valid)-drop|active|hover|focus|(en|dis)abled|read-(only|write)|placeholder-shown|default|checked|indeterminate|(in)?valid|(in|out-of)-range|required|optional|root|empty|blank|(first|last|only)-(child|of-type)|fullscreen)</string>
 			<key>name</key>
-			<string>entity.name.function.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>pseudo-class-function-dir</key>
 		<dict>
@@ -1283,35 +1290,35 @@
 			<key>match</key>
 			<string>:-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive)</string>
 			<key>name</key>
-			<string>entity.name.function.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>pseudo-class-ms</key>
 		<dict>
 			<key>match</key>
 			<string>:-ms-(input-placeholder|keyboard-active)</string>
 			<key>name</key>
-			<string>entity.name.function.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>pseudo-element</key>
 		<dict>
 			<key>match</key>
 			<string>::(-(epub|ms|wap|webkit)-)?(after|before|choices|first-(letter|line)|repeat-(index|item)|selection|value)</string>
 			<key>name</key>
-			<string>constant.numeric.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>pseudo-element-moz</key>
 		<dict>
 			<key>match</key>
 			<string>::-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)?|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))?|viewport(-scroll)?|xul-anonymous-block)</string>
 			<key>name</key>
-			<string>constant.numeric.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>pseudo-page</key>
 		<dict>
 			<key>match</key>
 			<string>:(blank|first|left|right)</string>
 			<key>name</key>
-			<string>support.type.css</string>
+			<string>entity.name.class.css</string>
 		</dict>
 		<key>ratio</key>
 		<dict>
