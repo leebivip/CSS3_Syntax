@@ -66,7 +66,7 @@
 			<key>match</key>
 			<string>([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd</string>
 			<key>name</key>
-			<string>variable.parameter.css</string>
+			<string>constant.other.anplusb.css</string>
 		</dict>
 		<key>at-charset</key>
 		<dict>
@@ -412,6 +412,13 @@
 				</dict>
 			</array>
 		</dict>
+		<key>attribute-identifier</key>
+		<dict>
+			<key>match</key>
+			<string>-?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.css</string>
+		</dict>
 		<key>attribute-selector</key>
 		<dict>
 			<key>begin</key>
@@ -442,7 +449,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#identifier</string>
+					<string>#attribute-identifier</string>
 				</dict>
 			</array>
 		</dict>
@@ -458,7 +465,7 @@
 			<key>match</key>
 			<string>\*</string>
 			<key>name</key>
-			<string>string.unquoted.css</string>
+			<string>entity.name.tag.css</string>
 		</dict>
 		<key>block</key>
 		<dict>

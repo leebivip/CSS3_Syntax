@@ -27,7 +27,7 @@ repository:
     # name highlights whitespace as well as characters. this is useful for
     # debugging because it's easy to see exactly what is being matched.
     # TODO: assign a proper name to this
-    name: variable.parameter.css
+    name: constant.other.anplusb.css
     match: ([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd
 
   attribute-selector:
@@ -39,8 +39,14 @@ repository:
     - include: '#single-quoted-string'
     - include: '#attribute-selector-operator'
     - include: '#attribute-selector-universal'
-    - include: '#identifier'
+    - include: '#attribute-identifier'
     end: \]
+
+  attribute-identifier:
+    # name: invalid.deprecated.css
+    # this is identical to the generic #identifier, but is styled differently
+    name: entity.other.attribute-name.css
+    match: -?([a-zA-Z_\p{^ASCII}]|\\([0-9a-fA-F]{1,6}|[^\n]))([-a-zA-Z0-9_\p{^ASCII}]|\\([^\n]|[0-9a-fA-F]{1,6}))*
 
   attribute-selector-operator:
     # name: invalid.deprecated.css
@@ -52,7 +58,7 @@ repository:
     # special rule for the universal attribute selector (*). distinct from
     # universal element selector. this pattern will only be matched inside
     # attribute selector brackets ([]).
-    name: string.unquoted.css
+    name: entity.name.tag.css
     match: \*
 
   at-charset:

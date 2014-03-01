@@ -29,7 +29,7 @@
 /* invalid @charset */
 
 @charset 'iso-8859-15'; /* non UTF-8 */
-@charset 'utf8";        /* mismatched single- and double-quote */
+@charset 'utf8';        /* mismatched single- and double-quote */
 @charset UTF-8;         /* not a quoted string */
 
 /* valid @import */
@@ -49,9 +49,9 @@
 
 /* valid url() */
 
-url("http://www.example.com/pinkish.gif");
-url(http://www.example.com/pinkish.gif);
-url("tile.png");
+p {background: url("http://www.example.com/pinkish.gif");}
+p {background: url(http://www.example.com/pinkish.gif);}
+p {background: url("tile.png");}
 
 /* valid @media */
 
