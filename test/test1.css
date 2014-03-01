@@ -363,6 +363,7 @@ size: 8.5in 11in;/* width height */
   font-family: Headline;
   src: local(Futura-Medium),
        url(fonts.svg#MyGeometricModern) format("svg");
+  font-weight: normal;
 }
 @media screen {
   @font-face {
@@ -599,7 +600,8 @@ size: 8.5in 11in;/* width height */
     font-size: 12px;
   }
 }
-.box {
+.box {}
+#box {
  animation-name: bounce;
  animation-duration: 4s;
  animation-iteration-count: 10;
@@ -850,6 +852,8 @@ label:matches(:hover, :focus) /for/ input,       /* association by "for" attribu
 label:matches(:hover, :focus):not([for]) input { /* association by containment */
 box-shadow: yellow 0 0 10px;
 }
+
+p::first-letter {}
 
 /* Case insensitive HTML tag and case-insensitive pseudo-class */
 
