@@ -67,3 +67,9 @@ matches lowercase text. If this bothers enough people, we can work to include
 matching uppercase text as well.
 
   ![alt text](https://github.com/y0ssar1an/CSS3-Syntax/raw/master/screenshots/case.png "Comparison between uppercase and lowercase css.")
+
+## Set CSS3 Syntax as Default
+1. Open a CSS file in Sublime Text
+2. Navigate to View > Syntax > Open all with current extension as... > CSS3
+
+After this step, any file you open in the future will be highlighted using CSS3 syntax.
