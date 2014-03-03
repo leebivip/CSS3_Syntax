@@ -66,7 +66,7 @@
 			<key>match</key>
 			<string>([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd</string>
 			<key>name</key>
-			<string>constant.other.anplusb.css</string>
+			<string>constant.other.an-plus-b.css</string>
 		</dict>
 		<key>at-charset</key>
 		<dict>
@@ -102,6 +102,8 @@
 			<string>punctuation.css</string>
 			<key>end</key>
 			<string>\}</string>
+			<key>name</key>
+			<string>meta.block.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -473,6 +475,8 @@
 			<string>\{</string>
 			<key>end</key>
 			<string>\}</string>
+			<key>name</key>
+			<string>meta.block.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -670,6 +674,8 @@
 			</dict>
 			<key>end</key>
 			<string>\}</string>
+			<key>name</key>
+			<string>meta.block.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1355,6 +1361,8 @@
 			<string>(?=[!:.#*\p{L}\[-])</string>
 			<key>end</key>
 			<string>(?=\{|;)</string>
+			<key>name</key>
+			<string>meta.selector.css</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1735,7 +1743,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.css</string>
+	<string>source.css</string>
 	<key>uuid</key>
 	<string>8195f5b1-d6d5-4ceb-b15b-e939b3d3fcdd</string>
 </dict>
