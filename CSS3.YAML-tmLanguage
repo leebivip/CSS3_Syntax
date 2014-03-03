@@ -1,7 +1,7 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
 name: CSS3
-scopeName: text.css
+scopeName: source.css
 fileTypes: [css]
 uuid: 8195f5b1-d6d5-4ceb-b15b-e939b3d3fcdd
 
@@ -26,7 +26,7 @@ repository:
     # every rule contains the "name: invalid.deprecated.css" line. this scope
     # name highlights whitespace as well as characters. this is useful for
     # debugging because it's easy to see exactly what is being matched.
-    name: constant.other.anplusb.css
+    name: constant.other.an-plus-b.css
     match: ([+-]?([0-9]*n[+-][0-9]+b|[0-9]+|n))|even|odd
 
   attribute-selector:
@@ -70,6 +70,7 @@ repository:
 
   at-font-face:
     # name: invalid.deprecated.css
+    name: meta.block.css
     begin: (@font-face)
     beginCaptures:
       '0': {name: keyword.other.at-rule.css}
@@ -187,6 +188,7 @@ repository:
 
   block:
     # name: invalid.deprecated.css
+    name: meta.block.css
     begin: \{
     patterns:
     - include: '#block-comment'
@@ -273,6 +275,7 @@ repository:
 
   font-feature-block:
     # name: invalid.deprecated.css
+    name: meta.block.css
     begin: (@(annotation|character-variant|ornaments|styl(eset|istic)|swash))
     beginCaptures:
       '0': {name: keyword.at-rule.css}
@@ -629,6 +632,7 @@ repository:
 
   selector:
     # name: invalid.deprecated.css
+    name: meta.selector.css
     begin: (?=[!:.#*\p{L}\[-])
     patterns:
     - include: '#block-comment'
