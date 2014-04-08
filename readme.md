@@ -20,9 +20,13 @@ Sublime Text package for CSS3 syntax highlighting.
 
 After you've installed the plugin, open any CSS file and set the syntax to CSS.
 * Mac: `cmd+shift+p` → Set Syntax: CSS3<br>
-  Windows/Linux: `ctrl+shift+p` → Set Syntax: CSS3
+* Windows/Linux: `ctrl+shift+p` → Set Syntax: CSS3
 
 ### Set CSS3 Syntax as Default
+* *WARNING: This may break extensions that only recognize the default CSS syntax,
+  such as Autoprefixr. A workaround, [shown here](http://www.chriseisenbraun.com/news/autoprefixer-not-working-in-sublime-text-3-try-this-one-weird-trick-), is to switch the syntax
+  back to CSS when you want to run Autoprefixr.*
+
 1. Open a CSS file in Sublime Text
 2. Navigate to View → Syntax → Open all with current extension as... → CSS3
 

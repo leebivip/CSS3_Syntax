@@ -1,0 +1,1523 @@
+MOZ PREFIXED PROPERTIES
+
+-moz-animation
+-moz-animation-delay
+-moz-animation-direction
+-moz-animation-duration
+-moz-animation-fill-mode
+-moz-animation-iteration-count
+-moz-animation-name
+-moz-animation-play-state
+-moz-animation-timing-function
+-moz-appearance
+-moz-backface-visibility
+-moz-background-clip
+-moz-background-inline-policy
+-moz-background-origin
+-moz-background-size
+-moz-binding
+-moz-border-bottom-colors
+-moz-border-end
+-moz-border-end-color
+-moz-border-end-style
+-moz-border-end-width
+-moz-border-image
+-moz-border-left-colors
+-moz-border-right-colors
+-moz-border-start
+-moz-border-start-color
+-moz-border-start-style
+-moz-border-start-width
+-moz-border-top-colors
+-moz-box-align
+-moz-box-direction
+-moz-box-flex
+-moz-box-ordinal-group
+-moz-box-orient
+-moz-box-pack
+-moz-box-sizing
+-moz-column-count
+-moz-column-fill
+-moz-column-gap
+-moz-column-rule
+-moz-column-rule-color
+-moz-column-rule-style
+-moz-column-rule-width
+-moz-column-width
+-moz-float-edge
+-moz-font-feature-settings
+-moz-font-language-override
+-moz-force-broken-image-icon
+-moz-hyphens
+-moz-image-region
+-moz-margin-end
+-moz-margin-start
+-moz-opacity
+-moz-orient
+-moz-outline
+-moz-outline-color
+-moz-outline-offset
+-moz-outline-radius
+-moz-outline-radius-bottomleft
+-moz-outline-radius-bottomright
+-moz-outline-radius-topleft
+-moz-outline-radius-topright
+-moz-outline-style
+-moz-outline-width
+-moz-padding-end
+-moz-padding-start
+-moz-perspective
+-moz-perspective-origin
+-moz-script-level
+-moz-script-min-size
+-moz-script-size-multiplier
+-moz-stack-sizing
+-moz-text-align-last
+-moz-text-decoration-color
+-moz-text-decoration-line
+-moz-text-decoration-style
+-moz-transform
+-moz-transform-origin
+-moz-transform-style
+-moz-transition
+-moz-transition-delay
+-moz-transition-duration
+-moz-transition-property
+-moz-transition-timing-function
+-moz-user-focus
+-moz-user-input
+-moz-user-modify
+-moz-user-select
+-moz-window-shadow
+
+animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?
+appearance
+backface-visibility
+background-(clip|inline-policy|origin|size)
+binding
+border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)
+box-(align|direction|flex|ordinal-group|orient|pack|sizing)
+column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)
+float-edge
+font-(feature-settings|language-override)
+force-broken-image-icon
+hyphens
+image-region
+margin-(end|start)
+opacity
+orient
+outline(-(color|offset|radius(-((bottom|top)(left|right)|style|width))?))?
+padding-(end|start)
+perspective(-origin)?
+script-(level|min-size|size-multiplier)
+stack-sizing
+text-(align-last|decoration-(color|line|style))
+transform(-(origin|style))?
+transition(-(delay|duration|property|timing-function))
+user-(focus|input|modify|select)
+window-shadow
+
+-moz-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|backface-visibility|background-(clip|inline-policy|origin|size)|binding|border-((bottom|left|right|top)-colors|(end|start)(-(color|style|width))?|image)|box-(align|direction|flex|ordinal-group|orient|pack|sizing)|column-(count|fill|gap|rule|rule-color|rule-style|rule-width|width)|float-edge|font-(feature-settings|language-override)|force-broken-image-icon|hyphens|image-region|margin-(end|start)|opacity|orient|outline(-(color|offset|radius(-((bottom|top)(left|right)|style|width))?))?|padding-(end|start)|perspective(-origin)?|script-(level|min-size|size-multiplier)|stack-sizing|text-(align-last|decoration-(color|line|style))|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))|user-(focus|input|modify|select)|window-shadow)
+
+
+MOZ UNPREFIXED PROPERTIES
+
+clip-path
+filter
+mask
+pointer-events
+
+
+MOZ PREFIXED PSEUDO-ELEMENTS
+
+::-moz-anonymous-block
+::-moz-anonymous-positioned-block
+::-moz-canvas
+::-moz-cell-content
+::-moz-focus-inner
+::-moz-focus-outer
+::-moz-inline-table
+::-moz-math-stretchy
+::-moz-page
+::-moz-page-sequence
+::-moz-pagebreak
+::-moz-pagecontent
+::-moz-placeholder
+::-moz-progress-bar
+::-moz-range-thumb
+::-moz-range-track
+::-moz-selection
+::-moz-scrolled-canvas
+::-moz-scrolled-content
+::-moz-scrolled-page-sequence
+::-moz-svg-foreign-content
+::-moz-table
+::-moz-table-cell
+::-moz-table-column
+::-moz-table-column-group
+::-moz-table-outer
+::-moz-table-row
+::-moz-table-row-group
+::-moz-viewport
+::-moz-viewport-scroll
+::-moz-xul-anonymous-block
+
+::-moz-(anonymous-(positioned-)?block|canvas|cell-content|focus-(inner|outer)|inline-table|math-stretchy|page(-sequence|break|content)|placeholder|progress-bar|range-(thumb|track)|selection|scrolled-(canvas|content|page-sequence)|svg-foreign-content|table(-(cell|(column|row)(-group)?|outer))|viewport(-scroll)?|xul-anonymous-block)
+
+
+MOZ PREFIXED PSEUDO-CLASSES
+
+:-moz-()
+
+any
+any-link
+bound-element
+broken
+drag-over
+first-node
+focusring
+full-screen
+full-screen-ancestor
+handler-blocked
+handler-crashed
+handler-disabled
+last-node
+list-bullet
+list-number
+loading
+lwtheme
+lwtheme-brighttext
+lwtheme-darktext
+only-whitespace
+placeholder
+read-only
+read-write
+suppressed
+submit-invalid
+tree-checkbox
+tree-cell
+tree-cell-text
+tree-column
+tree-drop-feedback
+tree-image
+tree-indentation
+tree-line
+tree-progressmeter
+tree-row
+tree-separator
+tree-twisty
+ui-invalid
+ui-valid
+user-disabled
+window-inactive
+
+:-moz-(any(-link)?|bound-element|broken|drag-over|first-node|focusring|full-screen(-ancestor)?|handler-(blocked|crashed|disabled)|last-node|list-(bullet|number)|loading|lwtheme(-(brighttext|darktext))?|only-whitespace|placeholder|read-(only|write)|suppressed|submit-invalid|tree-(checkbox|cell(-text)?|column|drop-feedback|image|indentation|line|progressmeter|row|separator|twisty)|ui-(in)?valid|user-disabled|window-inactive)
+
+
+
+MOZ PREFIXED PSEUDO CLASS FUNCTIONS
+
+:-moz-
+
+locale-dir(ltr)
+locale-dir(rtl)
+system-metric(images-in-menus)
+system-metric(mac-graphite-theme)
+system-metric(scrollbar-end-backward)
+system-metric(scrollbar-end-forward)
+system-metric(scrollbar-start-backward)
+system-metric(scrollbar-start-forward)
+system-metric(scrollbar-thumb-proportional)
+system-metric(touch-enabled)
+system-metric(windows-default-theme)
+tree-cell-text(hover)
+tree-row(hover)
+locale-dir(ltr)
+locale-dir(rtl)
+tree-cell-text(hover)
+tree-row(hover)
+
+
+MOZ PREFIXED MEDIA QUERIES
+
+-moz-images-in-menus
+-moz-mac-graphite-theme
+-moz-maemo-classic
+-moz-device-pixel-ratio
+-moz-scrollbar-end-backward
+-moz-scrollbar-end-forward
+-moz-scrollbar-start-backward
+-moz-scrollbar-start-forward
+-moz-scrollbar-thumb-proportional
+-moz-touch-enabled
+-moz-windows-classic
+-moz-windows-compositor
+-moz-windows-default-theme
+-moz-windows-theme
+
+images-in-menus
+mac-graphite-theme
+maemo-classic
+device-pixel-ratio
+scrollbar-((end|start)-(backward|forward)|thumb-proportional)
+touch-enabled
+windows-(classic|compositor|(default-)?theme)
+
+-moz-(images-in-menus|mac-graphite-theme|maemo-classic|device-pixel-ratio|scrollbar-((end|start)-(backward|forward)|thumb-proportional)|touch-enabled|windows-(classic|compositor|(default-)?theme))
+
+
+EPUB PREFIXED PROPERTIES
+from Google Group post (https://groups.google.com/forum/#!msg/epub-working-group/vsddaUgJD0A/MgDDrdm0-REJ)
+
+break-after
+break-before
+break-inside
+caption-side
+columms
+column-count
+column-fill
+column-gap
+column-rule
+column-rule-color
+column-rule-style
+column-rule-width
+column-width
+cue
+cue-after
+cue-before
+hyphens
+line-break
+pause
+pause-after
+pause-before
+rest
+rest-after
+rest-before
+ruby-position
+speak
+speak-as
+text-align-last
+text-combine
+text-emphasis
+text-emphasis-color
+text-emphasis-style
+text-orientation
+text-transform
+text-trim
+voice-balance
+voice-duration
+voice-family
+voice-pitch
+voice-range
+voice-rate
+voice-stress
+voice-volume
+word-break
+writing-mode
+
+break-(after|before|inside)|caption-side|columms|column-(count|fill|gap|rule(-(color|style|width))?|width)|cue(-(after|before))?|hyphens|line-break|pause(-(after|before))?|rest(-(after|before))?|ruby-position|speak(-as)?|text-(align-last|combine|emphasis(-(color|style))?|orientation|transform|trim)|voice-(balance|duration|family|pitch|range|rate|stress|volume)|word-break|writing-mode
+
+@-epub-namespace
+
+
+WEBKIT PREFIXED PROPERTIES
+
+
+-webkit-animation
+-webkit-animation-delay
+-webkit-animation-direction
+-webkit-animation-duration
+-webkit-animation-fill-mode
+-webkit-animation-iteration-count
+-webkit-animation-name
+-webkit-animation-play-state
+-webkit-animation-timing-function
+-webkit-appearance
+-webkit-backface-visibility
+-webkit-border-image
+-webkit-column-count
+-webkit-column-gap
+-webkit-column-width
+-webkit-column-rule
+-webkit-column-rule-width
+-webkit-column-rule-style
+-webkit-column-rule-color
+-webkit-columns
+-webkit-column-span
+-webkit-font-feature-settings
+-webkit-font-kerning
+-webkit-font-size-delta
+-webkit-font-variant-ligatures
+-webkit-grid-column
+-webkit-grid-columns
+-webkit-grid-row
+-webkit-grid-rows
+-webkit-hyphens
+-webkit-perspective
+-webkit-perspective-origin
+-webkit-region-overflow
+-webkit-transform
+-webkit-transform-origin
+-webkit-transform-style
+-webkit-transition
+-webkit-transition-delay
+-webkit-transition-duration
+-webkit-transition-property
+-webkit-transition-timing-function
+-webkit-background-clip
+-webkit-background-origin
+-webkit-background-size
+-webkit-border-bottom-left-radius
+-webkit-border-bottom-right-radius
+-webkit-border-radius
+-webkit-border-top-left-radius
+-webkit-border-top-right-radius
+-webkit-box-sizing
+-webkit-opacity
+-webkit-aspect-ratio
+-webkit-background-composite
+-webkit-border-after
+-webkit-border-after-color
+-webkit-border-after-style
+-webkit-border-after-width
+-webkit-border-before
+-webkit-border-before-color
+-webkit-border-before-style
+-webkit-border-before-width
+-webkit-border-end
+-webkit-border-end-color
+-webkit-border-end-style
+-webkit-border-end-width
+-webkit-border-fit
+-webkit-border-horizontal-spacing
+-webkit-border-start
+-webkit-border-start-color
+-webkit-border-start-style
+-webkit-border-start-width
+-webkit-border-vertical-spacing
+-webkit-box-align
+-webkit-box-direction
+-webkit-box-flex
+-webkit-box-flex-group
+-webkit-box-lines
+-webkit-box-ordinal-groups
+-webkit-box-orient
+-webkit-box-pack
+-webkit-box-reflect
+-webkit-box-shadow
+-webkit-column-axis
+-webkit-column-break-after
+-webkit-column-break-before
+-webkit-column-break-inside
+-webkit-dashboard-region
+-webkit-filter
+-webkit-font-smoothing
+-webkit-highlight
+-webkit-hyphenate-charset
+-webkit-hyphenate-limit-after
+-webkit-hyphenate-limit-before
+-webkit-hyphenate-limit-lines
+-webkit-line-align
+-webkit-line-box-contain
+-webkit-line-break
+-webkit-line-clamp
+-webkit-line-grid
+-webkit-line-snap
+-webkit-locale
+-webkit-logical-height
+-webkit-logical-width
+-webkit-margin-after
+-webkit-margin-after-collapse
+-webkit-margin-before
+-webkit-margin-before-collapse
+-webkit-margin-bottom-collapse
+-webkit-margin-collapse
+-webkit-margin-end
+-webkit-margin-start
+-webkit-margin-top-collapse
+-webkit-marquee
+-webkit-marquee-direction
+-webkit-marquee-increment
+-webkit-marquee-repetition
+-webkit-marquee-speed
+-webkit-marquee-style
+-webkit-mask
+-webkit-mask-attachment
+-webkit-mask-box-image
+-webkit-mask-box-image-outset
+-webkit-mask-box-image-repeat
+-webkit-mask-box-image-slice
+-webkit-mask-boximage-source
+-webkit-mask-box-image-width
+-webkit-mask-clip
+-webkit-mask-composite
+-webkit-mask-image
+-webkit-mask-origin
+-webkit-mask-position
+-webkit-mask-position-x
+-webkit-mask-position-y
+-webkit-mask-repeat
+-webkit-mask-repeat-x
+-webkit-mask-repeat-y
+-webkit-mask-size
+-webkit-match-nearest-mail-blockquote-color
+-webkit-max-logical-height
+-webkit-max-logical-width
+-webkit-min-logical-height
+-webkit-min-logical-width
+-webkit-nbsp-mode
+-webkit-overflow-scrolling
+-webkit-padding-after
+-webkit-padding-before
+-webkit-padding-end
+-webkit-padding-start
+-webkit-perspective-origin-x
+-webkit-perspective-origin-y
+-webkit-print-color-adjust
+-webkit-region-break-after
+-webkit-region-break-before
+-webkit-region-break-inside
+-webkit-rtl-ordering
+-webkit-shape-insided
+-webkit-shape-outside
+-webkit-svg-shadow
+-webkit-tap-highlight-color
+-webkit-text-decorations-in-effect
+-webkit-text-emphasis-position
+-webkit-text-fill-color
+-webkit-text-security
+-webkit-text-size-adjust
+-webkit-text-stroke
+-webkit-text-stroke-color
+-webkit-text-stroke-width
+-webkit-touch-callout
+
+animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?
+appearance
+aspect-ratio
+backface-visibility
+background-(clip|composite|origin|size)
+border-((after|before|end|start)(-(color|style|width))?|(bottom|top)-(left|right)-radius|fit|(horizontal|vertical)-spacing|image|radius)
+box-(align|direction|flex(-group)?|lines|ordinal-groups|orient|pack|reflect|shadow|sizing)
+column-(axis|break-(after|before|inside)|count|gap|rule(-(color|style|width))?|span|width)
+columns
+dashboard-region
+filter
+font-(feature-settings|kerning|size-delta|smoothing|variant-ligatures)
+grid-(columns?|rows?)
+highlight
+hyphenate-(charset|limit-(after|before|lines))
+hyphens
+line-(align|box-contain|break|clamp|grid|snap)
+locale
+logical-(height|width)
+margin-((after|before|bottom|top)(-collapse)?|collapse|end|start)
+marquee(-(direction|increment|repetition|speed|style))?
+mask(-(attachment|box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|(position|repeat)(-(x|y))?|size)))?
+match-nearest-mail-blockquote-color
+(max|min)-logical-(height|width)
+nbsp-mode
+opacity
+overflow-scrolling
+padding-(after|before|end|start)
+perspective(-(origin(-(x|y))?))?
+print-color-adjust
+region-(break-(after|before|inside)|overflow)
+rtl-ordering
+shape-(inside|outside)
+svg-shadow
+tap-highlight-color
+text-(decorations-in-effect|emphasis-position|fill-color|security|size-adjust|stroke(-(color|width))?)
+touch-callout
+transform(-(origin|style))?
+transition(-(delay|duration|property|timing-function))?
+
+-webkit-(animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|aspect-ratio|backface-visibility|background-(clip|composite|origin|size)|border-((after|before|end|start)(-(color|style|width))?|(bottom|top)-(left|right)-radius|fit|(horizontal|vertical)-spacing|image|radius)|box-(align|direction|flex(-group)?|lines|ordinal-groups|orient|pack|reflect|shadow|sizing)|column-(axis|break-(after|before|inside)|count|gap|rule(-(color|style|width))?|span|width)|columns|dashboard-region|filter|font-(feature-settings|kerning|size-delta|smoothing|variant-ligatures)|grid-(columns?|rows?)|highlight|hyphenate-(charset|limit-(after|before|lines))|hyphens|line-(align|box-contain|break|clamp|grid|snap)|locale|logical-(height|width)|margin-((after|before|bottom|top)(-collapse)?|collapse|end|start)|marquee(-(direction|increment|repetition|speed|style))?|mask(-(attachment|box-image(-(outset|repeat|slice|source|width))?|clip|composite|image|origin|(position|repeat)(-(x|y))?|size)))?|match-nearest-mail-blockquote-color|(max|min)-logical-(height|width)|nbsp-mode|opacity|overflow-scrolling|padding-(after|before|end|start)|perspective(-(origin(-(x|y))?))?|print-color-adjust|region-(break-(after|before|inside)|overflow)|rtl-ordering|shape-(inside|outside)|svg-shadow|tap-highlight-color|text-(decorations-in-effect|emphasis-position|fill-color|security|size-adjust|stroke(-(color|width))?)|touch-callout|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?)\s*(?=:)
+
+
+GENERIC PROPERTIES (UNPREFIXED)
+
+align-content   no  no  no  yes auto
+align-items no  no  no  yes auto
+align-self  no  no  no  yes auto
+alignment-adjust    no  no  no  yes auto
+alignment-baseline  no  no  no  yes baseline
+all no  no  no  yes depending on individual properties
+anchor-point    no  no  no  yes none
+animation   no  no  no  yes depending on individual properties
+animation-delay no  no  no  yes 0
+animation-direction no  no  no  yes normal
+animation-duration  no  no  no  yes 0
+animation-fill-mode no  no  no  yes none
+animation-iteration-count   no  no  no  yes 1
+animation-name  no  no  no  yes none
+animation-play-state    no  no  no  yes running
+animation-timing-function   no  no  no  yes ease
+appearance  no  no  no  yes normal
+azimuth no  yes yes ?   center
+backface-visibility no  no  no  yes visible
+background  yes yes yes yes depending on individual properties
+background-attachment   yes yes yes yes scroll
+background-clip no  no  no  yes border-box
+background-color    yes yes yes yes transparent
+background-image    yes yes yes yes none
+background-origin   no  no  no  yes padding-box
+background-position yes yes yes yes 0% 0%
+background-repeat   yes yes yes yes repeat
+background-size no  no  no  yes auto
+baseline-shift  no  no  no  yes baseline
+binding no  no  no  yes none
+bleed   no  no  no  yes 6pt
+bookmark-label  no  no  no  yes content()
+bookmark-level  no  no  no  yes none
+bookmark-state  no  no  no  yes open
+bookmark-target no  no  no  yes none
+border  yes yes yes yes depending on individual properties
+border-bottom   yes yes yes yes depending on individual properties
+border-bottom-color no  yes yes yes current color
+border-bottom-left-radius   no  no  no  yes 0
+border-bottom-right-radius  no  no  no  yes 0
+border-bottom-style no  yes yes yes none
+border-bottom-width yes yes yes yes medium
+border-collapse no  yes yes ?   separate
+border-color    yes yes yes yes depending on individual properties
+border-image    no  no  no  yes none
+border-image-outset no  no  no  yes 0
+border-image-repeat no  no  no  yes stretch
+border-image-slice  no  no  no  yes 100%
+border-image-source no  no  no  yes none
+border-image-width  no  no  no  yes 1
+border-left yes yes yes yes depending on individual properties
+border-left-color   no  yes yes yes current color
+border-left-style   no  yes yes yes none
+border-left-width   yes yes yes yes medium
+border-radius   no  no  no  yes 0
+border-right    yes yes yes yes depending on individual properties
+border-right-color  no  yes yes yes current color
+border-right-style  no  yes yes yes none
+border-right-width  yes yes yes yes medium
+border-spacing  no  yes yes ?   0
+border-style    yes yes yes yes depending on individual properties
+border-top  yes yes yes yes depending on individual properties
+border-top-color    no  yes yes yes current color
+border-top-left-radius  no  no  no  yes 0
+border-top-right-radius no  no  no  yes 0
+border-top-style    no  yes yes yes none
+border-top-width    yes yes yes yes medium
+border-width    yes yes yes yes depending on individual properties
+bottom  no  yes yes ?   auto
+box-decoration-break    no  no  no  yes slice
+box-shadow  no  no  no  yes none
+box-sizing  no  no  no  yes content-box
+break-after no  no  no  yes auto
+break-before    no  no  no  yes auto
+break-inside    no  no  no  yes auto
+caption-side    no  yes yes ?   top
+chains  no  no  no  yes none
+clear   yes yes yes yes none
+clip    no  yes yes ?   auto
+clip-path   no  no  no  yes none
+clip-rule   no  no  no  yes nonzero
+color   yes yes yes yes implementation dependent
+color-interpolation-filters no  no  no  yes auto
+color-profile   no  no  no  yes auto
+column-count    no  no  no  yes auto
+column-fill no  no  no  yes balance
+column-gap  no  no  no  yes normal
+column-rule no  no  no  yes depending on individual properties
+column-rule-color   no  no  no  yes current color
+column-rule-style   no  no  no  yes medium
+column-rule-width   no  no  no  yes medium
+column-span no  no  no  yes none
+column-width    no  no  no  yes auto
+columns no  no  no  yes depending on individual properties
+contain no  no  no  yes none
+content no  yes yes yes normal
+counter-increment   no  yes yes yes none
+counter-reset   no  yes yes yes none
+crop    no  no  no  yes auto
+cue no  yes yes yes depending on individual properties
+cue-after   no  yes yes yes none
+cue-before  no  yes yes yes none
+cursor  no  yes yes yes auto
+direction   no  yes yes ?   ltr
+display yes yes yes yes inline
+dominant-baseline   no  no  no  yes auto
+drop-initial-after-adjust   no  no  no  yes text-after-edge
+drop-initial-after-align    no  no  no  yes baseline
+drop-initial-before-adjust  no  no  no  yes text-before-edge
+drop-initial-before-align   no  no  no  yes caps-height
+drop-initial-size   no  no  no  yes auto
+drop-initial-value  no  no  no  yes initial
+elevation   no  yes yes ?   level
+empty-cells no  yes yes ?   show
+filter  no  no  no  yes none
+flex    no  no  no  yes depending on individual properties
+flex-basis  no  no  no  yes auto
+flex-direction  no  no  no  yes row
+flex-flow   no  no  no  yes depending on individual properties
+flex-grow   no  no  no  yes 0
+flex-shrink no  no  no  yes 1
+flex-wrap   no  no  no  yes nowrap
+float   yes yes yes yes none
+float-offset    no  no  no  yes 0 0
+flood-color no  no  no  yes black
+flood-opacity   no  no  no  yes 1
+flow-from   no  no  no  yes none
+flow-into   no  no  no  yes none
+font    yes yes yes yes depending on individual properties
+font-family yes yes yes yes implementation dependent
+font-feature-settings   no  no  no  yes normal
+font-kerning    no  no  no  yes auto
+font-language-override  no  no  no  yes normal
+font-size   yes yes yes yes medium
+font-size-adjust    no  yes no  yes none
+font-stretch    no  yes no  yes normal
+font-style  yes yes yes yes normal
+font-synthesis  no  no  no  yes weight style
+font-variant    yes yes yes yes normal
+font-variant-alternates no  no  no  yes normal
+font-variant-caps   no  no  no  yes normal
+font-variant-east-asian no  no  no  yes normal
+font-variant-ligatures  no  no  no  yes normal
+font-variant-numeric    no  no  no  yes normal
+font-variant-position   no  no  no  yes normal
+font-weight yes yes yes yes normal
+grid    no  no  no  yes depending on individual properties
+grid-area   no  no  no  yes depending on individual properties
+grid-auto-columns   no  no  no  yes auto
+grid-auto-flow  no  no  no  yes none
+grid-auto-position  no  no  no  yes 1 / 1
+grid-auto-rows  no  no  no  yes auto
+grid-column no  no  no  yes depending on individual properties
+grid-column-end no  no  no  yes auto
+grid-column-start   no  no  no  yes auto
+grid-row    no  no  no  yes depending on individual properties
+grid-row-end    no  no  no  yes auto
+grid-row-start  no  no  no  yes auto
+grid-template   no  no  no  yes depending on individual properties
+grid-template-areas no  no  no  yes none
+grid-template-columns   no  no  no  yes none
+grid-template-rows  no  no  no  yes none
+hanging-punctuation no  no  no  yes none
+height  yes yes yes yes auto
+hyphens no  no  no  yes manual
+icon    no  no  no  yes auto
+image-orientation   no  no  no  yes auto
+image-resolution    no  no  no  yes normal
+ime-mode    no  no  no  yes auto
+inline-box-align    no  no  no  yes last
+justify-content no  no  no  yes auto
+justify-items   no  no  no  yes auto
+justify-self    no  no  no  yes auto
+left    no  yes yes ?   auto
+letter-spacing  yes yes yes yes normal
+lighting-color  no  no  no  yes white
+line-break  no  no  no  yes auto
+line-height yes yes yes yes normal
+line-stacking   no  no  no  yes depending on individual properties
+line-stacking-ruby  no  no  no  yes exclude-ruby
+line-stacking-shift no  no  no  yes consider-shifts
+line-stacking-strategy  no  no  no  yes inline-line-height
+list-style  yes yes yes yes depending on individual properties
+list-style-image    yes yes yes yes none
+list-style-position yes yes yes yes outside
+list-style-type yes yes yes yes disc
+margin  yes yes yes yes depending on individual properties
+margin-bottom   yes yes yes yes 0
+margin-left yes yes yes yes 0
+margin-right    yes yes yes yes 0
+margin-top  yes yes yes yes 0
+marker-offset   no  yes no  no  auto
+marks   no  yes no  yes none
+mask    no  no  no  yes border-box
+mask-box    no  no  no  yes see individual properties
+mask-box-outset no  no  no  yes 0
+mask-box-repeat no  no  no  yes stretch
+mask-box-slice  no  no  no  yes 0 fill
+mask-box-source no  no  no  yes none
+mask-box-width  no  no  no  yes auto
+mask-clip   no  no  no  yes border-box
+mask-image  no  no  no  yes none
+mask-origin no  no  no  yes border-box
+mask-position   no  no  no  yes center
+mask-repeat no  no  no  yes no-repeat
+mask-size   no  no  no  yes border-box
+mask-source-type    no  no  no  yes auto
+mask-type   no  no  no  yes luminance
+max-height  no  yes yes yes none
+max-lines   no  no  no  yes none
+max-width   no  yes yes yes none
+min-height  no  yes yes yes 0
+min-width   no  yes yes yes 0
+move-to no  no  no  yes normal
+nav-down    no  no  no  yes auto
+nav-index   no  no  no  yes auto
+nav-left    no  no  no  yes auto
+nav-right   no  no  no  yes auto
+nav-up  no  no  no  yes auto
+object-fit  no  no  no  yes fill
+object-position no  no  no  yes 50% 50%
+opacity no  no  no  yes 1
+order   no  no  no  yes 0
+orphans no  yes yes yes 2
+outline no  yes yes yes depending on individual properties
+outline-color   no  yes yes yes invert
+outline-offset  no  no  no  yes 0
+outline-style   no  yes yes yes none
+outline-width   no  yes yes yes medium
+overflow    no  yes yes yes depending on individual properties
+overflow-wrap   no  no  no  yes normal
+overflow-x  no  no  no  yes visible
+overflow-y  no  no  no  yes visible
+padding yes yes yes yes depending on individual properties
+padding-bottom  yes yes yes yes 0
+padding-left    yes yes yes yes 0
+padding-right   yes yes yes yes 0
+padding-top yes yes yes yes 0
+page    no  yes no  yes auto
+page-break-after    no  yes yes ?   auto
+page-break-before   no  yes yes ?   auto
+page-break-inside   no  yes yes ?   auto
+page-policy no  no  no  yes start
+pause   no  yes yes yes implementation dependent
+pause-after no  yes yes yes implementation dependent
+pause-before    no  yes yes yes implementation dependent
+perspective no  no  no  yes none
+perspective-origin  no  no  no  yes 50% 50%
+pitch   no  yes yes ?   medium
+pitch-range no  yes yes ?   50
+play-during no  yes yes ?   auto
+position    no  yes yes ?   static
+presentation-level  no  no  no  yes 0
+quotes  no  yes yes yes text
+region-fragment no  no  no  yes auto
+rendering-intent    no  no  no  yes auto
+resize  no  no  no  yes none
+rest    no  no  no  yes depending on individual properties
+rest-after  no  no  no  yes none
+rest-before no  no  no  yes none
+richness    no  yes yes ?   50
+right   no  yes yes ?   auto
+rotation    no  no  no  yes 0
+rotation-point  no  no  no  yes 50% 50%
+ruby-align  no  no  no  yes auto
+ruby-overhang   no  no  no  yes none
+ruby-position   no  no  no  yes before
+ruby-span   no  no  no  yes none
+shape-image-threshold   no  no  no  yes 0.0
+shape-outside   no  no  no  yes none
+shape-margin    no  no  no  yes 0
+size    no  yes no  yes auto
+speak   no  yes yes yes auto
+speak-as    no  no  no  yes normal
+speak-header    no  yes yes ?   once
+speak-numeral   no  yes yes ?   continuous
+speak-punctuation   no  yes yes ?   none
+speech-rate no  yes yes ?   medium
+stress  no  yes yes ?   50
+string-set  no  no  no  yes none
+tab-size    no  no  no  yes 8
+table-layout    no  yes yes ?   auto
+target  no  no  no  yes depending on individual properties
+target-name no  no  no  yes current
+target-new  no  no  no  yes window
+target-position no  no  no  yes above
+text-align  yes yes yes yes start
+text-align-last no  no  no  yes auto
+text-combine-horizontal no  no  no  yes none
+text-decoration yes yes yes yes none
+text-decoration-color   no  no  no  yes currentColor
+text-decoration-line    no  no  no  yes none
+text-decoration-skip    no  no  no  yes objects
+text-decoration-style   no  no  no  yes solid
+text-emphasis   no  no  no  yes depending on individual properties
+text-emphasis-color no  no  no  yes currentColor
+text-emphasis-position  no  no  no  yes over right
+text-emphasis-style no  no  no  yes none
+text-height no  no  no  yes auto
+text-indent yes yes yes yes 0
+text-justify    no  no  no  yes auto
+text-orientation    no  no  no  yes mixed
+text-outline    no  no  no  yes none
+text-overflow   no  no  no  yes clip
+text-shadow no  yes no  yes none
+text-space-collapse no  no  no  yes collapse
+text-transform  yes yes yes ?   none
+text-underline-position no  no  no  yes auto
+text-wrap   no  no  no  yes normal
+top no  yes yes ?   auto
+transform   no  no  no  yes none
+transform-origin    no  no  no  yes 50% 50% 0
+transform-style no  no  no  yes flat
+transition  no  no  no  yes depending on individual properties
+transition-delay    no  no  no  yes 0s
+transition-duration no  no  no  yes 0s
+transition-property no  no  no  yes all
+transition-timing-function  no  no  no  yes ease
+unicode-bidi    no  yes yes ?   normal
+vertical-align  yes yes yes yes baseline
+visibility  no  yes yes yes visible
+voice-balance   no  no  no  yes center
+voice-duration  no  no  no  yes auto
+voice-family    no  yes yes yes implementation dependent
+voice-pitch no  no  no  yes medium
+voice-range no  no  no  yes medium
+voice-rate  no  no  no  yes normal
+voice-stress    no  no  no  yes normal
+voice-volume    no  no  no  yes medium
+volume  no  yes yes ?   medium
+white-space yes yes yes yes normal
+widows  no  yes yes yes 2
+width   yes yes yes yes auto
+word-break  no  no  no  yes normal
+word-spacing    yes yes yes yes normal
+word-wrap   no  no  no  yes normal
+wrap-flow   no  no  no  yes auto
+wrap-through    no  no  no  yes wrap
+writing-mode    no  no  no  yes horizontal-tb
+z-index
+
+
+align-content
+align-items
+align-self
+alignment-adjust
+alignment-baseline
+all
+anchor-point
+animation
+animation-delay
+animation-direction
+animation-duration
+animation-fill-mode
+animation-iteration-count
+animation-name
+animation-play-state
+animation-timing-function
+appearance
+azimuth
+backface-visibility
+background
+background-attachment
+background-clip
+background-color
+background-image
+background-origin
+background-position
+background-repeat
+background-size
+baseline-shift
+binding
+bleed
+bookmark-label
+bookmark-level
+bookmark-state
+bookmark-target
+border
+border-bottom
+border-bottom-color
+border-bottom-left-radius
+border-bottom-right-radius
+border-bottom-style
+border-bottom-width
+border-collapse
+border-color
+border-image
+border-image-outset
+border-image-repeat
+border-image-slice
+border-image-source
+border-image-width
+border-left
+border-left-color
+border-left-style
+border-left-width
+border-radius
+border-right
+border-right-color
+border-right-style
+border-right-width
+border-spacing
+border-style
+border-top
+border-top-color
+border-top-left-radius
+border-top-right-radius
+border-top-style
+border-top-width
+border-width
+bottom
+box-decoration-break
+box-shadow
+box-sizing
+break-after
+break-before
+break-inside
+caption-side
+chains
+clear
+clip
+clip-path
+clip-rule
+color
+color-interpolation-filters
+color-profile
+column-count
+column-fill
+column-gap
+column-rule
+column-rule-color
+column-rule-style
+column-rule-width
+column-span
+column-width
+columns
+contain
+content
+counter-increment
+counter-reset
+crop
+cue
+cue-after
+cue-before
+cursor
+direction
+display
+dominant-baseline
+drop-initial-after-adjust
+drop-initial-after-align
+drop-initial-before-adjust
+drop-initial-before-align
+drop-initial-size
+drop-initial-value
+elevation
+empty-cells
+filter
+flex
+flex-basis
+flex-direction
+flex-flow
+flex-grow
+flex-shrink
+flex-wrap
+float
+float-offset
+flood-color
+flood-opacity
+flow-from
+flow-into
+font
+font-family
+font-feature-settings
+font-kerning
+font-language-override
+font-size
+font-size-adjust
+font-stretch
+font-style
+font-synthesis
+font-variant
+font-variant-alternates
+font-variant-caps
+font-variant-east-asian
+font-variant-ligatures
+font-variant-numeric
+font-variant-position
+font-weight
+grid
+grid-area
+grid-auto-columns
+grid-auto-flow
+grid-auto-position
+grid-auto-rows
+grid-column
+grid-column-end
+grid-column-start
+grid-row
+grid-row-end
+grid-row-start
+grid-template
+grid-template-areas
+grid-template-columns
+grid-template-rows
+hanging-punctuation
+height
+hyphens
+icon
+image-orientation
+image-resolution
+ime-mode
+inline-box-align
+justify-content
+justify-items
+justify-self
+left
+letter-spacing
+lighting-color
+line-break
+line-height
+line-stacking
+line-stacking-ruby
+line-stacking-shift
+line-stacking-strategy
+list-style
+list-style-image
+list-style-position
+list-style-type
+margin
+margin-bottom
+margin-left
+margin-right
+margin-top
+marks
+mask
+mask-box
+mask-box-outset
+mask-box-repeat
+mask-box-slice
+mask-box-source
+mask-box-width
+mask-clip
+mask-image
+mask-origin
+mask-position
+mask-repeat
+mask-size
+mask-source-type
+mask-type
+max-height
+max-lines
+max-width
+min-height
+min-width
+move-to
+nav-down
+nav-index
+nav-left
+nav-right
+nav-up
+object-fit
+object-position
+opacity
+order
+orphans
+outline
+outline-color
+outline-offset
+outline-style
+outline-width
+overflow
+overflow-wrap
+overflow-x
+overflow-y
+padding
+padding-bottom
+padding-left
+padding-right
+padding-top
+page
+page-break-after
+page-break-before
+page-break-inside
+page-policy
+pause
+pause-after
+pause-before
+perspective
+perspective-origin
+pitch
+pitch-range
+play-during
+position
+presentation-level
+quotes
+region-fragment
+rendering-intent
+resize
+rest
+rest-after
+rest-before
+richness
+right
+rotation
+rotation-point
+ruby-align
+ruby-overhang
+ruby-position
+ruby-span
+shape-image-threshold
+shape-outside
+shape-margin
+size
+speak
+speak-as
+speak-header
+speak-numeral
+speak-punctuation
+speech-rate
+stress
+string-set
+tab-size
+table-layout
+target
+target-name
+target-new
+target-position
+text-align
+text-align-last
+text-combine-horizontal
+text-decoration
+text-decoration-color
+text-decoration-line
+text-decoration-skip
+text-decoration-style
+text-emphasis
+text-emphasis-color
+text-emphasis-position
+text-emphasis-style
+text-height
+text-indent
+text-justify
+text-orientation
+text-outline
+text-overflow
+text-shadow
+text-space-collapse
+text-transform
+text-underline-position
+text-wrap
+top
+transform
+transform-origin
+transform-style
+transition
+transition-delay
+transition-duration
+transition-property
+transition-timing-function
+unicode-bidi
+vertical-align
+visibility
+voice-balance
+voice-duration
+voice-family
+voice-pitch
+voice-range
+voice-rate
+voice-stress
+voice-volume
+volume
+white-space
+widows
+width
+word-break
+word-spacing
+word-wrap
+wrap-flow
+wrap-through
+writing-mode
+z-index
+
+
+
+
+align-(content|items|self)
+alignment-(adjust|baseline)
+all
+anchor-point
+animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?
+appearance
+azimuth
+backface-visibility
+background(-(attachment|clip|color|image|origin|position|repeat|size))?
+baseline-shift
+binding
+bleed
+bookmark-(label|level|state|target)
+border(-((bottom|top)(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|(left|right)(-(color|style|width))?|radius|spacing|style|width))?
+bottom
+box-(decoration-break|shadow|sizing)
+break-(after|before|inside)
+caption-side
+chains
+clear
+clip(-(path|rule))?
+color(-(interpolation-filters|profile))?
+column-(count|fill|gap|rule(-(color|style|width))?|span|width)
+columns
+contain
+content
+counter-(increment|reset)
+crop
+cue(-(after|before))?
+cursor
+direction
+display
+dominant-baseline
+drop-initial-((after|before)-(adjust|align)|size|value)
+elevation
+empty-cells
+filter
+flex(-(basis|direction|flow|grow|shrink|wrap))?
+float(-offset)?
+flood-(color|opacity)
+flow-(from|into)
+font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?
+grid(-(area|auto-(columns|flow|position|rows)|(column|row)(-(end|start))?|template(-(areas|columns|rows))?))?
+hanging-punctuation
+height
+hyphens
+icon
+image-(orientation|resolution)
+ime-mode
+inline-box-align
+justify-(content|items|self)
+left
+letter-spacing
+lighting-color
+line-(break|height|stacking(-(ruby|shift|strategy))?)
+list-style(-(image|position|type))?
+margin(-(bottom|left|right|top))?
+marks
+mask(-(box(-(outset|repeat|slice|source|width))?|clip|image|origin|position|repeat|size|source-type|type))?
+max-(height|lines|width)
+min-(height|width)
+move-to
+nav-(down|index|left|right|up)
+object-(fit|position)
+opacity
+order
+orphans
+outline(-(color|offset|style|width))?
+overflow(-(wrap|x|y))?
+padding(-(bottom|left|right|top))?
+page(-(break-(after|before|inside)|policy))?
+pause(-(after|before))?
+perspective(-origin)?
+pitch(-range)?
+play-during
+position
+presentation-level
+quotes
+region-fragment
+rendering-intent
+resize
+rest(-(after|before))?
+richness
+right
+rotation(-point)?
+ruby-(align|overhang|position|span)
+shape-(image-threshold|outside|margin)
+size
+speak(-(as|header|numeral|punctuation))?
+speech-rate
+stress
+string-set
+tab-size
+table-layout
+target(-(name|new|position))?
+text-(align(-last)?|combine-horizontal|decoration(-(color|line|skip|style))?|emphasis(-(color|position|style))?|height|indent|justify|orientation|outline|overflow|shadow|space-collapse|transform|underline-position|wrap)
+top
+transform(-(origin|style))?
+transition(-(delay|duration|property|timing-function))?
+unicode-bidi
+vertical-align
+visibility
+voice-(balance|duration|family|pitch|range|rate|stress|volume)
+volume
+white-space
+widows
+width
+word-(break|spacing|wrap)
+wrap-(flow|through)
+writing-mode
+z-index
+
+
+
+align-(content|items|self)|alignment-(adjust|baseline)|all|anchor-point|animation(-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function))?|appearance|azimuth|backface-visibility|background(-(attachment|clip|color|image|origin|position|repeat|size))?|baseline-shift|binding|bleed|bookmark-(label|level|state|target)|border(-((bottom|top)(-(color|(left|right)-radius|style|width))?|collapse|color|image(-(outset|repeat|slice|source|width))?|(left|right)(-(color|style|width))?|radius|spacing|style|width))?|bottom|box-(decoration-break|shadow|sizing)|break-(after|before|inside)|caption-side|chains|clear|clip(-(path|rule))?|color(-(interpolation-filters|profile))?|column-(count|fill|gap|rule(-(color|style|width))?|span|width)|columns|contain|content|counter-(increment|reset)|crop|cue(-(after|before))?|cursor|direction|display|dominant-baseline|drop-initial-((after|before)-(adjust|align)|size|value)|elevation|empty-cells|filter|flex(-(basis|direction|flow|grow|shrink|wrap))?|float(-offset)?|flood-(color|opacity)|flow-(from|into)|font(-(family|feature-settings|kerning|language-override|size(-adjust)?|stretch|style|synthesis|variant(-(alternates|caps|east-asian|ligatures|numeric|position))?|weight))?|grid(-(area|auto-(columns|flow|position|rows)|(column|row)(-(end|start))?|template(-(areas|columns|rows))?))?|hanging-punctuation|height|hyphens|icon|image-(orientation|resolution)|ime-mode|inline-box-align|justify-(content|items|self)|left|letter-spacing|lighting-color|line-(break|height|stacking(-(ruby|shift|strategy))?)|list-style(-(image|position|type))?|margin(-(bottom|left|right|top))?|marks|mask(-(box(-(outset|repeat|slice|source|width))?|clip|image|origin|position|repeat|size|source-type|type))?|max-(height|lines|width)|min-(height|width)|move-to|nav-(down|index|left|right|up)|object-(fit|position)|opacity|order|orphans|outline(-(color|offset|style|width))?|overflow(-(wrap|x|y))?|padding(-(bottom|left|right|top))?|page(-(break-(after|before|inside)|policy))?|pause(-(after|before))?|perspective(-origin)?|pitch(-range)?|play-during|position|presentation-level|quotes|region-fragment|rendering-intent|resize|rest(-(after|before))?|richness|right|rotation(-point)?|ruby-(align|overhang|position|span)|shape-(image-threshold|outside|margin)|size|speak(-(as|header|numeral|punctuation))?|speech-rate|stress|string-set|tab-size|table-layout|target(-(name|new|position))?|text-(align(-last)?|combine-horizontal|decoration(-(color|line|skip|style))?|emphasis(-(color|position|style))?|height|indent|justify|orientation|outline|overflow|shadow|space-collapse|transform|underline-position|wrap)|top|transform(-(origin|style))?|transition(-(delay|duration|property|timing-function))?|unicode-bidi|vertical-align|visibility|voice-(balance|duration|family|pitch|range|rate|stress|volume)|volume|white-space|widows|width|word-(break|spacing|wrap)|wrap-(flow|through)|writing-mode|z-index
+
+
+/* ms prefixed properties */
+
+
+-ms-accelerator
+-ms-background-position-x
+-ms-background-position-y
+-ms-behavior
+-ms-block-progression
+-ms-content-zoom-chaining
+-ms-content-zooming
+-ms-content-zoom-limit
+-ms-content-zoom-limit-max
+-ms-content-zoom-limit-min
+-ms-content-zoom-snap
+-ms-content-zoom-snap-points
+-ms-content-zoom-snap-type
+-ms-filter
+-ms-flow-from
+-ms-flow-into
+-ms-grid-column
+-ms-grid-column-align
+-ms-grid-columns
+-ms-grid-column-span
+-ms-grid-row
+-ms-grid-row-align
+-ms-grid-rows
+-ms-grid-row-span
+-ms-high-contrast-adjust
+-ms-hyphenate-limit-chars
+-ms-hyphenate-limit-lines
+-ms-hyphenate-limit-zone
+-ms-hyphens
+-ms-ime-mode
+-ms-interpolation-mode
+-ms-layout-flow
+-ms-layout-grid
+-ms-layout-grid-char
+-ms-layout-grid-line
+-ms-layout-grid-mode
+-ms-layout-grid-type
+-ms-overflow-style
+-ms-overflow-x
+-ms-overflow-y
+-ms-progress-appearance
+-ms-scrollbar-3dlight-color
+-ms-scrollbar-darkshadow-color
+-ms-scrollbar-highlight-color
+-ms-scrollbar-shadow-color
+-ms-scrollbar-track-color
+-ms-scroll-chaining
+-ms-scroll-limit
+-ms-scroll-limit-x-max
+-ms-scroll-limit-x-min
+-ms-scroll-limit-y-max
+-ms-scroll-limit-y-min
+-ms-scroll-rails
+-ms-scroll-snap-points-x
+-ms-scroll-snap-points-y
+-ms-scroll-snap-type
+-ms-scroll-snap-x
+-ms-scroll-snap-y
+-ms-scroll-translation
+-ms-text-align-last
+-ms-text-autospace
+-ms-text-combine-horizontal
+-ms-text-justify
+-ms-text-kashida-space
+-ms-text-overflow
+-ms-text-underline-position
+-ms-user-select
+-ms-word-wrap
+-ms-wrap-flow
+-ms-wrap-margin
+-ms-wrap-through
+-ms-writing-mode
+-ms-zoom
+
+
+accelerator
+background-position-(x|y)
+behavior
+block-progression
+content-zoom(-(chaining|limit(-(max|min))?|snap(-(points|type))?)|ing)
+filter
+flow-(from|into)
+grid-(columns?|rows?)(-(align|span))?
+high-contrast-adjust
+hyphenate-limit-(chars|lines|zone)
+hyphens
+ime-mode
+interpolation-mode
+layout-(flow|grid(-(char|line|mode|type))?)
+overflow-(style|x|y)
+progress-appearance
+scroll-(chaining|limit(-((x|y)-(max|min)))?|rails|snap-(points-(x|y)|type|(x|y))|translation)
+scrollbar-(3dlight|darkshadow|highlight|shadow|track)-color
+text-(align-last|autospace|combine-horizontal|justify|kashida-space|overflow|underline-position)
+user-select
+word-(wrap|flow)
+wrap-(margin|through)
+writing-mode
+zoom
+
+
+
+accelerator|background-position-(x|y)|behavior|block-progression|content-zoom(-(chaining|limit(-(max|min))?|snap(-(points|type))?)|ing)|filter|flow-(from|into)|grid-(columns?|rows?)(-(align|span))?|high-contrast-adjust|hyphenate-limit-(chars|lines|zone)|hyphens|ime-mode|interpolation-mode|layout-(flow|grid(-(char|line|mode|type))?)|overflow-(style|x|y)|progress-appearance|scroll-(chaining|limit(-((x|y)-(max|min)))?|rails|snap-(points-(x|y)|type|(x|y))|translation)|scrollbar-(3dlight|darkshadow|highlight|shadow|track)-color|text-(align-last|autospace|combine-horizontal|justify|kashida-space|overflow|underline-position)|user-select|word-(wrap|flow)|wrap-(margin|through)|writing-mode|zoom
+
+
+/* ms prefixed pseudo-classes */
+
+:-ms-input-placeholder
+:-ms-keyboard-active
+
+:-ms-(input-placeholder|keyboard-active)
+
+
+STUFF 3
+
+calendar-picker-indicator
+color-swatch
+color-swatch-wrapper
+details-marker
+file-upload-button
+image-inner-element
+inner-spin-button
+input-placeholder
+input-speech-button
+keygen-select
+media-controls-panel
+media-controls-timeline-container
+media-slider-container
+meter-bar
+meter-even-less-good-value
+meter-optimum-value
+meter-suboptimal-value
+progress-bar
+progress-value
+resizer
+resizer:window-inactive
+scrollbar
+scrollbar-button
+scrollbar-corner
+scrollbar-thumb
+scrollbar-track
+scrollbar-track-piece
+search-cancel-button
+search-decoration
+search-results-button
+search-results-decoration
+slider-container
+slider-runnable-track
+slider-thumb
+textfield-decoration-container
+validation-bubble
+validation-bubble-arrow
+validation-bubble-arrow-clipper
+validation-bubble-heading
+validation-bubble-message
+validation-bubble-text-block
+
+
+calendar-picker-indicator
+color-swatch(-wrapper)?
+details-marker
+file-upload-button
+image-inner-element
+inner-spin-button
+input-(placeholder|speech-button)
+keygen-select
+media-(controls-(panel|timeline-container)|slider-container)
+meter-(bar|(even-less-good|optimum|suboptimal)-value)
+progress-(bar|value)
+resizer
+scrollbar(-(button|corner|thumb|track(-piece)?))?
+search-((cancel|results)-button|(results-)?decoration)
+slider-(container|runnable-track|thumb)
+textfield-decoration-container
+validation-bubble(-(arrow(-clipper)?|heading|message|text-block))?
+
+
+::-webkit-(calendar-picker-indicator|color-swatch(-wrapper)?|details-marker|file-upload-button|image-inner-element|inner-spin-button|input-(placeholder|speech-button)|keygen-select|media-(controls-(panel|timeline-container)|slider-container)|meter-(bar|(even-less-good|optimum|suboptimal)-value)|progress-(bar|value)|resizer|scrollbar(-(button|corner|thumb|track(-piece)?))?|search-((cancel|results)-button|(results-)?decoration)|slider-(container|runnable-track|thumb)|textfield-decoration-container|validation-bubble(-(arrow(-clipper)?|heading|message|text-block))?)
+

@@ -1713,7 +1713,9 @@ p {list-style-image: blue;}
 p {list-style-position: blue;}
 p {list-style-type: blue;}
 p {margin: blue;}
-p {margin-bottom: blue;}
+p {
+  margin-bottom: blue;
+}
 p {margin-left: blue;}
 p {margin-right: blue;}
 p {margin-top: blue;}
