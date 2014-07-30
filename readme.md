@@ -1,7 +1,7 @@
 CSS3_Syntax
 ===========
 
-Sublime Text package for CSS3 syntax highlighting.
+## Announcement: For ST3 users, this package has been replaced by [CSS3](https://github.com/y0ssar1an/CSS3). This package will be removed some time after Sublime Text 3 is released.
 
 ## Features
 * __Comprehensive__: near complete support for CSS3, based on the latest draft
